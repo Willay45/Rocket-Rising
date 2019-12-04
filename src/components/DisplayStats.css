@@ -1,0 +1,13 @@
+.contenair {
+    margin-top: 150px;
+}
+.pokeName {
+    color: black;
+}
+.theButton {
+    background-color: red;
+    border-radius: 40px;
+    width: 300px;
+    height: 55px;
+    color: white;
+}
