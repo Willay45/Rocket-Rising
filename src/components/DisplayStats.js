@@ -2,10 +2,10 @@ import React from 'react';
 import './DisplayStats.css';
 
 const DisplayStats = ({starters}) => {
-    const thePokemon = [];
+    const choosenPokemon = [];
     const chooseOne = () => {
-        thePokemon.push(starters);
-        console.log(thePokemon);
+        choosenPokemon.push(starters);
+        console.log(choosenPokemon);
     };
     return (
         <div className="container">
