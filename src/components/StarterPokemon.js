@@ -30,35 +30,6 @@ const StarterPokemon = () => {
     };
     starters.push(ekans, gastly, bellsprout);
 
-    /*
-        const fetchEkans = () => {
-            axios.get(`https://pokeapi.co/api/v2/pokemon/ekans`)
-                .then(response => response.data)
-                .then(data => {
-                    ekans = data;
-                    console.log(ekans.name);
-                });
-        };
-
-        const fetchGastly = () => {
-            axios.get(`https://pokeapi.co/api/v2/pokemon/gastly`)
-                .then(response => response.data)
-                .then(data => {
-                    gastly = data;
-                    console.log(gastly.name);
-                });
-        };
-
-        const fetchGrimer = () => {
-            axios.get(`https://pokeapi.co/api/v2/pokemon/grimer`)
-                .then(response => response.data)
-                .then(data => {
-                    grimer = data;
-                    console.log(grimer.name);
-                });
-        };
-    */
-
     const displayPokemon = (index) => {
         setPokemonStat(starters[index]);
     };
