@@ -1,0 +1,25 @@
+{
+  "starters": {
+    "ekans": {
+      "img": "http://www.pokestadium.com/sprites/xy/ekans.gif",
+      "name": "Ekans",
+      "description": "Ekans is a purple, serpentine Pokémon. Its eyes, underbelly, the thick stripe around its neck, and rattle are yellow.",
+      "type": "Poison",
+      "imgType": "../images/poison.png"
+    },
+    "gastly": {
+      "img": "http://www.pokestadium.com/sprites/xy/gastly.gif",
+      "name": "Gastly",
+      "description": "Gastly has no true form, due to 95% of its body being poisonous gas. However, it consistently appears as a black, spherical Pokémon surrounded by a purple haze.",
+      "type": "Ghost",
+      "imgType": "../images/ghost.png"
+    },
+    "bellsprout": {
+      "img": "http://www.pokestadium.com/sprites/xy/bellsprout.gif",
+      "name": "Bellsprout",
+      "description": "Bellsprout is a plant-based Pokémon with a stem-like brown body. There is a single green leaf on each side of its body. It has a yellow bell-shaped head with what appear to be pink lips at the end and beady black eyes.",
+      "type": "Grass",
+      "imgType": "../images/grass.png"
+    }
+  }
+}

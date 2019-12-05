@@ -4,7 +4,7 @@
 .pokeName {
     color: black;
 }
-.selectedPokemon {
+.selectedPokemonButton {
     background-color: red;
     border-radius: 40px;
     width: 300px;
