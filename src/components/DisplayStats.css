@@ -1,10 +1,10 @@
-.contenair {
+.container {
     margin-top: 150px;
 }
 .pokeName {
     color: black;
 }
-.theButton {
+.selectedPokemon {
     background-color: red;
     border-radius: 40px;
     width: 300px;
