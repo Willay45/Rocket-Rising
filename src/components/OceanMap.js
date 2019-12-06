@@ -29,7 +29,7 @@ const OceanMap = () => {
         // })
     };
 
-    const giveMeStats = () => {
+    const giveMeStats = async () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${opponent.pokemon.name}`)
             .then(response => response.data)
             .then(data => {
