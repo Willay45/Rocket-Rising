@@ -1,0 +1,49 @@
+.container ul {
+
+    list-style-type: none;
+
+    background-color: blueviolet;
+}
+
+.buttons {
+
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-content: space-around;
+
+}
+
+#button1 {
+    padding: 6px 0 6px 0;
+    font: Bold 13px Arial;
+    background: #d34836;
+    color: #fff;
+    width: 90px;
+    border-radius: 2px;
+    border: none;
+}
+
+#button2 {
+    padding: 6px 0 6px 0;
+    font: bold 13px Arial;
+    background: #478bf9;
+    color: #fff;
+    border-radius: 2px;
+    width: 100px;
+    border: none;
+}
+
+#button3 {
+    padding: 6px 0 6px 0;
+    font: bold 13px Arial;
+    background: #f5f5f5;
+    color: #555;
+    border-radius: 2px;
+    width: 100px;
+    border: 1px solid #ccc;
+}
+
+
+
+

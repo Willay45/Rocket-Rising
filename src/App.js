@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './components/LandingPage';
+import Inventory from "./components/Inventory";
 
 function App() {
-  return (
-    <div className="App">
-      <LandingPage />
+    return (
+        <div className="App">
 
-    </div>
-  );
+            <Inventory/>
+        </div>
+    );
 }
 
 export default App;
