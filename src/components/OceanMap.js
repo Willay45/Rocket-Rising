@@ -55,7 +55,6 @@ const OceanMap = () => {
                     />
                 }
                     </div>
-                }
             <div className="navButtons">
                 <img src="https://image.noelshack.com/fichiers/2019/49/4/1575564164-backpack.png"
                      alt="inventory" /*onClick={() => {inventory}}*/ className="itemNav backpack"/>
