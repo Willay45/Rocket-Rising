@@ -1,0 +1,49 @@
+.background {
+    width: 100%;
+}
+
+.mapRenderMontain {
+    background-image: url("https://image.noelshack.com/fichiers/2019/49/7/1575772803-montagne.png");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popUp {
+    display: block;
+    padding: 20px;
+    background-color: black;
+    opacity: 70%;
+    color: white;
+}
+.pokemonSprite {
+    margin: 25px;
+}
+.launchFightButton {
+    height: 80px;
+    cursor: pointer;
+}
+.mapTitle {
+    color: white;
+}
+.darkBorder {
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navButtons {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+.itemNav {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 15px;
+}
+
