@@ -3,6 +3,7 @@ import './App.css';
 import StarterPokemon from './components/StarterPokemon';
 import OceanMap from "./components/OceanMap";
 import MontainMap from "./components/MontainMap";
+import DojoMap from "./components/DojoMap";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       {/*<StarterPokemon />*/}
       <OceanMap/>
       <MontainMap/>
+      <DojoMap/>
     </div>
   );
 }
