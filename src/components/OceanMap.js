@@ -6,48 +6,30 @@ const OceanMap = () => {
 
     const [opponent, setOpponent] = useState(null);
 
-    function randomPok() {
+    //Get a random number to search a random pokemon
+    function getRandomNumber() {
+        const random = (max, min) => {
+            return Math.floor(Math.random() * (max - min)) + min;
+        };
         return random(0, 10)
     }
 
-    const random = (max, min) => {
-        return Math.floor(Math.random() * (max - min)) + min;
+    const getWaterPokemon = async () => {
+        // Getting the type of pokemon
+        let res = await axios.get("https://pokeapi.co/api/v2/type/11/");
+        let data = res.data;
+        await setOpponent(res.data.pokemon[getRandomNumber()].pokemon.name);
+        let pokemonClone = res.data.pokemon[getRandomNumber()].pokemon.name;
+
+        //Getting the pokemon object by the name
+        let stats = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonClone}`);
+        let content = stats.data;
+        await setOpponent(stats.data);
     };
 
-    const fetchPokemon = () => {
-        axios.get('https://pokeapi.co/api/v2/type/11/')
-            .then(response => response.data)
-            .then(data => {
-                setOpponent(data.pokemon[randomPok()]);
-            })
-        // .then(() => {
-        //     axios.get(`https://pokeapi.co/api/v2/pokemon/${opponent.pokemon.name}`)
-        //         .then(response => response.data)
-        //         .then(data => {
-        //             setOpponent(data);
-        //         })
-        // })
-    };
-
-    const giveMeStats = async () => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${opponent.pokemon.name}`)
-            .then(response => response.data)
-            .then(data => {
-                setOpponent(data);
-            })
-    };
-
-    //TODO: ASYNC AWAIT
-
-    const fetchTheOpponent = () => {
-        fetchPokemon();
-        console.log(opponent.pokemon.name);
-        giveMeStats();
-        console.log(opponent);
-        console.log(opponent);
-    };
 
     const finalPokemon = () => {
+        console.log(`The fetched pokemon is: ${opponent.name}`);
         console.log(opponent);
     };
 
@@ -57,7 +39,7 @@ const OceanMap = () => {
                 <h1 className="mapTitle">Ocean</h1>
             </div>
             <div className="mapRender">
-                <img onClick={fetchPokemon} className="launchFight"
+                <img onClick={getWaterPokemon} className="launchFight"
                      src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"/>
             </div>
             <div className="navButtons">
@@ -69,8 +51,7 @@ const OceanMap = () => {
                      className="pokeTeam itemNav"/>
             </div>
             <div className="darkBorder">
-                <button onClick={fetchTheOpponent}>Show me the object</button>
-                <button onClick={finalPokemon}>Show me the final fetch</button>
+                <button onClick={finalPokemon}>Show final opponent in the console</button>
             </div>
         </div>
     )
