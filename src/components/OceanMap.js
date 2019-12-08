@@ -11,7 +11,7 @@ const OceanMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 10)
+        return random(0, 50)
     }
 
     const getWaterPokemon = async () => {
@@ -27,21 +27,35 @@ const OceanMap = () => {
         await setOpponent(stats.data);
     };
 
-
-    const finalPokemon = () => {
-        console.log(`The fetched pokemon is: ${opponent.name}`);
-        console.log(opponent);
-    };
-
     return (
         <div>
             <div className="darkBorder">
                 <h1 className="mapTitle">Ocean</h1>
             </div>
             <div className="mapRender">
-                <img onClick={getWaterPokemon} className="launchFight"
-                     src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"/>
-            </div>
+                {opponent ?
+                        <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
+                    : null
+                }
+
+                {opponent ?
+                    <img className="pokemonSprite"
+                        src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
+                         alt="a wild pokemon appear"
+                    /> :
+                    null
+                }
+
+                {
+                    opponent ?
+                        null
+                        :
+                    <img onClick={getWaterPokemon} className="launchFightButton"
+                         src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"
+                    />
+                }
+                    </div>
+                }
             <div className="navButtons">
                 <img src="https://image.noelshack.com/fichiers/2019/49/4/1575564164-backpack.png"
                      alt="inventory" /*onClick={() => {inventory}}*/ className="itemNav backpack"/>
@@ -51,7 +65,7 @@ const OceanMap = () => {
                      className="pokeTeam itemNav"/>
             </div>
             <div className="darkBorder">
-                <button onClick={finalPokemon}>Show final opponent in the console</button>
+
             </div>
         </div>
     )
