@@ -11,10 +11,10 @@ const DojoMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 15)
+        return random(0, 10)
     }
 
-    const getWaterPokemon = async () => {
+    const getFightingPokemon = async () => {
         // Getting the type of pokemon
         let res = await axios.get("https://pokeapi.co/api/v2/type/2/");
         await setOpponent(res.data.pokemon[getRandomNumber()].pokemon.name);
@@ -33,13 +33,13 @@ const DojoMap = () => {
             </div>
             <div className="mapRenderDojo">
                 {opponent ?
-                        <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
+                    <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
                     : null
                 }
 
                 {opponent ?
                     <img className="pokemonSprite"
-                        src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
+                         src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
                          alt="a wild pokemon appear"
                     /> :
                     null
@@ -49,11 +49,12 @@ const DojoMap = () => {
                     opponent ?
                         null
                         :
-                    <img onClick={getWaterPokemon} className="launchFightButton"
-                         src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"
-                    />
+                        <img onClick={getFightingPokemon} className="launchFightButton"
+                             src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png"
+                             alt="launchFight"
+                        />
                 }
-                    </div>
+            </div>
             <div className="navButtons">
                 <img src="https://image.noelshack.com/fichiers/2019/49/4/1575564164-backpack.png"
                      alt="inventory" /*onClick={() => {inventory}}*/ className="itemNav backpack"/>

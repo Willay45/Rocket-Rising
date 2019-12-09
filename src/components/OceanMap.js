@@ -11,7 +11,7 @@ const OceanMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 50)
+        return random(0, 49)
     }
 
     const getWaterPokemon = async () => {

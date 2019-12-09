@@ -11,7 +11,7 @@ const MontainMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 50)
+        return random(0, 17)
     }
 
     const getWaterPokemon = async () => {
