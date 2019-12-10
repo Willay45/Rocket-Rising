@@ -1,0 +1,50 @@
+.background {
+    width: 100%;
+}
+
+.mapRenderPath {
+    background-image: url("https://i.pinimg.com/564x/64/0a/e0/640ae02ae001f7906aba2d2b343b10ad.jpg");
+    background-size: cover;
+    background-position: bottom;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popUp {
+    display: block;
+    padding: 20px;
+    background-color: black;
+    opacity: 70%;
+    color: white;
+}
+.pokemonSprite {
+    margin: 25px;
+}
+.launchFightButton {
+    height: 80px;
+    cursor: pointer;
+}
+.mapTitle {
+    color: white;
+}
+.darkBorder {
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navButtons {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+.itemNav {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 15px;
+}
+

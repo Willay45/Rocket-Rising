@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import './ForestMap.css';
+import './ElectricalMap.css';
 import axios from 'axios';
 import NavBar from "./NavBar";
 
-const ForestMap = () => {
+const ElectricalMap = () => {
 
     const [opponentObject, setOpponentObject] = useState(null);
 
@@ -12,21 +12,19 @@ const ForestMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 61)
+        return random(0, 21)
     }
 
     const getThePokemon = async () => {
         // Getting the type of pokemon
         const stockTypes = [];
-        let type1 = await axios.get("https://pokeapi.co/api/v2/type/17/");
-        let type2 = await axios.get("https://pokeapi.co/api/v2/type/7/");
-        let type3 = await axios.get("https://pokeapi.co/api/v2/type/4/");
+        let type1 = await axios.get("https://pokeapi.co/api/v2/type/9/");
+        let type2 = await axios.get("https://pokeapi.co/api/v2/type/13/");
 
-        Promise.all([...type1.data.pokemon.slice(0, 12), ...type2.data.pokemon.slice(0, 12), ...type3.data.pokemon.slice(0, 37)]).then((values) => {
+        Promise.all([...type1.data.pokemon.slice(0, 5), ...type2.data.pokemon.slice(0, 16)]).then((values) => {
             let content = values;
             stockTypes.push(...content);
             let randomNumber = stockTypes[getRandomNumber()];
-            //setOpponent(randomNumber.pokemon.name);
             axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber.pokemon.name}`)
                 .then(response => response.data)
                 .then(data => {
@@ -38,9 +36,9 @@ const ForestMap = () => {
     return (
         <div>
             <div className="darkBorder">
-                <h1 className="mapTitle">Forest</h1>
+                <h1 className="mapTitle">Electrical factory</h1>
             </div>
-            <div className="mapRenderForest">
+            <div className="mapRenderElectrical">
                 {opponentObject ?
                     <h1 className="popUp">{`A wild ${opponentObject.name} appears !`}</h1>
                     : null
@@ -70,4 +68,4 @@ const ForestMap = () => {
     )
 };
 
-export default ForestMap;
+export default ElectricalMap;

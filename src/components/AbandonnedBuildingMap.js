@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import './ForestMap.css';
+import './AbandonedBuildingMap.css';
 import axios from 'axios';
 import NavBar from "./NavBar";
 
-const ForestMap = () => {
+const AbandonedBuildingMap = () => {
 
     const [opponentObject, setOpponentObject] = useState(null);
 
@@ -12,17 +12,20 @@ const ForestMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 61)
+        return random(0, 31)
     }
 
     const getThePokemon = async () => {
         // Getting the type of pokemon
         const stockTypes = [];
-        let type1 = await axios.get("https://pokeapi.co/api/v2/type/17/");
-        let type2 = await axios.get("https://pokeapi.co/api/v2/type/7/");
-        let type3 = await axios.get("https://pokeapi.co/api/v2/type/4/");
+        //Get ghost type
+        let type1 = await axios.get("https://pokeapi.co/api/v2/type/8/");
+        //Get psychic type
+        let type2 = await axios.get("https://pokeapi.co/api/v2/type/14/");
+        //Get dark type
+        let type3 = await axios.get("https://pokeapi.co/api/v2/type/17/");
 
-        Promise.all([...type1.data.pokemon.slice(0, 12), ...type2.data.pokemon.slice(0, 12), ...type3.data.pokemon.slice(0, 37)]).then((values) => {
+        Promise.all([...type1.data.pokemon.slice(0, 3), ...type2.data.pokemon.slice(0, 23), ...type3.data.pokemon.slice(0, 5)]).then((values) => {
             let content = values;
             stockTypes.push(...content);
             let randomNumber = stockTypes[getRandomNumber()];
@@ -38,9 +41,9 @@ const ForestMap = () => {
     return (
         <div>
             <div className="darkBorder">
-                <h1 className="mapTitle">Forest</h1>
+                <h1 className="mapTitle">Abandoned castle</h1>
             </div>
-            <div className="mapRenderForest">
+            <div className="mapRenderAbandoned">
                 {opponentObject ?
                     <h1 className="popUp">{`A wild ${opponentObject.name} appears !`}</h1>
                     : null
@@ -70,4 +73,4 @@ const ForestMap = () => {
     )
 };
 
-export default ForestMap;
+export default AbandonedBuildingMap;

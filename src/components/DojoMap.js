@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './DojoMap.css';
 import axios from 'axios';
+import NavBar from "./NavBar";
 
 const DojoMap = () => {
 
@@ -14,7 +15,7 @@ const DojoMap = () => {
         return random(0, 10)
     }
 
-    const getFightingPokemon = async () => {
+    const getThePokemon = async () => {
         // Getting the type of pokemon
         let res = await axios.get("https://pokeapi.co/api/v2/type/2/");
         await setOpponent(res.data.pokemon[getRandomNumber()].pokemon.name);
@@ -49,23 +50,14 @@ const DojoMap = () => {
                     opponent ?
                         null
                         :
-                        <img onClick={getFightingPokemon} className="launchFightButton"
+                        <img onClick={getThePokemon} className="launchFightButton"
                              src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png"
                              alt="launchFight"
                         />
                 }
             </div>
-            <div className="navButtons">
-                <img src="https://image.noelshack.com/fichiers/2019/49/4/1575564164-backpack.png"
-                     alt="inventory" /*onClick={() => {inventory}}*/ className="itemNav backpack"/>
-                <img src="https://image.noelshack.com/fichiers/2019/49/4/1575565596-mappokemon.png"
-                     className="map itemNav" alt="mini map"/>
-                <img src="https://image.noelshack.com/fichiers/2019/49/5/1575621888-pokerocket.png" alt="pokemon team"
-                     className="pokeTeam itemNav"/>
-            </div>
-            <div className="darkBorder">
-
-            </div>
+            <NavBar/>
+            <div className="darkBorder"></div>
         </div>
     )
 };

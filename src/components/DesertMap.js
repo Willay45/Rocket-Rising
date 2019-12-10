@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import './MontainMap.css';
+import './DesertMap.css';
 import axios from 'axios';
+import NavBar from "./NavBar";
+import {Link} from "react-router-dom";
 
-const MontainMap = () => {
+const DesertMap = () => {
 
     const [opponent, setOpponent] = useState(null);
 
@@ -14,7 +16,7 @@ const MontainMap = () => {
         return random(0, 17)
     }
 
-    const getWaterPokemon = async () => {
+    const getThePokemon = async () => {
         // Getting the type of pokemon
         let res = await axios.get("https://pokeapi.co/api/v2/type/6/");
         await setOpponent(res.data.pokemon[getRandomNumber()].pokemon.name);
@@ -29,17 +31,17 @@ const MontainMap = () => {
     return (
         <div>
             <div className="darkBorder">
-                <h1 className="mapTitle">Montain</h1>
+                <h1 className="mapTitle">Desert</h1>
             </div>
-            <div className="mapRenderMontain">
+            <div className="mapRenderDesert">
                 {opponent ?
-                        <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
+                    <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
                     : null
                 }
 
                 {opponent ?
                     <img className="pokemonSprite"
-                        src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
+                         src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
                          alt="a wild pokemon appear"
                     /> :
                     null
@@ -49,24 +51,16 @@ const MontainMap = () => {
                     opponent ?
                         null
                         :
-                    <img onClick={getWaterPokemon} className="launchFightButton"
-                         src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"
-                    />
+                        <img onClick={getThePokemon} className="launchFightButton"
+                             src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png"
+                             alt="launchFight"
+                        />
                 }
-                    </div>
-            <div className="navButtons">
-                <img src="https://image.noelshack.com/fichiers/2019/49/4/1575564164-backpack.png"
-                     alt="inventory" /*onClick={() => {inventory}}*/ className="itemNav backpack"/>
-                <img src="https://image.noelshack.com/fichiers/2019/49/4/1575565596-mappokemon.png"
-                     className="map itemNav" alt="mini map"/>
-                <img src="https://image.noelshack.com/fichiers/2019/49/5/1575621888-pokerocket.png" alt="pokemon team"
-                     className="pokeTeam itemNav"/>
             </div>
-            <div className="darkBorder">
-
-            </div>
+            <NavBar/>
+            <div className="darkBorder"></div>
         </div>
     )
 };
 
-export default MontainMap;
+export default DesertMap;

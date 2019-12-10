@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import './OceanMap.css';
+import './MountainMap.css';
 import axios from 'axios';
 import NavBar from "./NavBar";
 
-const OceanMap = () => {
+const MountainMap = () => {
 
     const [opponent, setOpponent] = useState(null);
 
@@ -12,12 +12,12 @@ const OceanMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 49)
+        return random(0, 17)
     }
 
     const getThePokemon = async () => {
         // Getting the type of pokemon
-        let res = await axios.get("https://pokeapi.co/api/v2/type/11/");
+        let res = await axios.get("https://pokeapi.co/api/v2/type/6/");
         await setOpponent(res.data.pokemon[getRandomNumber()].pokemon.name);
         let pokemonClone = res.data.pokemon[getRandomNumber()].pokemon.name;
 
@@ -30,17 +30,17 @@ const OceanMap = () => {
     return (
         <div>
             <div className="darkBorder">
-                <h1 className="mapTitle">Ocean</h1>
+                <h1 className="mapTitle">Montain</h1>
             </div>
-            <div className="mapRenderOcean">
+            <div className="mapRenderMontain">
                 {opponent ?
-                        <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
+                    <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
                     : null
                 }
 
                 {opponent ?
                     <img className="pokemonSprite"
-                        src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
+                         src={`http://www.pokestadium.com/sprites/xy/${opponent.name}.gif`}
                          alt="a wild pokemon appear"
                     /> :
                     null
@@ -50,15 +50,16 @@ const OceanMap = () => {
                     opponent ?
                         null
                         :
-                    <img onClick={getThePokemon} className="launchFightButton"
-                         src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png" alt="launchFight"
-                    />
+                        <img onClick={getThePokemon} className="launchFightButton"
+                             src="https://image.noelshack.com/fichiers/2019/49/5/1575625404-pokeball.png"
+                             alt="launchFight"
+                        />
                 }
-                    </div>
+            </div>
             <NavBar/>
             <div className="darkBorder"></div>
         </div>
     )
 };
 
-export default OceanMap;
+export default MountainMap;
