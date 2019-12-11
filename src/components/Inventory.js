@@ -1,57 +1,79 @@
-import React, {useState, useEffect} from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, {useState} from 'react';
 import './Inventory.css';
 
 function Inventory() {
-    const [inventory, setinventory] = useState({
+    // eslint-disable-next-line no-unused-vars
+    const [{Berrie1, Berrie2, Berrie3, Pokeballs, Pokegreen, Potion2, Potions}, setInventory] = useState({
         Berrie1: 0,
+        Pokegreen: 0,
         Berrie2: 0,
         Berrie3: 0,
-        Berrie4: 0,
-        Berrie5: 0,
-        Berrie6: 0,
-        Berrie7: 0,
-        Berrie8: 0,
-        Berrie9: 0,
-        Berrie10: 0,
-        Berrie11: 0,
-        Pokeballs: 5,
-        Potions: 5,
+        Pokeballs: 0,
+        Potions: 0,
+        Potion2: 0
     });
 
-    return (
-        <div className="container">
+    return <div className="container">
 
-            <ul>
-                <li>{inventory.Berrie1}<img src={require("./Pictures/20.png")}/></li>
-                <li>{inventory.Berrie2}<img src={require("./Pictures/4.png")}/></li>
-                <li>{inventory.Berrie3}<img src={require("./Pictures/5.png")}/></li>
-                <li>{inventory.Berrie4}<img src={require("./Pictures/10.png")}/></li>
-                <li>{inventory.Berrie5}<img src={require("./Pictures/13.png")}/></li>
-                <li>{inventory.Berrie6}<img src={require("./Pictures/14.png")}/></li>
-                <li>{inventory.Berrie7}<img src={require("./Pictures/15.png")}/></li>
-                <li>{inventory.Berrie8}<img src={require("./Pictures/16.png")}/></li>
-                <li>{inventory.Berrie9}<img src={require("./Pictures/17.png")}/></li>
-                <li>{inventory.Berrie10}<img src={require("./Pictures/19.png")}/></li>
-                <li>{inventory.Pokeballs}<img src=""/></li>
-                <li>{inventory.Potions}<img src=""/></li>
+        <div className="titles">
 
+            <h2>Berries</h2>
 
+            <h2>Pokeballs</h2>
 
-            </ul>
-
-            <div className="buttons">
-
-                <button id="button1">Berries</button>
-
-                <button id="button2">Pokeballs</button>
-
-                <button id="button3">Drinks</button>
-            </div>
-
+            <h2>Drinks</h2>
 
         </div>
 
-    )
+        <ul>
+            <li>{Berrie1}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/15.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Pokeballs}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/pokeball.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Potions}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/potion.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Berrie2}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/17.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Pokegreen}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/pokegreen.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Potion2}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/potion2.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+            <li>{Berrie3}
+                <div style={{
+                    background: `no-repeat center url(${require("./Pictures/20.png")})`,
+                    backgroundSize: 'contain'
+                }}/>
+            </li>
+
+        </ul>
+
+
+    </div>
 }
 
 export default Inventory;

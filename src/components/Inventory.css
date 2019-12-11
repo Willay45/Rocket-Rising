@@ -1,47 +1,55 @@
-.container ul {
+@media (min-width: 360px) and (max-width: 812px) {
 
-    list-style-type: none;
+    .container ul {
 
-    background-color: blueviolet;
-}
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        list-style-type: none;
+        background-color: #E1D198;
+        border: 2px solid black;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 8px;
+        padding: 0;
 
-.buttons {
+    }
 
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    align-content: space-around;
+    li {
 
-}
+        border: 2px solid black;
+        border-radius: 8px;
+        border-bottom: 20px solid #FF0000;
+        opacity: 80%;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-#button1 {
-    padding: 6px 0 6px 0;
-    font: Bold 13px Arial;
-    background: #d34836;
-    color: #fff;
-    width: 90px;
-    border-radius: 2px;
-    border: none;
-}
+    li div {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
 
-#button2 {
-    padding: 6px 0 6px 0;
-    font: bold 13px Arial;
-    background: #478bf9;
-    color: #fff;
-    border-radius: 2px;
-    width: 100px;
-    border: none;
-}
+    .titles {
 
-#button3 {
-    padding: 6px 0 6px 0;
-    font: bold 13px Arial;
-    background: #f5f5f5;
-    color: #555;
-    border-radius: 2px;
-    width: 100px;
-    border: 1px solid #ccc;
+        display: flex;
+        justify-content: space-around;
+        text-indent: -10px;
+        background: -webkit-linear-gradient(top, darkred, red, black);
+        background: -moz-linear-gradient(top, darkred, red, black);
+        background: -ms-linear-gradient(top, darkred, red, black);
+        background: -o-linear-gradient(top, darkred, red, black);
+        background: linear-gradient(to bottom, darkred, red, black);
+
+    }
+
+    .h2 {
+        padding: 6px 0 6px 0;
+        font: Bold 13px Arial;
+    }
+
 }
 
 
