@@ -1,0 +1,34 @@
+{
+  "maps": {
+    "abandoned": {
+      "name": "Abandoned Castle",
+      "type": [
+        8,
+        14,
+        17
+      ],
+      "className": "mapRenderAbandoned"
+    },
+    "desert": {
+      "name": "Desert",
+      "type": 6,
+      "classname" : "mapRenderDesert"
+    },
+    "forest": {
+      "name": "Forest",
+      "type": [
+        17,
+        7,
+        4
+      ],
+      "classname": "mapRenderDesert"
+    },
+    "plain": {
+      "name": "Plain",
+      "type": [
+        12,
+        3
+      ]
+    }
+  }
+}
