@@ -1,0 +1,36 @@
+.pokeTeamContainer {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.threeFirst {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    width: 50vh;
+    height: 40vh;
+    margin-bottom: 10px;
+}
+.threeOther {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    width: 50vh;
+    height: 40vh;
+}
+.pokemonCase {
+    background-color: indianred;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.pokeName {
+    color: white;
+}
