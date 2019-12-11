@@ -13,7 +13,6 @@ import PathMap from "./components/PathMap";
 import ElectricalMap from "./components/ElectricalMap";
 import AbandonedBuildingMap from "./components/AbandonnedBuildingMap";
 import NavMaps from "./components/NavMaps";
-import NavBar from "./components/NavBar";
 
 function App() {
     return (
