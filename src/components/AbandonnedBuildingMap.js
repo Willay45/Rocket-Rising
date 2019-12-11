@@ -29,7 +29,6 @@ const AbandonedBuildingMap = () => {
             let content = values;
             stockTypes.push(...content);
             let randomNumber = stockTypes[getRandomNumber()];
-            //setOpponent(randomNumber.pokemon.name);
             axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber.pokemon.name}`)
                 .then(response => response.data)
                 .then(data => {
