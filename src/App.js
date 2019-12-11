@@ -8,6 +8,6 @@ const App = () => {
       <TeamPokemon />
     </div>
   );
-}
+};
 
 export default App;
