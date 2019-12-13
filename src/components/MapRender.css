@@ -1,0 +1,146 @@
+.mapRender {
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popUp {
+    display: block;
+    padding: 20px;
+    background-color: black;
+    opacity: 70%;
+    color: white;
+}
+.pokemonSprite {
+    margin: 25px;
+}
+.launchFightButton {
+    height: 80px;
+    cursor: pointer;
+}
+.mapTitle {
+    color: white;
+}
+.darkBorder {
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navButtons {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+.itemNav {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 15px;
+}
+.mapRenderAbandoned {
+    background-image: url("https://i.pinimg.com/564x/83/36/01/8336017a1662acbbdd85af32a84211c2.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderDesert {
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/1/1575910408-desert.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderDojo {
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/005/451/012/large/john-moonan-popup1.jpg?1491123063");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderElectrical {
+    background-image: url("https://www.pokepedia.fr/images/1/19/Eoliennes_anime.png");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderForest {
+    background-image: url("https://image.noelshack.com/fichiers/2019/49/7/1575835953-foret.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderGlacier {
+    background-image: url("https://i.ytimg.com/vi/_JgRpTTO29g/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDBiNsLg5UfeP2FB02ZVMrcluRzCw");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderMountain {
+    background-image: url("https://image.noelshack.com/fichiers/2019/49/7/1575772803-montagne.png");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderOcean {
+    background-image: url("https://image.noelshack.com/fichiers/2019/49/4/1575563477-mer.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderPath {
+    background-image: url("https://i.pinimg.com/564x/64/0a/e0/640ae02ae001f7906aba2d2b343b10ad.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderPlain {
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/1/1575887507-plaine.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mapRenderVolcano {
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/1/1575908191-volcan.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+

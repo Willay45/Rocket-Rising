@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
-import Inventory from "./components/Inventory";
+import {Route, Switch} from 'react-router-dom';
+import NavMaps from "./components/NavMaps";
+import MapRender from "./components/MapRender";
 
 function App() {
     return (
         <div className="App">
-
-            <Inventory/>
+            <Switch>
+                <Route exact path="/map" component={NavMaps}/>
+                <Route path="/map/:map" component={MapRender}/>
+            </Switch>
         </div>
     );
 }
