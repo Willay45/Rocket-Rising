@@ -7,7 +7,6 @@ import './MapRender.css';
 
 const MapRender = (props) => {
         const [selectedMap, setSelectedMap] = useState({});
-        const [pokemonName, setPokemonName] = useState(null);
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
 
