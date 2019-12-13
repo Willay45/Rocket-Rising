@@ -12,7 +12,7 @@ const PlainMap = () => {
         const random = (max, min) => {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        return random(0, 61)
+        return random(0, 60)
     }
 
     const getThePokemon = async () => {

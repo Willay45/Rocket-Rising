@@ -1,17 +1,6 @@
 import React from 'react';
 import './NavMaps.css';
 import {Switch, Route, Link} from 'react-router-dom';
-import ForestMap from "./ForestMap";
-import DesertMap from "./DesertMap";
-import PlainMap from "./PlainMap";
-import OceanMap from "./OceanMap";
-import ElectricalMap from "./ElectricalMap";
-import AbandonedBuildingMap from "./AbandonnedBuildingMap";
-import MountainMap from "./MountainMap";
-import VolcanoMap from "./VolcanoMap";
-import PathMap from "./PathMap";
-import DojoMap from "./DojoMap";
-import GlacierMap from "./GlacierMap";
 import NavBar from "./NavBar";
 
 const NavMaps = () => {
@@ -25,18 +14,17 @@ const NavMaps = () => {
                 <div className="backgroundDiv">
                     <div className="mapRenderNav">
                         <ul>
-                            <li><Link className="itemLi" to="/Map">NavMap</Link></li>
-                            <li><Link className="itemLi" to="/ForestMap">Forest</Link></li>
-                            <li><Link className="itemLi" to="/DesertMap">Desert</Link></li>
-                            <li><Link className="itemLi" to="/PlainMap">Plain</Link></li>
-                            <li><Link className="itemLi" to="/OceanMap">Ocean</Link></li>
-                            <li><Link className="itemLi" to="/ElectricalMap">Electric central</Link></li>
-                            <li><Link className="itemLi" to="/AbandonedBuildingMap">Abandoned house</Link></li>
-                            <li><Link className="itemLi" to="/MountainMap">Mountain</Link></li>
-                            <li><Link className="itemLi" to="/VolcanoMap">Volcano</Link></li>
-                            <li><Link className="itemLi" to="/PathMap">Path</Link></li>
-                            <li><Link className="itemLi" to="/DojoMap">Dojo</Link></li>
-                            <li><Link className="itemLi" to="/GlacierMap">Glacier</Link></li>
+                            <li><Link className="itemLi" to="/maprender/forest">Forest</Link></li>
+                            <li><Link className="itemLi" to="/maprender/desert">Desert</Link></li>
+                            <li><Link className="itemLi" to="/maprender/plain">Plain</Link></li>
+                            <li><Link className="itemLi" to="/maprender/ocean">Ocean</Link></li>
+                            <li><Link className="itemLi" to="/maprender/electrical">Electric central</Link></li>
+                            <li><Link className="itemLi" to="/maprender/abandoned">Abandoned house</Link></li>
+                            <li><Link className="itemLi" to="/maprender/mountain">Mountain</Link></li>
+                            <li><Link className="itemLi" to="/maprender/volcano">Volcano</Link></li>
+                            <li><Link className="itemLi" to="/maprender/path">Path</Link></li>
+                            <li><Link className="itemLi" to="/maprender/dojo">Dojo</Link></li>
+                            <li><Link className="itemLi" to="/maprender/glacier">Glacier</Link></li>
                         </ul>
                     </div>
                 </div>

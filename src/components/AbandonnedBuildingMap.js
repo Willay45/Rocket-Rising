@@ -2,18 +2,11 @@ import React, {useState} from 'react';
 import './AbandonedBuildingMap.css';
 import axios from 'axios';
 import NavBar from "./NavBar";
+import randomNumber from "../services/RandomNumber";
 
 const AbandonedBuildingMap = () => {
 
     const [opponentObject, setOpponentObject] = useState(null);
-
-    //Get a random number to search a random pokemon
-    function getRandomNumber() {
-        const random = (max, min) => {
-            return Math.floor(Math.random() * (max - min)) + min;
-        };
-        return random(0, 31)
-    }
 
     const getThePokemon = async () => {
         // Getting the type of pokemon
@@ -28,8 +21,8 @@ const AbandonedBuildingMap = () => {
         Promise.all([...type1.data.pokemon.slice(0, 3), ...type2.data.pokemon.slice(0, 23), ...type3.data.pokemon.slice(0, 5)]).then((values) => {
             let content = values;
             stockTypes.push(...content);
-            let randomNumber = stockTypes[getRandomNumber()];
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber.pokemon.name}`)
+            let randomPokemon = stockTypes[randomNumber(31, 0)];
+            axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemon.pokemon.name}`)
                 .then(response => response.data)
                 .then(data => {
                     setOpponentObject(data);

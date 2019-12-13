@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 
 const VolcanoMap = () => {
 
-    const [opponent, setOpponent] = useState(null);
     const [opponentObject, setOpponentObject] = useState(null);
 
     //Get a random number to search a random pokemon

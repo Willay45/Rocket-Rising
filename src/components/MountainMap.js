@@ -30,9 +30,9 @@ const MountainMap = () => {
     return (
         <div>
             <div className="darkBorder">
-                <h1 className="mapTitle">Montain</h1>
+                <h1 className="mapTitle">Mountain</h1>
             </div>
-            <div className="mapRenderMontain">
+            <div className="mapRenderMountain">
                 {opponent ?
                     <h1 className="popUp">{`A wild ${opponent.name} appears !`}</h1>
                     : null
