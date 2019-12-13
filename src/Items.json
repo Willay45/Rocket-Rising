@@ -1,0 +1,50 @@
+{
+  "items": {
+    "potion": {
+      "name": "Potion",
+      "url": "https://www.pokepedia.fr/images/a/aa/Potion_JCC.png",
+      "effect": 20,
+      "description": "+ 20 PV"
+    },
+    "superPotion": {
+      "name": "Super Potion",
+      "url": "https://margxt.fr/wp-content/uploads/2019/08/Super-Potion-Pokemon-Go.png",
+      "effect": 60,
+      "description": "+60 PV"
+    },
+    "razzBerry": {
+      "name": "Razz Berry",
+      "url": "https://www.pokepedia.fr/images/9/93/Baie_Framby.png",
+      "effect": 0,
+      "description": "Cook or mix"
+    },
+    "nanabBerry": {
+      "name": "Nanab Berry",
+      "url": "https://www.pokepedia.fr/images/5/58/Baie_Nanab.png",
+      "effect": 20,
+      "description": "Reduce moves and calm"
+    },
+    "pomegBerry": {
+      "name": "Pomeg Berry",
+      "url": "https://www.pokepedia.fr/images/5/58/Baie_Nanab.png",
+      "effect": 20,
+      "description": "Up happiness"
+    },
+
+    "pokeball": {
+      "name": "Pokeball",
+      "url": "https://www.pokepedia.fr/images/a/a9/Baie_Grena.png",
+      "effect": null,
+      "description":"Capture a wild pokemon"
+    },
+
+    "pokeShadow": {
+      "name": "poke Shadow",
+      "url": "https://zupimages.net/viewer.php?id=19/50/7srq.png",
+      "effect": null,
+      "description": "Capture a farmer's pokemon"
+
+    }
+
+  }
+}
