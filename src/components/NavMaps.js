@@ -14,22 +14,22 @@ const NavMaps = () => {
                 <div className="backgroundDiv">
                     <div className="mapRenderNav">
                         <ul>
-                            <li><Link className="itemLi" to="/maprender/forest">Forest</Link></li>
-                            <li><Link className="itemLi" to="/maprender/desert">Desert</Link></li>
-                            <li><Link className="itemLi" to="/maprender/plain">Plain</Link></li>
-                            <li><Link className="itemLi" to="/maprender/ocean">Ocean</Link></li>
-                            <li><Link className="itemLi" to="/maprender/electrical">Electric central</Link></li>
-                            <li><Link className="itemLi" to="/maprender/abandoned">Abandoned house</Link></li>
-                            <li><Link className="itemLi" to="/maprender/mountain">Mountain</Link></li>
-                            <li><Link className="itemLi" to="/maprender/volcano">Volcano</Link></li>
-                            <li><Link className="itemLi" to="/maprender/path">Path</Link></li>
-                            <li><Link className="itemLi" to="/maprender/dojo">Dojo</Link></li>
-                            <li><Link className="itemLi" to="/maprender/glacier">Glacier</Link></li>
+                            <li><Link className="itemLi" to="/map/forest">Forest</Link></li>
+                            <li><Link className="itemLi" to="/map/desert">Desert</Link></li>
+                            <li><Link className="itemLi" to="/map/plain">Plain</Link></li>
+                            <li><Link className="itemLi" to="/map/ocean">Ocean</Link></li>
+                            <li><Link className="itemLi" to="/map/electrical">Electric central</Link></li>
+                            <li><Link className="itemLi" to="/map/abandoned">Abandoned house</Link></li>
+                            <li><Link className="itemLi" to="/map/mountain">Mountain</Link></li>
+                            <li><Link className="itemLi" to="/map/volcano">Volcano</Link></li>
+                            <li><Link className="itemLi" to="/map/path">Path</Link></li>
+                            <li><Link className="itemLi" to="/map/dojo">Dojo</Link></li>
+                            <li><Link className="itemLi" to="/map/glacier">Glacier</Link></li>
                         </ul>
                     </div>
                 </div>
                 <NavBar/>
-                <div className="darkBottomBorder"></div>
+                <div className="darkBottomBorder"/>
             </div>
         </div>
     )

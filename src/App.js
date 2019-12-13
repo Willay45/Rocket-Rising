@@ -8,8 +8,8 @@ function App() {
     return (
         <div className="App">
             <Switch>
-                <Route exact path="/Map" component={NavMaps}/>
-                <Route path="/MapRender/:map" component={MapRender}/>
+                <Route exact path="/map" component={NavMaps}/>
+                <Route path="/map/:map" component={MapRender}/>
             </Switch>
         </div>
     );

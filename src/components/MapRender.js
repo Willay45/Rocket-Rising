@@ -70,7 +70,7 @@ const MapRender = (props) => {
                     }
                 </div>
                 <NavBar/>
-                <div className="darkBorder"></div>
+                <div className="darkBorder"/>
             </div>
         )
     }
