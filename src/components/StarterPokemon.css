@@ -1,18 +1,23 @@
-.container {
+.containerStarter {
     background-image: url("https://image.noelshack.com/fichiers/2019/49/3/1575457002-centre-ville.jpg");
+    display:flex;
+    flex-direction: column;
     background-size: cover;
     align-items: center;
     height: 300px;
 }
+
 .titleChoose {
     color: red;
 }
-.threePokemon {
+
+.threePokemons {
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
+
 .pokemon {
     margin-top: 25px;
     padding: 15px;

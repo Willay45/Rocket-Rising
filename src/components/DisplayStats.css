@@ -1,13 +1,21 @@
-.container {
-    margin-top: 150px;
+.containerDescription {
+    background-color: grey;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    text-align: center;
+    padding-bottom: 200px;
 }
 .pokeName {
-    color: black;
+    color: white;
 }
 .selectedPokemonButton {
+    margin-left: auto;
+    margin-right: auto;
     background-color: red;
     border-radius: 40px;
-    width: 300px;
+    width: 200px;
     height: 55px;
     color: white;
 }
