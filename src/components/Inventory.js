@@ -4,10 +4,6 @@ import "./Inventory.css";
 import "../Items.json";
 
 function Inventory() {
-    // eslint-disable-next-line no-unused-vars
-    const [{playerInventory}, setPlayerInventory] = useState({
-
-    });
     const [berrie1,setberrie1] = useState(0);
     const [berrie2,setberrie2] = useState(0);
     const [berrie3,setberrie3] = useState(0);
