@@ -10,10 +10,14 @@
     flex-wrap: wrap-reverse;
 }
 
-.title {
+#title {
+
+    margin-bottom: 90%;
     width: 321px;
     height: 80px;
-    margin-top: 120%;
+
+
+
 }
 
 .playButton {
