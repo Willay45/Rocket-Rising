@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import NavBar from "./NavBar";
 import randomNumber from "../services/RandomNumber";
-import {maps} from '../services/maps';
-import './MapRender.css';
+import {maps} from "../services/maps";
+import "./MapRender.css";
 
 const MapRender = (props) => {
         const [selectedMap, setSelectedMap] = useState({});

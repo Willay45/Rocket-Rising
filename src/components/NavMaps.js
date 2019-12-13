@@ -1,6 +1,6 @@
-import React from 'react';
-import './NavMaps.css';
-import {Switch, Route, Link} from 'react-router-dom';
+import React from "react";
+import "./NavMaps.css";
+import {Switch, Route, Link} from "react-router-dom";
 import NavBar from "./NavBar";
 
 const NavMaps = () => {
