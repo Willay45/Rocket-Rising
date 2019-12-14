@@ -6,31 +6,105 @@
     justify-content: center;
     align-items: center;
 }
-.threeFirst {
+
+.pokemonCard {
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/6/1576362067-whitepokeball.png");
+    background-position: top left;
+    background-size: 45px;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+}
+
+.imgAndXp {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemonImage {
+    width: 50px;
+    height: 50px;
+}
+
+.pokemonStats {
+    display: flex;
+    flex-direction: column;
+}
+
+.twoFirst {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: grey;
-    width: 50vh;
-    height: 40vh;
-    margin-bottom: 10px;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
 }
-.threeOther {
+
+.twoSecond {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: grey;
-    width: 50vh;
-    height: 40vh;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
 }
+.twoThird {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
 .pokemonCase {
-    background-color: indianred;
-    border-radius: 50%;
-    width: 80px;
+    background-color: #2d3436;
+    border: solid #636e72 5px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    width: 180px;
     height: 80px;
 }
 .pokeName {
+    font-size: 18px;
     color: white;
+    margin: 5px;
+}
+
+.lifeBar {
+    width: 90px;
+    margin-bottom: -15px;
+}
+
+.lifeStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.pokeHp {
+    color: white;
+    font-size: 12px;
+    margin: 5px;
+}
+
+.tip {
+    display: inline;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 12px;
+    color: black;
+    padding: 10px;
+}
+
+.navMenuFake {
+    display: flex;
+}
+.menuItem {
+    width: 100px;
 }
