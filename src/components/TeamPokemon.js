@@ -13,10 +13,12 @@ const TeamPokemon = () => {
     });
     const [statsRequired, setStatsRequired] = useState(false);
     const [pokemonStat, setPokemonStat] = useState({});
+    const [indexSelected, setIndexSelected] = useState(null);
 
     const showStats = (index) => {
         setStatsRequired(true);
         let selectedPokemon = pokemonTeam[index];
+        setIndexSelected(index);
         setPokemonStat(selectedPokemon);
         console.log(selectedPokemon)
     };
@@ -149,10 +151,6 @@ const TeamPokemon = () => {
         console.log(savedData)
     };
 
-    const consoleTest = () => {
-        console.log(pokemonTeam);
-    };
-
     const addPokemon = () => {
         setPokemonTeam(model);
     };
@@ -161,204 +159,213 @@ const TeamPokemon = () => {
         addPokemon();
     }, [nbPokemon]);
 
+
     return (
         <div className="pokeTeamContainer">
             <button onClick={pokemonInLocal}>API request</button>
             <button onClick={testLocalMemory}>Show me the local save</button>
             <button onClick={pushNew}>Push new</button>
-            <div className="twoFirst">
-                {/*first pokemon*/}
-                {pokemonTeam ?
-                    <div onClick={() => {
-                        showStats(0)
-                    }}
-                         className="pokemonCase case1">
-                        {pokemonTeam[0] ?
-                            <div className="pokemonCard">
-                                <div className="imgAndXp">
-                                    <img
-                                        className="pokemonImage"
-                                        src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[0].name}.gif`}
-                                        alt="img"
-                                    />
-                                    <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>
-                                </div>
-                                <div className="pokemonStats">
-                                    <h1 className="pokeName">{pokemonTeam[0].name}</h1>
-                                    <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                         alt="life bar"/>
-                                    <div className="lifeStatus">
-                                        <h3 className="pokeHp">{pokemonTeam[0].hp}/ </h3>
-                                        <h3 className="pokeHp">{pokemonTeam[0].hpMax}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            : null}
-                    </div>
-                    : null
-                }
-                {/*second pokemon*/}
-                {pokemonTeam ?
-                    <div onClick={() => {
-                        showStats(1)
-                    }}
-                         className="pokemonCase case2">
-                        {pokemonTeam[1] ?
-                            <div className="pokemonCard">
-                                <div className="imgAndXp">
-                                    <img
-                                        className="pokemonImage"
-                                        src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[1].name}.gif`}
-                                        alt="img"
-                                    />
-                                    <h3 className="pokeName">Lv.{pokemonTeam[1].lvl}</h3>
-                                </div>
-                                <div className="pokemonStats">
-                                    <h1 className="pokeName">{pokemonTeam[1].name}</h1>
-                                    <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                         alt="life bar"/>
-                                    <div className="lifeStatus">
-                                        <h3 className="pokeHp">{pokemonTeam[1].hp}/ </h3>
-                                        <h3 className="pokeHp">{pokemonTeam[1].hpMax}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            : null}
-                    </div>
-                    : null
-                }
-            </div>
-            <div className="twoSecond">
-                {/*third pokemon*/}
-                {pokemonTeam ?
-                    <div onClick={() => {
-                        showStats(2)
-                    }}
-                         className="pokemonCase case1">
-                        {pokemonTeam[2] ?
-                            <div className="pokemonCard">
-                                <div className="imgAndXp">
-                                    <img
-                                        className="pokemonImage"
-                                        src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[2].name}.gif`}
-                                        alt="img"
-                                    />
-                                    <h3 className="pokeName">Lv.{pokemonTeam[2].lvl}</h3>
-                                </div>
-                                <div className="pokemonStats">
-                                    <h1 className="pokeName">{pokemonTeam[2].name}</h1>
-                                    <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                         alt="life bar"/>
-                                    <div className="lifeStatus">
-                                        <h3 className="pokeHp">{pokemonTeam[2].hp}/ </h3>
-                                        <h3 className="pokeHp">{pokemonTeam[2].hpMax}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            : null}
-                    </div>
-                    : null
-                }
-                {/*fourth pokemon*/}
-                {pokemonTeam ?
-                    <div onClick={() => {
-                        showStats(3)
-                    }}
-                         className="pokemonCase case2">
-                        {
-                            pokemonTeam[3] ?
-                                <div className="pokemonCard">
-                                    <div className="imgAndXp">
-                                        <img
-                                            className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[3].name}.gif`}
-                                            alt="img"
-                                        />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[3].lvl}</h3>
-                                    </div>
-                                    <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[3].name}</h1>
-                                        <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                             alt="life bar"/>
-                                        <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[3].hp}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[3].hpMax}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                : null
-                        }
-                    </div>
-                    : null
-                }
-            </div>
-            <div className="twoThird">
-                {/*fifth pokemon*/}
-                {
-                    pokemonTeam ?
+            {/*The 6 pokémons*/}
+            <div>
+                <div className="twoFirst">
+                    {/*first pokemon*/}
+                    {pokemonTeam ?
                         <div onClick={() => {
-                            showStats(4)
+                            showStats(0);
+                            console.log(indexSelected)
                         }}
                              className="pokemonCase case1">
-                            {pokemonTeam[4] ?
+                            {pokemonTeam[0] ?
                                 <div className="pokemonCard">
                                     <div className="imgAndXp">
                                         <img
                                             className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[4].name}.gif`}
+                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[0].name}.gif`}
                                             alt="img"
                                         />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[4].lvl}</h3>
+                                        <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>
+                                        {/*Show the favorite pokemon*/}
+                                        {indexSelected && pokemonTeam[indexSelected].name === pokemonStat.name ? <div className="favorite" /> : null}
                                     </div>
                                     <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[4].name}</h1>
+                                        <h1 className="pokeName">{pokemonTeam[0].name}</h1>
                                         <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
                                              alt="life bar"/>
                                         <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[4].hp}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[4].hpMax}</h3>
+                                            <h3 className="pokeHp">{pokemonTeam[0].hp}/ </h3>
+                                            <h3 className="pokeHp">{pokemonTeam[0].hpMax}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 : null}
                         </div>
                         : null
-                }
-                {/*sixth pokemon*/}
-                {
-                    pokemonTeam ?
-                        <div className="pokemonCase case2">
-                            {pokemonTeam[5] ?
-                                <div onClick={() => {
-                                    showStats(5)
-                                }}
-                                     className="pokemonCard">
+                    }
+                    {/*second pokemon*/}
+                    {pokemonTeam ?
+                        <div onClick={() => {
+                            showStats(1)
+                        }}
+                             className="pokemonCase case2">
+                            {pokemonTeam[1] ?
+                                <div className="pokemonCard">
                                     <div className="imgAndXp">
                                         <img
                                             className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[5].name}.gif`}
+                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[1].name}.gif`}
                                             alt="img"
                                         />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[5].lvl}</h3>
+                                        <h3 className="pokeName">Lv.{pokemonTeam[1].lvl}</h3>
                                     </div>
                                     <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[5].name}</h1>
+                                        <h1 className="pokeName">{pokemonTeam[1].name}</h1>
                                         <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
                                              alt="life bar"/>
                                         <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}</h3>
+                                            <h3 className="pokeHp">{pokemonTeam[1].hp}/ </h3>
+                                            <h3 className="pokeHp">{pokemonTeam[1].hpMax}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 : null}
                         </div>
                         : null
-                }
+                    }
+                </div>
+                <div className="twoSecond">
+                    {/*third pokemon*/}
+                    {pokemonTeam ?
+                        <div onClick={() => {
+                            showStats(2)
+                        }}
+                             className="pokemonCase case1">
+                            {pokemonTeam[2] ?
+                                <div className="pokemonCard">
+                                    <div className="imgAndXp">
+                                        <img
+                                            className="pokemonImage"
+                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[2].name}.gif`}
+                                            alt="img"
+                                        />
+                                        <h3 className="pokeName">Lv.{pokemonTeam[2].lvl}</h3>
+                                    </div>
+                                    <div className="pokemonStats">
+                                        <h1 className="pokeName">{pokemonTeam[2].name}</h1>
+                                        <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
+                                             alt="life bar"/>
+                                        <div className="lifeStatus">
+                                            <h3 className="pokeHp">{pokemonTeam[2].hp}/ </h3>
+                                            <h3 className="pokeHp">{pokemonTeam[2].hpMax}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                : null}
+                        </div>
+                        : null
+                    }
+                    {/*fourth pokemon*/}
+                    {pokemonTeam ?
+                        <div onClick={() => {
+                            showStats(3)
+                        }}
+                             className="pokemonCase case2">
+                            {
+                                pokemonTeam[3] ?
+                                    <div className="pokemonCard">
+                                        <div className="imgAndXp">
+                                            <img
+                                                className="pokemonImage"
+                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[3].name}.gif`}
+                                                alt="img"
+                                            />
+                                            <h3 className="pokeName">Lv.{pokemonTeam[3].lvl}</h3>
+                                        </div>
+                                        <div className="pokemonStats">
+                                            <h1 className="pokeName">{pokemonTeam[3].name}</h1>
+                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
+                                                 alt="life bar"/>
+                                            <div className="lifeStatus">
+                                                <h3 className="pokeHp">{pokemonTeam[3].hp}/ </h3>
+                                                <h3 className="pokeHp">{pokemonTeam[3].hpMax}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    : null
+                            }
+                        </div>
+                        : null
+                    }
+                </div>
+                <div className="twoThird">
+                    {/*fifth pokemon*/}
+                    {
+                        pokemonTeam ?
+                            <div onClick={() => {
+                                showStats(4)
+                            }}
+                                 className="pokemonCase case1">
+                                {pokemonTeam[4] ?
+                                    <div className="pokemonCard">
+                                        <div className="imgAndXp">
+                                            <img
+                                                className="pokemonImage"
+                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[4].name}.gif`}
+                                                alt="img"
+                                            />
+                                            <h3 className="pokeName">Lv.{pokemonTeam[4].lvl}</h3>
+                                        </div>
+                                        <div className="pokemonStats">
+                                            <h1 className="pokeName">{pokemonTeam[4].name}</h1>
+                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
+                                                 alt="life bar"/>
+                                            <div className="lifeStatus">
+                                                <h3 className="pokeHp">{pokemonTeam[4].hp}/ </h3>
+                                                <h3 className="pokeHp">{pokemonTeam[4].hpMax}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    : null}
+                            </div>
+                            : null
+                    }
+                    {/*sixth pokemon*/}
+                    {
+                        pokemonTeam ?
+                            <div className="pokemonCase case2">
+                                {pokemonTeam[5] ?
+                                    <div onClick={() => {
+                                        showStats(5)
+                                    }}
+                                         className="pokemonCard">
+                                        <div className="imgAndXp">
+                                            <img
+                                                className="pokemonImage"
+                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[5].name}.gif`}
+                                                alt="img"
+                                            />
+                                            <h3 className="pokeName">Lv.{pokemonTeam[5].lvl}</h3>
+                                        </div>
+                                        <div className="pokemonStats">
+                                            <h1 className="pokeName">{pokemonTeam[5].name}</h1>
+                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
+                                                 alt="life bar"/>
+                                            <div className="lifeStatus">
+                                                <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}/ </h3>
+                                                <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    : null}
+                            </div>
+                            : null
+                    }
+                </div>
             </div>
             { statsRequired ?
                 <DisplayPokemonTeamStats
+                    teamPokemon={pokemonTeam}
                 pokemon={pokemonStat}
+                    index={indexSelected}
             /> : null
             }
             { statsRequired ? null :

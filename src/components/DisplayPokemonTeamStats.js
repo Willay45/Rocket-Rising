@@ -1,10 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './DisplayPokemonTeamStats.js.css'
 
-const DisplayPokemonTeamStats = ({pokemon}) => {
+const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index}) => {
+
+    const [favorite, setFavorite] = useState({});
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    useEffect(() => {
+        localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon))
+    }, [teamPokemon]);
+
+    const addToFavorite = (index) => {
+        console.log(teamPokemon);
+        let stock = teamPokemon.splice(index, 1, teamPokemon[index]);
+        let stockFavorite = teamPokemon[index];
+        setFavorite(stockFavorite);
+        console.log(favorite);
+        teamPokemon.splice(index, 1);
+        teamPokemon.splice(0, 0, stockFavorite);
+        console.log(teamPokemon);
+        localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon));
+        setIsFavorite(true);
+    };
+
+    const removeFavorite = () => {
+        setIsFavorite(false);
+    };
+
     return (
         <div className="statsContainer">
             <div className="header">
+                { isFavorite ? <div
+                        onClick={removeFavorite}
+                        className="favoritePokemon"
+                    >Remove current favorite</div>
+                    : <div className="favoritePokemon"
+                    onClick={() => {
+                    addToFavorite(index);
+                }}
+                >Add as favorite</div>}
                 <img className="pokemonStatsImage"
                      src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}
                      alt={pokemon.name}/>
