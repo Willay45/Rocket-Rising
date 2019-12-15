@@ -9,7 +9,7 @@ const StarterPokemon = () => {
     const displayPokemon = (character) => {
         setPokemonStat(starterPack.starters[character]);
     };
-
+s
     return (
         <div className="container">
             <h1 className="titleChoose">Choose your pokemon !</h1>

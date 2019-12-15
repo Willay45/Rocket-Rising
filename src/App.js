@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TeamPokemon from "./components/TeamPokemon";
+import TestLocalStorage from "./components/TestLocalStorage";
 
 const App = () => {
   return (

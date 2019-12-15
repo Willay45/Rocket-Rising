@@ -1,0 +1,32 @@
+.statsContainer {
+    background-color: lightblue;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nameAndLvl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.statsRender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.movesAndStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pokemonStatsImage {
+    width: 70px;
+    height: 70px;
+}
