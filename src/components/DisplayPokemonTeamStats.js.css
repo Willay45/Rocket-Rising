@@ -1,9 +1,14 @@
 .statsContainer {
     background-color: lightblue;
     width: 100%;
+    padding-top: 10px;
+    background-image: url("https://cdn.wallpapersafari.com/74/36/buCkKp.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .header {
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -13,20 +18,70 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: dimgrey;
 }
+
 .statsRender {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.twoColumns {
+    display: flex;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.leftStats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.rightStats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .movesAndStats {
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: white;
+}
+
+.movesStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+}
+
+.typesStats {
+    font-size: 18px;
+    color: white;
+}
+
+.movesStats h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.itemStats {
+    font-size: 14px;
+    margin: 2px
 }
 
 .pokemonStatsImage {
     width: 70px;
     height: 70px;
+}
+
+.itemSpell {
+    margin: 0;
+    font-size: 14px;
 }
