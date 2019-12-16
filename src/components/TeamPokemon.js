@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './TeamPokemon.css';
-import axios from 'axios'
-import DisplayPokemonTeamStats from "./DisplayPokemonTeamStats";
-import JsLifeBar from "./JsLifeBar";
+import axios from 'axios';
+import DisplayPokemonTeamStats from './DisplayPokemonTeamStats';
+import JsLifeBar from './JsLifeBar';
 
 const TeamPokemon = () => {
     const [pokemonTeam, setPokemonTeam] = useState({});
@@ -20,7 +20,6 @@ const TeamPokemon = () => {
         let selectedPokemon = pokemonTeam[index];
         setIndexSelected(index);
         setPokemonStat(selectedPokemon);
-        console.log(selectedPokemon)
     };
 
 
@@ -130,7 +129,6 @@ const TeamPokemon = () => {
 
     const pushNew = () => {
         model.push(newPokemon);
-        console.log(model)
         setPokemonTeam(model)
     };
 
@@ -138,8 +136,6 @@ const TeamPokemon = () => {
         axios.get("https://pokeapi.co/api/v2/pokemon/squirtle")
             .then(response => response.data)
             .then(data => {
-                console.log("Je suis la requete API :");
-                console.log(data);
                 let fetchedPokemon = data;
                 setNewPokemon(fetchedPokemon)
             })
@@ -152,8 +148,6 @@ const TeamPokemon = () => {
 
     const testLocalMemory = () => {
         let savedData = JSON.parse(localStorage.getItem('fetched pokemon'));
-        console.log("Je suis la sauvegarde locale :");
-        console.log(savedData)
     };
 
     const addPokemon = () => {
@@ -164,8 +158,6 @@ const TeamPokemon = () => {
         addPokemon();
     }, [nbPokemon]);
 
-
-    console.log(pokemonTeam);
     return (
         <div className="pokeTeamContainer">
             <button onClick={pokemonInLocal}>API request</button>
@@ -178,7 +170,6 @@ const TeamPokemon = () => {
                     {pokemonTeam ?
                         <div onClick={() => {
                             showStats(0);
-                            console.log(indexSelected)
                         }}
                              className="pokemonCase case1">
                             {pokemonTeam[0] ?
