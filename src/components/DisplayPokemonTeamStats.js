@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './DisplayPokemonTeamStats.js.css'
+import './DisplayPokemonTeamStats.js.css';
+import JsLifeBar from "./JsLifeBar";
 
-const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index}) => {
+const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) => {
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
@@ -16,10 +17,16 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index}) => {
         let stockFavorite = teamPokemon[index];
         setFavorite(stockFavorite);
         console.log(favorite);
-        teamPokemon.splice(index, 1);
-        teamPokemon.splice(0, 0, stockFavorite);
+        const pokemons = teamPokemon;
+        pokemons.splice(index, 1)
+        const pokemonTable = [stockFavorite, ...pokemons]
+        setTeamPokemon(pokemonTable)
+        // teamPokemon.splice(index, 1);
+        // teamPokemon.splice(0, 0, stockFavorite);
         console.log(teamPokemon);
-        localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon));
+        // let finalState = teamPokemon;
+        // setTeamPokemon(finalState);
+        localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTable));
         setIsFavorite(true);
     };
 
@@ -43,8 +50,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index}) => {
                      src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}
                      alt={pokemon.name}/>
                 <div className="nameAndLvl">
-                    <h1 className="statsName">{pokemon.name}</h1>
-                    <p>Lv. todo</p>
+                    <h1 className="statsName">{pokemon.name.toUpperCase()}</h1>
+                    <p>Lv.{pokemon.lvl}</p>
                 </div>
             </div>
             <div className="typesStats">
@@ -55,16 +62,20 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index}) => {
             {/*Statistics of the selected pokemon*/}
             <div className="movesAndStats">
                 <div className="statsRender">
-                    <div className="twoColumns">
-                        <div className="leftStats">
-                            <p className="itemStats">Speed : {pokemon.stats[0].base_stat}</p>
-                            <p className="itemStats">Special defense : {pokemon.stats[1].base_stat}</p>
-                            <p className="itemStats">Special attack : {pokemon.stats[2].base_stat}</p>
-                        </div>
-                        <div className="rightStats">
-                            <p className="itemStats">Defense : {pokemon.stats[3].base_stat}</p>
-                            <p className="itemStats">Attack : {pokemon.stats[4].base_stat}</p>
-                            <p className="itemStats">HP : {pokemon.stats[5].base_stat}</p>
+                    <div className="statistics">
+                        <h4>Statistics</h4>
+                        <JsLifeBar pokemon={pokemon} />
+                        <div className="twoColumns">
+                            <div className="leftStats">
+                                <p className="itemStats">Speed : {pokemon.stats[0].base_stat}</p>
+                                <p className="itemStats">Special defense : {pokemon.stats[1].base_stat}</p>
+                                <p className="itemStats">Special attack : {pokemon.stats[2].base_stat}</p>
+                            </div>
+                            <div className="rightStats">
+                                <p className="itemStats">Defense : {pokemon.stats[3].base_stat}</p>
+                                <p className="itemStats">Attack : {pokemon.stats[4].base_stat}</p>
+                                <p className="itemStats">HP : {pokemon.stats[5].base_stat}</p>
+                            </div>
                         </div>
                     </div>
                     <div className="movesStats">

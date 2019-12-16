@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './TeamPokemon.css';
 import axios from 'axios'
-import starterPack from "../datas/starters";
 import DisplayPokemonTeamStats from "./DisplayPokemonTeamStats";
+import JsLifeBar from "./JsLifeBar";
 
 const TeamPokemon = () => {
     const [pokemonTeam, setPokemonTeam] = useState({});
@@ -35,8 +35,9 @@ const TeamPokemon = () => {
                     {base_stat: 48},
                     {base_stat: 80},
                     {base_stat: 35},
-                    {base_stat: 97},
-            ],
+                    {base_stat: 58},
+                    {base_stat: 58},
+                ],
             lvl: 42,
             hp: 121,
             hpMax: 121
@@ -51,8 +52,9 @@ const TeamPokemon = () => {
                     {base_stat: 48},
                     {base_stat: 80},
                     {base_stat: 35},
-                    {base_stat: 97},
-            ],
+                    {base_stat: 158},
+                    {base_stat: 139},
+                ],
             lvl: 37,
             hp: 158,
             hpMax: 158
@@ -64,11 +66,12 @@ const TeamPokemon = () => {
                 [
                     {base_stat: 88},
                     {base_stat: 24},
-                    {base_stat: 48},
+                    {base_stat: 88},
                     {base_stat: 80},
                     {base_stat: 35},
-                    {base_stat: 97},
-            ],
+                    {base_stat: 457},
+                    {base_stat: 428},
+                ],
             lvl: 87,
             hp: 468,
             hpMax: 468
@@ -83,8 +86,9 @@ const TeamPokemon = () => {
                     {base_stat: 48},
                     {base_stat: 80},
                     {base_stat: 35},
-                    {base_stat: 97},
-            ],
+                    {base_stat: 489},
+                    {base_stat: 287},
+                ],
             lvl: 68,
             hp: 385,
             hpMax: 385
@@ -99,8 +103,9 @@ const TeamPokemon = () => {
                     {base_stat: 48},
                     {base_stat: 80},
                     {base_stat: 35},
-                    {base_stat: 97},
-            ],
+                    {base_stat: 348},
+                    {base_stat: 27},
+                ],
             lvl: 68,
             hp: 385,
             hpMax: 385
@@ -117,7 +122,7 @@ const TeamPokemon = () => {
                 {base_stat: 80},
                 {base_stat: 35},
                 {base_stat: 97},
-        ],
+            ],
         lvl: 74,
         hp: 584,
         hpMax: 584
@@ -160,6 +165,7 @@ const TeamPokemon = () => {
     }, [nbPokemon]);
 
 
+    console.log(pokemonTeam);
     return (
         <div className="pokeTeamContainer">
             <button onClick={pokemonInLocal}>API request</button>
@@ -185,16 +191,11 @@ const TeamPokemon = () => {
                                         />
                                         <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>
                                         {/*Show the favorite pokemon*/}
-                                        {indexSelected && pokemonTeam[indexSelected].name === pokemonStat.name ? <div className="favorite" /> : null}
+                                        <div className="favorite"/>
                                     </div>
                                     <div className="pokemonStats">
                                         <h1 className="pokeName">{pokemonTeam[0].name}</h1>
-                                        <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                             alt="life bar"/>
-                                        <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[0].hp}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[0].hpMax}</h3>
-                                        </div>
+                                        <JsLifeBar pokemon={pokemonTeam[0]}/>
                                     </div>
                                 </div>
                                 : null}
@@ -219,12 +220,7 @@ const TeamPokemon = () => {
                                     </div>
                                     <div className="pokemonStats">
                                         <h1 className="pokeName">{pokemonTeam[1].name}</h1>
-                                        <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                             alt="life bar"/>
-                                        <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[1].hp}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[1].hpMax}</h3>
-                                        </div>
+                                        <JsLifeBar pokemon={pokemonTeam[1]}/>
                                     </div>
                                 </div>
                                 : null}
@@ -251,12 +247,7 @@ const TeamPokemon = () => {
                                     </div>
                                     <div className="pokemonStats">
                                         <h1 className="pokeName">{pokemonTeam[2].name}</h1>
-                                        <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                             alt="life bar"/>
-                                        <div className="lifeStatus">
-                                            <h3 className="pokeHp">{pokemonTeam[2].hp}/ </h3>
-                                            <h3 className="pokeHp">{pokemonTeam[2].hpMax}</h3>
-                                        </div>
+                                        <JsLifeBar pokemon={pokemonTeam[2]}/>
                                     </div>
                                 </div>
                                 : null}
@@ -282,12 +273,7 @@ const TeamPokemon = () => {
                                         </div>
                                         <div className="pokemonStats">
                                             <h1 className="pokeName">{pokemonTeam[3].name}</h1>
-                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                                 alt="life bar"/>
-                                            <div className="lifeStatus">
-                                                <h3 className="pokeHp">{pokemonTeam[3].hp}/ </h3>
-                                                <h3 className="pokeHp">{pokemonTeam[3].hpMax}</h3>
-                                            </div>
+                                            <JsLifeBar pokemon={pokemonTeam[3]}/>
                                         </div>
                                     </div>
                                     : null
@@ -316,12 +302,7 @@ const TeamPokemon = () => {
                                         </div>
                                         <div className="pokemonStats">
                                             <h1 className="pokeName">{pokemonTeam[4].name}</h1>
-                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                                 alt="life bar"/>
-                                            <div className="lifeStatus">
-                                                <h3 className="pokeHp">{pokemonTeam[4].hp}/ </h3>
-                                                <h3 className="pokeHp">{pokemonTeam[4].hpMax}</h3>
-                                            </div>
+                                            <JsLifeBar pokemon={pokemonTeam[4]}/>
                                         </div>
                                     </div>
                                     : null}
@@ -347,12 +328,7 @@ const TeamPokemon = () => {
                                         </div>
                                         <div className="pokemonStats">
                                             <h1 className="pokeName">{pokemonTeam[5].name}</h1>
-                                            <img className="lifeBar" src="http://pixelartmaker.com/art/e86a0a807bc9ffc.png"
-                                                 alt="life bar"/>
-                                            <div className="lifeStatus">
-                                                <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}/ </h3>
-                                                <h3 className="pokeHp">{pokemonTeam[5].stats[5].base_stat}</h3>
-                                            </div>
+                                            <JsLifeBar pokemon={pokemonTeam[5]}/>
                                         </div>
                                     </div>
                                     : null}
@@ -361,14 +337,15 @@ const TeamPokemon = () => {
                     }
                 </div>
             </div>
-            { statsRequired ?
+            {statsRequired ?
                 <DisplayPokemonTeamStats
+                    setTeamPokemon={setPokemonTeam}
                     teamPokemon={pokemonTeam}
-                pokemon={pokemonStat}
+                    pokemon={pokemonStat}
                     index={indexSelected}
-            /> : null
+                /> : null
             }
-            { statsRequired ? null :
+            {statsRequired ? null :
                 <div className="tip">
                     <h1>Choose a Pokémon for more details</h1>
                 </div>
