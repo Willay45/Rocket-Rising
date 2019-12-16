@@ -8,13 +8,10 @@ const DisplayStats = ({starters}) => {
         choosenPokemon.push(starters);
     };
     return (
-        <div>
-            <div className="containerDescription">
-                <h1 className="pokeName">{starters.name}</h1>
-                <p>{starters.description}</p>
-                {starters.name ?
-                    <button className="selectedPokemonButton" onClick={chooseOne}>I want this pokemon !</button> : null}
-            </div>
+        <div className="containerDisplayStats">
+            <h1 className="pokeName">{starters.name}</h1>
+            <p>{starters.description}</p>
+            {starters.name ? <button className="selectedPokemonButton" onClick={chooseOne}>I want this pokemon !</button> : null}
         </div>
     )
 };

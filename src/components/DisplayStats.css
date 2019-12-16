@@ -1,11 +1,7 @@
-.containerDescription {
+.containerDisplayStats {
+    margin-top: 150px;
     background-color: grey;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    text-align: center;
-    padding-bottom: 200px;
+    padding: 15px;
 }
 .pokeName {
     color: white;
