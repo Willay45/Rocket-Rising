@@ -12,6 +12,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
     }, [teamPokemon]);
 
     const addToFavorite = (index) => {
+        pokemon.isFavorite = true;
         console.log(teamPokemon);
         let stock = teamPokemon.splice(index, 1, teamPokemon[index]);
         let stockFavorite = teamPokemon[index];
@@ -20,24 +21,23 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
         const pokemons = teamPokemon;
         pokemons.splice(index, 1);
         const pokemonTable = [stockFavorite, ...pokemons];
-        setTeamPokemon(pokemonTable)
-        // teamPokemon.splice(index, 1);
-        // teamPokemon.splice(0, 0, stockFavorite);
+        setTeamPokemon(pokemonTable);
         console.log(teamPokemon);
-        // let finalState = teamPokemon;
-        // setTeamPokemon(finalState);
         localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTable));
         setIsFavorite(true);
     };
 
     const removeFavorite = () => {
         setIsFavorite(false);
+        pokemon.isFavorite = false;
+        const stock = pokemon;
+        console.log(stock);
     };
 
     return (
         <div className="statsContainer">
             <div className="header">
-                { isFavorite ? <div
+                { pokemon.isFavorite ? <div
                         onClick={removeFavorite}
                         className="favoritePokemon"
                     >Remove current favorite</div>

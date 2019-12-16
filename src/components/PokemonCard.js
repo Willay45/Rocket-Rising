@@ -2,9 +2,7 @@ import React from 'react';
 import JsLifeBar from "./JsLifeBar";
 import './PokemonCard.css';
 
-const PokemonCard = ({pokemonTeam, index, pokemon}) => {
-
-
+const PokemonCard = ({pokemon}) => {
 
     return (
         <div>
@@ -18,7 +16,7 @@ const PokemonCard = ({pokemonTeam, index, pokemon}) => {
                                 alt="img"
                             />
                             <h3 className="pokeName">Lv.{pokemon.lvl}</h3>
-                            <div className="favorite"/>
+                            {pokemon.isFavorite ? <div className="favorite"/> : null}
                         </div>
                         <div className="pokemonStats">
                             <h1 className="pokeName">{pokemon.name}</h1>

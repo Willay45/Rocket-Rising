@@ -2,6 +2,7 @@
     background-color: lightskyblue;
     display: flex;
     height: 100px;
+    width: 170px;
     flex-direction: row;
     justify-content: center;
     align-items: center;

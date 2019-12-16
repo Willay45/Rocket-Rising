@@ -2,11 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './TeamPokemon.css';
 import axios from 'axios';
 import DisplayPokemonTeamStats from './DisplayPokemonTeamStats';
-import JsLifeBar from './JsLifeBar';
 import PokemonCard from "./PokemonCard";
 
 const TeamPokemon = () => {
-    const [pokemonTeam, setPokemonTeam] = useState({});
+    const [pokemonTeam, setPokemonTeam] = useState([]);
     const [nbPokemon, setNbPokemon] = useState(0);
     const [newPokemon, setNewPokemon] = useState({});
     const [localData, setLocalData] = useState(() => {
@@ -16,13 +15,12 @@ const TeamPokemon = () => {
     const [pokemonStat, setPokemonStat] = useState({});
     const [indexSelected, setIndexSelected] = useState(null);
 
-    const showStats = (index) => {
+    const showStats = (element, index) => {
         setStatsRequired(true);
-        let selectedPokemon = pokemonTeam[index];
+        let selectedPokemon = element;
         setIndexSelected(index);
         setPokemonStat(selectedPokemon);
     };
-
 
     let model = [
         {
@@ -38,6 +36,7 @@ const TeamPokemon = () => {
                     {base_stat: 58},
                     {base_stat: 58},
                 ],
+            isFavorite: false,
             lvl: 42,
             hp: 121,
             hpMax: 121
@@ -55,6 +54,7 @@ const TeamPokemon = () => {
                     {base_stat: 158},
                     {base_stat: 139},
                 ],
+            isFavorite: false,
             lvl: 37,
             hp: 158,
             hpMax: 158
@@ -72,6 +72,7 @@ const TeamPokemon = () => {
                     {base_stat: 457},
                     {base_stat: 428},
                 ],
+            isFavorite: false,
             lvl: 87,
             hp: 468,
             hpMax: 468
@@ -89,6 +90,7 @@ const TeamPokemon = () => {
                     {base_stat: 489},
                     {base_stat: 287},
                 ],
+            isFavorite: false,
             lvl: 68,
             hp: 385,
             hpMax: 385
@@ -106,27 +108,30 @@ const TeamPokemon = () => {
                     {base_stat: 348},
                     {base_stat: 27},
                 ],
+            isFavorite: false,
+            lvl: 68,
+            hp: 385,
+            hpMax: 385
+        },
+        {
+            name: "eevee",
+            type: "water",
+            stats:
+                [
+                    {base_stat: 88},
+                    {base_stat: 24},
+                    {base_stat: 48},
+                    {base_stat: 80},
+                    {base_stat: 35},
+                    {base_stat: 348},
+                    {base_stat: 27},
+                ],
+            isFavorite: false,
             lvl: 68,
             hp: 385,
             hpMax: 385
         }
     ];
-    let imNew = {
-        name: "lapras",
-        type: "water",
-        stats:
-            [
-                {base_stat: 88},
-                {base_stat: 24},
-                {base_stat: 48},
-                {base_stat: 80},
-                {base_stat: 35},
-                {base_stat: 97},
-            ],
-        lvl: 74,
-        hp: 584,
-        hpMax: 584
-    };
 
     const pushNew = () => {
         model.push(newPokemon);
@@ -142,11 +147,6 @@ const TeamPokemon = () => {
             })
     };
 
-    useEffect(() => {
-        //localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTeam))
-    }, [pokemonTeam]);
-
-
     const testLocalMemory = () => {
         let savedData = JSON.parse(localStorage.getItem('fetched pokemon'));
     };
@@ -160,121 +160,34 @@ const TeamPokemon = () => {
     }, []);
 
     return (
-        <div className="pokeTeamContainer">
+        <div className="teamPokemonRender">
             <button onClick={pokemonInLocal}>API request</button>
             <button onClick={testLocalMemory}>Show me the local save</button>
             <button onClick={pushNew}>Push new</button>
             {/*The 6 pokémons*/}
-            <div>
-                <div className="twoFirst">
-                    {/*first pokemon*/}
-                    {pokemonTeam ?
-                        <div onClick={() => {
-                            showStats(0);
-                        }}
-                             className="pokemonCase case1">
-                            {pokemonTeam[0] ?
-                                <PokemonCard
-                                    pokemonTeam={pokemonTeam}
-                                    index={0}
-                                    pokemon={pokemonTeam[0]}
-                                /> : null}
+            <div className="teamPokemonContainer">
+                {pokemonTeam.map((element, index) => {
+                    return (
+                        <div onClick={() => showStats(element, index)}
+                             className="pokemonCase"
+                             key={index}
+                        >
+                            <PokemonCard
+                                pokemonTeam={pokemonTeam}
+                                pokemon={element}
+                            />
                         </div>
-                        : null
-                    }
-                    {/*second pokemon*/}
-                    {pokemonTeam ?
-                        <div onClick={() => {
-                            showStats(1)
-                        }}
-                             className="pokemonCase case2">
-                            {pokemonTeam[1] ?
-                                <PokemonCard
-                                    pokemonTeam={pokemonTeam}
-                                    index={1}
-                                    pokemon={pokemonTeam[1]}
-                                /> : null}
-                        </div>
-                        : null
-                    }
-                </div>
-                <div className="twoSecond">
-                    {/*third pokemon*/}
-                    {pokemonTeam ?
-                        <div onClick={() => {
-                            showStats(2)
-                        }}
-                             className="pokemonCase case1">
-                            {pokemonTeam[2] ?
-                                <PokemonCard
-                                    pokemonTeam={pokemonTeam}
-                                    index={2}
-                                    pokemon={pokemonTeam[2]}
-                                /> : null}
-                        </div>
-                        : null
-                    }
-                    {/*fourth pokemon*/}
-                    {pokemonTeam ?
-                        <div onClick={() => {
-                            showStats(3)
-                        }}
-                             className="pokemonCase case2">
-                            {
-                                pokemonTeam[3] ?
-                                    <PokemonCard
-                                        pokemonTeam={pokemonTeam}
-                                        index={3}
-                                        pokemon={pokemonTeam[3]}
-                                    /> : null}
-                        </div>
-                        : null
-                    }
-                </div>
-                <div className="twoThird">
-                    {/*fifth pokemon*/}
-                    {
-                        pokemonTeam ?
-                            <div onClick={() => {
-                                showStats(4)
-                            }}
-                                 className="pokemonCase case1">
-                                {pokemonTeam[4] ?
-                                    <PokemonCard
-                                        pokemonTeam={pokemonTeam}
-                                        index={4}
-                                        pokemon={pokemonTeam[4]}
-                                    /> : null}
-                            </div>
-                            : null
-                    }
-                    {/*sixth pokemon*/}
-                    {
-                        pokemonTeam ?
-                            <div className="pokemonCase case2">
-                                {pokemonTeam[5] ?
-                                    <div onClick={() => {
-                                        showStats(5)
-                                    }}
-                                         className="pokemonCard">
-                                        <PokemonCard
-                                            pokemonTeam={pokemonTeam}
-                                            index={5}
-                                            pokemon={pokemonTeam[5]}
-                                        /> : null}
-                            </div>
-                            : null
-                    }
-                            </div>
+                    )
+                })
+                }
+            </div>
             {statsRequired ?
                 <DisplayPokemonTeamStats
                     setTeamPokemon={setPokemonTeam}
                     teamPokemon={pokemonTeam}
                     pokemon={pokemonStat}
                     index={indexSelected}
-                /> : null
-            }
-            {statsRequired ? null :
+                /> :
                 <div className="tip">
                     <h1>Choose a Pokémon for more details</h1>
                 </div>

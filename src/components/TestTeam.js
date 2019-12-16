@@ -195,9 +195,7 @@ const TestTeam = () => {
                                         </div>
                                     </div>
                             </div>
-                        : null
-                    }
-                    {/*first pokemon*/}
+                        : null}
                 </div>
             </div>
             {statsRequired ?
