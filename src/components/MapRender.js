@@ -53,7 +53,7 @@ const MapRender = (props) => {
                 <div className={selectedMap ? `${selectedMap.className}` : "mapRender"}>
                     {opponentObject
                         ?
-                        <div>
+                        <div className="fetchedPokemon">
                             <h1 className="popUp">{`A wild ${opponentObject.name} appears !`}</h1>
                             <img className="pokemonSprite"
                                  src={`http://www.pokestadium.com/sprites/xy/${opponentObject.name}.gif`}
