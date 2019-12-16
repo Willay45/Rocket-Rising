@@ -1,5 +1,7 @@
-.container {
+.containerDisplayStats {
     margin-top: 150px;
+    background-color: grey;
+    padding: 15px;
 }
 .pokeName {
     color: black;
