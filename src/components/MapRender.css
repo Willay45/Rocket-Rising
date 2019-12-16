@@ -11,6 +11,7 @@
     align-items: center;
 }
 .popUp {
+    text-align: center;
     display: block;
     padding: 20px;
     background-color: black;
