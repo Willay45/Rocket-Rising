@@ -8,7 +8,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
     const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => {
-        localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon))
+        //localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon))
     }, [teamPokemon]);
 
     const addToFavorite = (index) => {
@@ -18,8 +18,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
         setFavorite(stockFavorite);
         console.log(favorite);
         const pokemons = teamPokemon;
-        pokemons.splice(index, 1)
-        const pokemonTable = [stockFavorite, ...pokemons]
+        pokemons.splice(index, 1);
+        const pokemonTable = [stockFavorite, ...pokemons];
         setTeamPokemon(pokemonTable)
         // teamPokemon.splice(index, 1);
         // teamPokemon.splice(0, 0, stockFavorite);

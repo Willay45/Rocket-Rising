@@ -3,6 +3,7 @@ import './TeamPokemon.css';
 import axios from 'axios';
 import DisplayPokemonTeamStats from './DisplayPokemonTeamStats';
 import JsLifeBar from './JsLifeBar';
+import PokemonCard from "./PokemonCard";
 
 const TeamPokemon = () => {
     const [pokemonTeam, setPokemonTeam] = useState({});
@@ -142,7 +143,7 @@ const TeamPokemon = () => {
     };
 
     useEffect(() => {
-        localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTeam))
+        //localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTeam))
     }, [pokemonTeam]);
 
 
@@ -156,7 +157,7 @@ const TeamPokemon = () => {
 
     useEffect(() => {
         addPokemon();
-    }, [nbPokemon]);
+    }, []);
 
     return (
         <div className="pokeTeamContainer">
@@ -173,23 +174,28 @@ const TeamPokemon = () => {
                         }}
                              className="pokemonCase case1">
                             {pokemonTeam[0] ?
-                                <div className="pokemonCard">
-                                    <div className="imgAndXp">
-                                        <img
-                                            className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[0].name}.gif`}
-                                            alt="img"
-                                        />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>
-                                        {/*Show the favorite pokemon*/}
-                                        <div className="favorite"/>
-                                    </div>
-                                    <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[0].name}</h1>
-                                        <JsLifeBar pokemon={pokemonTeam[0]}/>
-                                    </div>
-                                </div>
-                                : null}
+                                <PokemonCard
+                                    pokemonTeam={pokemonTeam}
+                                    index={0}
+                                    pokemon={pokemonTeam[0]}
+                                /> : null}
+                            {/*<div className="pokemonCard">*/}
+                            {/*    <div className="imgAndXp">*/}
+                            {/*        <img*/}
+                            {/*            className="pokemonImage"*/}
+                            {/*            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[0].name}.gif`}*/}
+                            {/*            alt="img"*/}
+                            {/*        />*/}
+                            {/*        <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>*/}
+                            {/*        /!*Show the favorite pokemon*!/*/}
+                            {/*        <div className="favorite"/>*/}
+                            {/*    </div>*/}
+                            {/*    <div className="pokemonStats">*/}
+                            {/*        <h1 className="pokeName">{pokemonTeam[0].name}</h1>*/}
+                            {/*        <JsLifeBar pokemon={pokemonTeam[0]}/>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            {/*: null}*/}
                         </div>
                         : null
                     }
