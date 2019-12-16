@@ -1,5 +1,6 @@
 import React from 'react';
 import JsLifeBar from "./JsLifeBar";
+import './PokemonCard.css';
 
 const PokemonCard = ({pokemonTeam, index, pokemon}) => {
 

@@ -179,23 +179,6 @@ const TeamPokemon = () => {
                                     index={0}
                                     pokemon={pokemonTeam[0]}
                                 /> : null}
-                            {/*<div className="pokemonCard">*/}
-                            {/*    <div className="imgAndXp">*/}
-                            {/*        <img*/}
-                            {/*            className="pokemonImage"*/}
-                            {/*            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[0].name}.gif`}*/}
-                            {/*            alt="img"*/}
-                            {/*        />*/}
-                            {/*        <h3 className="pokeName">Lv.{pokemonTeam[0].lvl}</h3>*/}
-                            {/*        /!*Show the favorite pokemon*!/*/}
-                            {/*        <div className="favorite"/>*/}
-                            {/*    </div>*/}
-                            {/*    <div className="pokemonStats">*/}
-                            {/*        <h1 className="pokeName">{pokemonTeam[0].name}</h1>*/}
-                            {/*        <JsLifeBar pokemon={pokemonTeam[0]}/>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                            {/*: null}*/}
                         </div>
                         : null
                     }
@@ -206,21 +189,11 @@ const TeamPokemon = () => {
                         }}
                              className="pokemonCase case2">
                             {pokemonTeam[1] ?
-                                <div className="pokemonCard">
-                                    <div className="imgAndXp">
-                                        <img
-                                            className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[1].name}.gif`}
-                                            alt="img"
-                                        />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[1].lvl}</h3>
-                                    </div>
-                                    <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[1].name}</h1>
-                                        <JsLifeBar pokemon={pokemonTeam[1]}/>
-                                    </div>
-                                </div>
-                                : null}
+                                <PokemonCard
+                                    pokemonTeam={pokemonTeam}
+                                    index={1}
+                                    pokemon={pokemonTeam[1]}
+                                /> : null}
                         </div>
                         : null
                     }
@@ -233,21 +206,11 @@ const TeamPokemon = () => {
                         }}
                              className="pokemonCase case1">
                             {pokemonTeam[2] ?
-                                <div className="pokemonCard">
-                                    <div className="imgAndXp">
-                                        <img
-                                            className="pokemonImage"
-                                            src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[2].name}.gif`}
-                                            alt="img"
-                                        />
-                                        <h3 className="pokeName">Lv.{pokemonTeam[2].lvl}</h3>
-                                    </div>
-                                    <div className="pokemonStats">
-                                        <h1 className="pokeName">{pokemonTeam[2].name}</h1>
-                                        <JsLifeBar pokemon={pokemonTeam[2]}/>
-                                    </div>
-                                </div>
-                                : null}
+                                <PokemonCard
+                                    pokemonTeam={pokemonTeam}
+                                    index={2}
+                                    pokemon={pokemonTeam[2]}
+                                /> : null}
                         </div>
                         : null
                     }
@@ -259,22 +222,11 @@ const TeamPokemon = () => {
                              className="pokemonCase case2">
                             {
                                 pokemonTeam[3] ?
-                                    <div className="pokemonCard">
-                                        <div className="imgAndXp">
-                                            <img
-                                                className="pokemonImage"
-                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[3].name}.gif`}
-                                                alt="img"
-                                            />
-                                            <h3 className="pokeName">Lv.{pokemonTeam[3].lvl}</h3>
-                                        </div>
-                                        <div className="pokemonStats">
-                                            <h1 className="pokeName">{pokemonTeam[3].name}</h1>
-                                            <JsLifeBar pokemon={pokemonTeam[3]}/>
-                                        </div>
-                                    </div>
-                                    : null
-                            }
+                                    <PokemonCard
+                                        pokemonTeam={pokemonTeam}
+                                        index={3}
+                                        pokemon={pokemonTeam[3]}
+                                    /> : null}
                         </div>
                         : null
                     }
@@ -288,21 +240,11 @@ const TeamPokemon = () => {
                             }}
                                  className="pokemonCase case1">
                                 {pokemonTeam[4] ?
-                                    <div className="pokemonCard">
-                                        <div className="imgAndXp">
-                                            <img
-                                                className="pokemonImage"
-                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[4].name}.gif`}
-                                                alt="img"
-                                            />
-                                            <h3 className="pokeName">Lv.{pokemonTeam[4].lvl}</h3>
-                                        </div>
-                                        <div className="pokemonStats">
-                                            <h1 className="pokeName">{pokemonTeam[4].name}</h1>
-                                            <JsLifeBar pokemon={pokemonTeam[4]}/>
-                                        </div>
-                                    </div>
-                                    : null}
+                                    <PokemonCard
+                                        pokemonTeam={pokemonTeam}
+                                        index={4}
+                                        pokemon={pokemonTeam[4]}
+                                    /> : null}
                             </div>
                             : null
                     }
@@ -315,25 +257,15 @@ const TeamPokemon = () => {
                                         showStats(5)
                                     }}
                                          className="pokemonCard">
-                                        <div className="imgAndXp">
-                                            <img
-                                                className="pokemonImage"
-                                                src={`http://www.pokestadium.com/sprites/xy/${pokemonTeam[5].name}.gif`}
-                                                alt="img"
-                                            />
-                                            <h3 className="pokeName">Lv.{pokemonTeam[5].lvl}</h3>
-                                        </div>
-                                        <div className="pokemonStats">
-                                            <h1 className="pokeName">{pokemonTeam[5].name}</h1>
-                                            <JsLifeBar pokemon={pokemonTeam[5]}/>
-                                        </div>
-                                    </div>
-                                    : null}
+                                        <PokemonCard
+                                            pokemonTeam={pokemonTeam}
+                                            index={5}
+                                            pokemon={pokemonTeam[5]}
+                                        /> : null}
                             </div>
                             : null
                     }
-                </div>
-            </div>
+                            </div>
             {statsRequired ?
                 <DisplayPokemonTeamStats
                     setTeamPokemon={setPokemonTeam}
