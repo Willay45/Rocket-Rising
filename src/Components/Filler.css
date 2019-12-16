@@ -1,0 +1,10 @@
+
+    .filler {
+        display: flex;
+        position: relative;
+        background: #04B404;
+        height: 100%;
+        border-radius: inherit;
+        transition: width .2s ease-in;
+    }
+

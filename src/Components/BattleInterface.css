@@ -1,0 +1,141 @@
+.button {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: left;
+    align-content: space-between;
+    border-radius: 100px 0px / 120px;;
+    color: #FECD03;
+    background-color: #355AA6;
+    font-size: 36px;
+    block-size: 60px;
+    font-family: "Roboto Slab", sans-serif;
+    margin-top: 10px;
+    left: 70px;
+    top: -935px;
+    text-align: center;
+    }
+
+.btn {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: left;
+    align-content: space-between;
+    border-radius: 100px 0px / 120px;;
+    color: #FECD03;
+    background-color: #355AA6;
+    font-size: 36px;
+    block-size: 60px;
+    font-family: "Roboto Slab", sans-serif;
+    margin-top: 10px;
+    left: 570px;
+    top: -1220px;
+    text-align: center;
+}
+
+.back {
+    background-color: black;
+    font-size: 36px;
+    display: flex;
+    position: relative;
+    top: 710px;
+    width: 920px;
+    height: 220px;
+}      
+
+.backUp {
+    background-color: black;
+    font-size: 36px;
+    display: flex;
+    position: relative;
+    top: -40px;
+    width: 920px;
+    height: 180px;
+}      
+
+.console {
+    display: flex;
+    position: relative;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.6);
+    border: solid;
+    border-color: black;
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 36px;
+    margin-left: 20px;
+    left: 260px;
+    margin-right: 10px;
+    top: -350px;
+}
+
+
+.test {
+    display: flex;
+    position: fixed;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.5);
+    border: solid;
+    border-color: rgb(0, 128, 0);
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 40px;
+    margin-left: 45px;
+    padding-left: 5px;
+    padding-right: auto;
+    left: 110px;
+    margin-right: -300px;
+    top: 840px;
+}
+
+.img {    
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 5px;
+    width: 45px;
+    height: 45px;
+}
+
+.image {
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-attachment: relative;
+    width: 900px;
+    height: 700px;
+    top: -78px;
+    left: 0px;
+}
+
+.pokeplayer-one {
+    display: flex;
+    position: relative;
+    width: 110%;
+    left: 0px;
+    margin-top: -480px;
+    top: -10px;
+    }
+
+.pokeplayer-two {
+    display: flex;
+    position: relative;
+    width: 45%;
+    margin-left: 270px;
+    left: 340px;
+    top: -310px;
+    margin-top: -100px;
+}
+
+.combat {
+    display: flex;
+    position: relative;
+    background-attachment: relative;
+    margin-top: -340px;
+    width: 1000px;
+    height: 800px;
+    left: 0px;
+}
