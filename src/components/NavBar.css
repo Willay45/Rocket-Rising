@@ -1,0 +1,11 @@
+.navButtons {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+.itemNav {
+     height: 80px;
+     width: 80px;
+     border-radius: 50%;
+     margin: 15px;
+ }

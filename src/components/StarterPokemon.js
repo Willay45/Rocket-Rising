@@ -35,7 +35,6 @@ const StarterPokemon = () => {
                         :null
                 }
             </div>
-
         </div>
     )
 };

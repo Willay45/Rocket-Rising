@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './DisplayStats.css';
 
 const DisplayStats = ({starters}) => {

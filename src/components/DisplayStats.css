@@ -4,12 +4,14 @@
     padding: 15px;
 }
 .pokeName {
-    color: black;
+    color: white;
 }
 .selectedPokemonButton {
+    margin-left: auto;
+    margin-right: auto;
     background-color: red;
     border-radius: 40px;
-    width: 300px;
+    width: 200px;
     height: 55px;
     color: white;
 }
