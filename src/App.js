@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
-import Inventory from "./components/Inventory";
+import PokeCenter from "./components/PokeCenter";
+
 
 function App() {
     return (
         <div className="App">
 
-            <Inventory/>
+            <PokeCenter/>
         </div>
     );
 }

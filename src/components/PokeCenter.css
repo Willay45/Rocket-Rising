@@ -1,0 +1,41 @@
+
+.PokeCenterEnter {
+    background-color: black;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576445205-cpout.jpg");
+    background-repeat: no-repeat;
+    background-size: 800px 700px;
+    background-position: center;
+    height: 100vh;
+}
+
+
+.PokeCenterContainer {
+    background-color: black;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/4/1576169341-cpin.jpg");
+    background-repeat: no-repeat;
+    background-size: 800px 700px;
+    background-position: center;
+    height: 100vh;
+}
+
+#pc {
+    display: flex;
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 35%;
+    right: 36%;
+
+
+
+}
+
+#joelle {
+    display: flex;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 37%;
+    left: 2%;
+
+}

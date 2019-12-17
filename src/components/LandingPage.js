@@ -9,7 +9,7 @@ function LandingPage() {
             <img className="title" src="https://image.noelshack.com/fichiers/2019/49/3/1575471833-rocket-rising-1.png" alt="home page picture" />
         </div>
     )
-}
+};
 
 
 export default LandingPage;
