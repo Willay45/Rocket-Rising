@@ -28,22 +28,12 @@ const TeamPokemon = () => {
         setPokemonTeam(model);
     };
 
-    const pokemonInLocal = () => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/squirtle")
-            .then(response => response.data)
-            .then(data => {
-                let fetchedPokemon = data;
-                setNewPokemon(fetchedPokemon)
-            })
-    };
-
     useEffect(() => {
         setPokemonTeam(model);
     }, []);
 
     return (
         <div className="teamPokemonRender">
-            <button onClick={pokemonInLocal}>API request</button>
             <button onClick={pushNew}>Push new</button>
             {/*The 6 pokémons*/}
             <div className="teamPokemonContainer">
