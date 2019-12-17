@@ -6,7 +6,6 @@ import PokemonCard from "./PokemonCard";
 
 const TeamPokemon = () => {
     const [pokemonTeam, setPokemonTeam] = useState([]);
-    const [nbPokemon, setNbPokemon] = useState(0);
     const [newPokemon, setNewPokemon] = useState({});
     const [localData, setLocalData] = useState(() => {
         localStorage.getItem('fetched pokemon')
