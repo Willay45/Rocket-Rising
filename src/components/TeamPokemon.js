@@ -112,24 +112,6 @@ const TeamPokemon = () => {
             lvl: 68,
             hp: 385,
             hpMax: 385
-        },
-        {
-            name: "eevee",
-            type: "water",
-            stats:
-                [
-                    {base_stat: 88},
-                    {base_stat: 24},
-                    {base_stat: 48},
-                    {base_stat: 80},
-                    {base_stat: 35},
-                    {base_stat: 348},
-                    {base_stat: 27},
-                ],
-            isFavorite: false,
-            lvl: 68,
-            hp: 385,
-            hpMax: 385
         }
     ];
 

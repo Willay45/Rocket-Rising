@@ -31,6 +31,10 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
         setIsFavorite(false);
         pokemon.isFavorite = false;
         const stock = pokemon;
+        const team = teamPokemon;
+        team.splice(0, 1);
+        const pokemonTeamNow = [stock, ...team];
+        setTeamPokemon(pokemonTeamNow);
         console.log(stock);
     };
 
