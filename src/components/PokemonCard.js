@@ -1,19 +1,17 @@
 import React from 'react';
-import JsLifeBar from "./JsLifeBar";
+import JsLifeBar from './JsLifeBar';
 import './PokemonCard.css';
 
 const PokemonCard = ({pokemon}) => {
 
     return (
-        <div>
-            <div>
                 <div className="cardContainer">
                     <div className="pokemonCard">
                         <div className="imgAndXp">
                             <img
                                 className="pokemonImage"
                                 src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}
-                                alt="img"
+                                alt="image of the pokemon"
                             />
                             <h3 className="pokeName">Lv.{pokemon.lvl}</h3>
                             {pokemon.isFavorite ? <div className="favorite"/> : null}
@@ -24,8 +22,6 @@ const PokemonCard = ({pokemon}) => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     )
 };
 

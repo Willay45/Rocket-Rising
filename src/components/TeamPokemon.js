@@ -116,7 +116,7 @@ const TeamPokemon = () => {
 
     const pushNew = () => {
         model.push(newPokemon);
-        setPokemonTeam(model)
+        setPokemonTeam(model);
     };
 
     const pokemonInLocal = () => {
@@ -128,22 +128,13 @@ const TeamPokemon = () => {
             })
     };
 
-    const testLocalMemory = () => {
-        let savedData = JSON.parse(localStorage.getItem('fetched pokemon'));
-    };
-
-    const addPokemon = () => {
-        setPokemonTeam(model);
-    };
-
     useEffect(() => {
-        addPokemon();
+        setPokemonTeam(model);
     }, []);
 
     return (
         <div className="teamPokemonRender">
             <button onClick={pokemonInLocal}>API request</button>
-            <button onClick={testLocalMemory}>Show me the local save</button>
             <button onClick={pushNew}>Push new</button>
             {/*The 6 pokémons*/}
             <div className="teamPokemonContainer">
@@ -174,7 +165,7 @@ const TeamPokemon = () => {
                 </div>
             }
             <div className="navMenuFake">
-                <img className="menuItem" src="http://www.pokestadium.com/sprites/xy/charizard.gif" alt=""/>
+                <img className="menuItem"img src="http://www.pokestadium.com/sprites/xy/charizard.gif" alt=""/>
                 <img className="menuItem" src="http://www.pokestadium.com/sprites/xy/charizard.gif" alt=""/>
                 <img className="menuItem" src="http://www.pokestadium.com/sprites/xy/charizard.gif" alt=""/>
             </div>

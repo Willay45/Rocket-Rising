@@ -1,15 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './DisplayPokemonTeamStats.js.css';
-import JsLifeBar from "./JsLifeBar";
+import JsLifeBar from './JsLifeBar';
 
 const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) => {
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
-
-    useEffect(() => {
-        //localStorage.setItem('fetched pokemon', JSON.stringify(teamPokemon))
-    }, [teamPokemon]);
 
     const addToFavorite = (index) => {
         pokemon.isFavorite = true;
