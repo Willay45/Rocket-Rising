@@ -13,16 +13,13 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
 
     const addToFavorite = (index) => {
         pokemon.isFavorite = true;
-        console.log(teamPokemon);
         let stock = teamPokemon.splice(index, 1, teamPokemon[index]);
         let stockFavorite = teamPokemon[index];
         setFavorite(stockFavorite);
-        console.log(favorite);
         const pokemons = teamPokemon;
         pokemons.splice(index, 1);
         const pokemonTable = [stockFavorite, ...pokemons];
         setTeamPokemon(pokemonTable);
-        console.log(teamPokemon);
         localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTable));
         setIsFavorite(true);
     };
@@ -35,7 +32,6 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
         team.splice(0, 1);
         const pokemonTeamNow = [stock, ...team];
         setTeamPokemon(pokemonTeamNow);
-        console.log(stock);
     };
 
     return (
