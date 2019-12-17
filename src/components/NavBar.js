@@ -14,13 +14,14 @@ const NavBar = () => {
                 <img src="https://image.noelshack.com/fichiers/2019/49/4/1575565596-mappokemon.png"
                      className="map itemNav"
                      alt="mini map"
-                     onClick={NavMaps}
                 />
             </Link>
+            <Link to="/team-pokemon">
             <img src="https://image.noelshack.com/fichiers/2019/49/5/1575621888-pokerocket.png"
                  alt="pokemon team"
                  className="pokeTeam itemNav"
             />
+            </Link>
         </div>
     )
 };

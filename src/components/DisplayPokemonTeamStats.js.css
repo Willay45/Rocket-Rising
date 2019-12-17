@@ -17,12 +17,22 @@
 .favoritePokemon {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     font-size: 12px;
     color: black;
     width: 70px;
     height: 40px;
     border: solid darkgrey 2px;
-    background-color: yellow;
+    background-color: lightslategray;
+}
+
+.favoriteStar {
+    width: 50px;
+}
+
+.favoriteText {
+    color: white;
 }
 
 .nameAndLvl {
@@ -87,6 +97,9 @@
 }
 
 .typesStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     font-size: 18px;
     color: white;
 }

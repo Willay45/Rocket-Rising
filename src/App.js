@@ -6,6 +6,7 @@ import MapRender from "./components/MapRender";
 import StarterPokemon from "./components/StarterPokemon";
 import LandingPage from "./components/LandingPage";
 import TeamPokemon from "./components/TeamPokemon";
+import TutorialEnd from "./components/TutorialEnd";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/starter-pokemon" component={StarterPokemon}/>
                 <Route path="/map/:map" component={MapRender}/>
                 <Route path="/team-pokemon" component={TeamPokemon}/>
+                <Route path="/adventure-start" component={TutorialEnd}/>
             </Switch>
         </div>
     );
