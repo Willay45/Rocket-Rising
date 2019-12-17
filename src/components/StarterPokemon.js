@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import './StarterPokemon.css';
-import DisplayStats from './DisplayStats';
+import DisplayStats from './DisplayStarterDescription';
 import starterPack from '../datas/starters.json';
 
 const StarterPokemon = () => {
     const [pokemonStat, setPokemonStat] = useState({});
+    const [statsRequired, setStatsRequired] = useState(false);
 
     const displayPokemon = (character) => {
         setPokemonStat(starterPack.starters[character]);
+        setStatsRequired(true)
     };
 
     return (
-        <div className="container">
+        <div className="containerStarter">
             <h1 className="titleChoose">Choose your pokemon !</h1>
             <div className="threePokemons">
                 <img className="pokemon"
@@ -27,9 +29,12 @@ const StarterPokemon = () => {
                     displayPokemon("bellsprout")
                 }}
                      alt="bellsprout"/>
-                <DisplayStats
-                   starters={pokemonStat}/>
             </div>
+            { statsRequired ?
+                <DisplayStats
+                    starters={pokemonStat}/>
+                :null
+            }
         </div>
     )
 };
