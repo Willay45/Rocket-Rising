@@ -32,7 +32,6 @@ const MapRender = (props) => {
                         setSelectedMap(myMap);
                     }
                 });
-
                 let nbByType = myMap.nbPokemon;
                 await getPokemon(myMap);
             })()
