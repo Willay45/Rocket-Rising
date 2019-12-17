@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './StarterPokemon.css';
-import DisplayStats from './DisplayStats';
+import DisplayStats from './DisplayStarterDescription';
 import starterPack from '../datas/starters.json';
 
 const StarterPokemon = () => {
@@ -29,12 +29,12 @@ const StarterPokemon = () => {
                     displayPokemon("bellsprout")
                 }}
                      alt="bellsprout"/>
-                { statsRequired ?
-                    <DisplayStats
-                        starters={pokemonStat}/>
-                        :null
-                }
             </div>
+            { statsRequired ?
+                <DisplayStats
+                    starters={pokemonStat}/>
+                :null
+            }
         </div>
     )
 };
