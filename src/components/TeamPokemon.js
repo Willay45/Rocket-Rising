@@ -22,7 +22,7 @@ const TeamPokemon = () => {
         const localTeam = [JSON.parse(localStorage.getItem('pokemonTeam'))];
         console.log(localTeam);
         setPokemonTeam(localTeam);
-        console.log(pokemonTeam)
+        console.log(pokemonTeam);
     }, []);
 
     const showStats = (element, index) => {
