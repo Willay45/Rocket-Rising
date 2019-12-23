@@ -7,6 +7,7 @@ import StarterPokemon from "./components/StarterPokemon";
 import LandingPage from "./components/LandingPage";
 import TeamPokemon from "./components/TeamPokemon";
 import TutorialEnd from "./components/TutorialEnd";
+import Inventory from "./components/Inventory";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/map/:map" component={MapRender}/>
                 <Route path="/team-pokemon" component={TeamPokemon}/>
                 <Route path="/adventure-start" component={TutorialEnd}/>
+                <Route path="/inventory" component={Inventory}/>
             </Switch>
         </div>
     );

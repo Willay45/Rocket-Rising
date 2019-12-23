@@ -2,6 +2,8 @@
 import React, {useState} from "react";
 import "./Inventory.css";
 import "../Items.json";
+import NavMaps from "./NavMaps";
+import NavBar from "./NavBar";
 
 function Inventory() {
     const [berrie1,setberrie1] = useState(0);
@@ -13,66 +15,59 @@ function Inventory() {
     const [potion2,setpotion2] = useState(0);
 
     return (
-        <div className="container">
-
+        <div className="containerInventory">
             <div className="titles">
-
-                <h2>berries</h2>
-
-                <h2>pokeballs</h2>
-
-                <h2>drinks</h2>
-
+                <h2 className="inventoryTitle">BERRIES</h2>
+                <h2 className="inventoryTitle">POKEBALLS</h2>
+                <h2 className="inventoryTitle">POTIONS</h2>
             </div>
 
-            <ul>
-                <li>
+            <ul className="inventoryUl">
+                <li className="itemList">
                     {berrie1}
                     <div style={{
                         background: `no-repeat center url(${require("../images/15.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{pokeballs}
+                <li className="itemList">{pokeballs}
                     <div style={{
                         background: `no-repeat center url(${require("../images/pokeball.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{potions}
+                <li className="itemList">{potions}
                     <div style={{
                         background: `no-repeat center url(${require("../images/potion.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{berrie2}
+                <li className="itemList">{berrie2}
                     <div style={{
                         background: `no-repeat center url(${require("../images/17.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{pokegreen}
+                <li className="itemList">{pokegreen}
                     <div style={{
                         background: `no-repeat center url(${require("../images/pokegreen.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{potion2}
+                <li className="itemList">{potion2}
                     <div style={{
                         background: `no-repeat center url(${require("../images/potion2.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-                <li>{berrie3}
+                <li className="itemList">{berrie3}
                     <div style={{
                         background: `no-repeat center url(${require("../images/20.png")})`,
                         backgroundSize: 'contain'
                     }}/>
                 </li>
-
             </ul>
-
-
+            <NavBar/>
         </div>
     )
 }
