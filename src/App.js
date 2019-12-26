@@ -8,6 +8,7 @@ import LandingPage from "./components/LandingPage";
 import TeamPokemon from "./components/TeamPokemon";
 import TutorialEnd from "./components/TutorialEnd";
 import Inventory from "./components/Inventory";
+import TestMaps from "./components/TestMaps";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/team-pokemon" component={TeamPokemon}/>
                 <Route path="/adventure-start" component={TutorialEnd}/>
                 <Route path="/inventory" component={Inventory}/>
+                <Route path="/testMap" component={TestMaps}/>
             </Switch>
         </div>
     );

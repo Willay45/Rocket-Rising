@@ -1,0 +1,60 @@
+.navigationContainer {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.mapsContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.navDiv {
+    background-color: lightslategray;
+    padding: 15px;
+    color: white;
+}
+
+.mapTitleNav {
+    background: transparent;
+}
+
+.selectedMap {
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.mapImage {
+    width: 100%;
+    height: auto;
+    opacity: 70%;
+}
+
+.linkToMap {
+    padding: 5px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+}
+
+.leftArrow {
+    height: 50px;
+    width: 50px;
+    transform: rotate(90deg);
+}
+
+.rightArrow {
+    height: 50px;
+    width: 50px;
+    transform: rotate(270deg);
+}

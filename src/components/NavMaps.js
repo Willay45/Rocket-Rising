@@ -26,7 +26,6 @@ const NavMaps = () => {
                             <li><Link className="itemLi" to="/map/dojo">Dojo</Link></li>
                             <li><Link className="itemLi" to="/map/glacier">Glacier</Link></li>
                             <li><Link className="itemLi" to="/starter-pokemon">Starter pokemon</Link></li>
-                            <li><Link className="itemLi" to="/team-pokemon">team pokemon</Link></li>
                             <li><Link className="itemLi" to="/adventure-start">after starter</Link></li>
                         </ul>
                     </div>

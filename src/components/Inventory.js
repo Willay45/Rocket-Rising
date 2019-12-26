@@ -16,10 +16,11 @@ function Inventory() {
 
     return (
         <div className="containerInventory">
+            <div className="inventoryTitle"/>
             <div className="titles">
-                <h2 className="inventoryTitle">BERRIES</h2>
-                <h2 className="inventoryTitle">POKEBALLS</h2>
-                <h2 className="inventoryTitle">POTIONS</h2>
+                <h2 className="itemTitle">BERRIES</h2>
+                <h2 className="itemTitle">POKEBALLS</h2>
+                <h2 className="itemTitle">POTIONS</h2>
             </div>
 
             <ul className="inventoryUl">

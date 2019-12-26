@@ -12,7 +12,7 @@ const NavBar = () => {
                      className="itemNav backpack"
                 />
             </Link>
-            <Link to="/Map">
+            <Link to="/TestMap">
                 <img src="https://image.noelshack.com/fichiers/2019/49/4/1575565596-mappokemon.png"
                      className="map itemNav"
                      alt="mini map"

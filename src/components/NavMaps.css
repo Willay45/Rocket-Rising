@@ -1,6 +1,7 @@
 .bigContainer {
     background-image: url("https://i.imgur.com/kHVctyq.png");
 }
+
 .containerNav {
     display: flex;
     flex-direction: column;
@@ -20,7 +21,6 @@
 }
 
 .backgroundDiv {
-    /*background-image: url("https://i.imgur.com/kHVctyq.png");*/
     height: 100%;
     display: flex;
     justify-content: center;

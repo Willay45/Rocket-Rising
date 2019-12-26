@@ -23,7 +23,8 @@
       ],
       "className": "mapRenderAbandoned",
       "nbType": 3,
-      "nbTotal": 31
+      "nbTotal": 31,
+      "img": "https://i.pinimg.com/564x/83/36/01/8336017a1662acbbdd85af32a84211c2.jpg"
     },
 
     {
@@ -39,7 +40,8 @@
       ],
       "className": "mapRenderDesert",
       "nbType": 1,
-      "nbTotal": 17
+      "nbTotal": 17,
+      "img": "https://image.noelshack.com/fichiers/2019/50/1/1575910408-desert.jpg"
     },
 
     {
@@ -49,13 +51,14 @@
       "types": [
         {
           "id": 2,
-          "typeName": "ground",
+          "typeName": "fighting",
           "nbPokemon": 10
         }
       ],
       "className": "mapRenderDojo",
       "nbType": 1,
-      "nbTotal": 10
+      "nbTotal": 10,
+      "img": "https://cdna.artstation.com/p/assets/images/images/005/451/012/large/john-moonan-popup1.jpg?1491123063"
     },
 
     {
@@ -76,7 +79,8 @@
       ],
       "className": "mapRenderElectrical",
       "nbType": 2,
-      "nbTotal": 21
+      "nbTotal": 21,
+      "img": "https://www.pokepedia.fr/images/1/19/Eoliennes_anime.png"
     },
 
     {
@@ -102,7 +106,8 @@
       ],
       "className": "mapRenderForest",
       "nbType": 3,
-      "nbTotal": 61
+      "nbTotal": 61,
+      "img": "https://image.noelshack.com/fichiers/2019/49/7/1575835953-foret.jpg"
     },
 
     {
@@ -118,7 +123,8 @@
       ],
       "className": "mapRenderGlacier",
       "nbType": 1,
-      "nbTotal": 9
+      "nbTotal": 9,
+      "img": "https://i.ytimg.com/vi/_JgRpTTO29g/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDBiNsLg5UfeP2FB02ZVMrcluRzCw"
     },
 
     {
@@ -134,7 +140,8 @@
       ],
       "className": "mapRenderMountain",
       "nbType": 1,
-      "nbTotal": 17
+      "nbTotal": 17,
+      "img": "https://image.noelshack.com/fichiers/2019/49/7/1575772803-montagne.png"
     },
 
     {
@@ -150,7 +157,8 @@
       ],
       "className": "mapRenderOcean",
       "nbType": 1,
-      "nbTotal": 49
+      "nbTotal": 49,
+      "img": "https://image.noelshack.com/fichiers/2019/49/4/1575563477-mer.jpg"
     },
 
     {
@@ -166,7 +174,8 @@
       ],
       "className": "mapRenderPath",
       "nbType": 1,
-      "nbTotal": 36
+      "nbTotal": 36,
+      "img": "https://i.pinimg.com/564x/64/0a/e0/640ae02ae001f7906aba2d2b343b10ad.jpg"
     },
 
     {
@@ -187,7 +196,8 @@
       ],
       "className": "mapRenderPlain",
       "nbType": 2,
-      "nbTotal": 60
+      "nbTotal": 60,
+      "img": "https://i.pinimg.com/originals/85/b0/71/85b0714c5bda6ba66bd7c8c9a75abb3e.png"
     },
 
     {
@@ -208,7 +218,8 @@
       ],
       "className": "mapRenderVolcano",
       "nbType": 2,
-      "nbTotal": 40
+      "nbTotal": 40,
+      "img": "https://image.noelshack.com/fichiers/2019/50/1/1575908191-volcan.jpg"
     }
   ]
 }
