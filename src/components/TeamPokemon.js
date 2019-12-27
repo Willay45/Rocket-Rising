@@ -48,10 +48,7 @@ const TeamPokemon = () => {
 
     return (
         <div className="teamPokemonRender">
-            <div className="pokemonTeamTitleContainer">
-                <h1 className="pokemonTeamTitle">Pokemon team</h1>
-            </div>
-            <button onClick={addPokemonToTeam}>Test</button>
+            <div className="pokemonTeamTitleContainer"/>
             {/*The 6 pokémons*/}
             <div className="teamPokemonContainer">
                 {pokemonTeam.length > 0 ?

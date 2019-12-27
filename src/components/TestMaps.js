@@ -11,7 +11,6 @@ const TestMaps = () => {
     const [currentMapName, setCurrentMapName] = useState(mapsName[currentMap]);
     const [selectedMap, setSelectedMap] = useState({});
 
-
     useEffect(() => {
         setCurrentMapName(mapsName[currentMap]);
         console.log("New render asked");
@@ -24,8 +23,7 @@ const TestMaps = () => {
         if (currentMap < mapsName.length - 1) {
             setCurrentMap(currentMap + 1);
             console.log(currentMap);
-        }
-        else {
+        } else {
             setCurrentMap(0);
             console.log("Can't increase more")
         }
@@ -35,8 +33,7 @@ const TestMaps = () => {
         if (currentMap > 0) {
             setCurrentMap(currentMap - 1);
             console.log(currentMap)
-        }
-        else {
+        } else {
             setCurrentMap(mapsName.length - 1);
             console.log("Can't decrease more")
         }
@@ -50,7 +47,8 @@ const TestMaps = () => {
 
     return (
         <div className="mapsContainer">
-            <h1>Choose your destination</h1>
+            <img className="navigationTitleImage"
+                 src="https://fontmeme.com/permalink/191226/64dc75d51622372524761ffb2576dd23.png"/>
             <div className="navigationContainer">
                 <div
                     className="navDiv"
@@ -61,9 +59,13 @@ const TestMaps = () => {
                          alt=""/>
                 </div>
                 <div className="selectedMap">
-                    <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
+                    {selectedMap.name ?
+                        <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
+                        : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
+                    }
                     <img className="mapImage" src={selectedMap.img} alt="map background"/>
-                    <p style={{textAlign: "center", fontSize: "18px"}}>Types of pokemon you can find there:</p>
+                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
+                        there:</p>
                     {selectedMap.types ?
                         selectedMap.types.map((element) => {
                                 return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)

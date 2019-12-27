@@ -1,8 +1,6 @@
-// eslint-disable-next-line no-unused-vars
 import React, {useState} from "react";
 import "./Inventory.css";
 import "../Items.json";
-import NavMaps from "./NavMaps";
 import NavBar from "./NavBar";
 
 function Inventory() {

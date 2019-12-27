@@ -16,17 +16,30 @@
 }
 
 .navDiv {
-    background-color: lightslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
     padding: 15px;
     color: white;
+    height: 95%;
+    cursor: pointer;
 }
 
 .mapTitleNav {
     background: transparent;
+    text-align: center;
+    margin: 5px;
+}
+
+.navigationTitleImage {
+    background-color: rgba(0,0,0, 0.8);
+    padding: 5px;
 }
 
 .selectedMap {
-    background-color: lightskyblue;
+    background-color: rgba(0,0,0, 0.6);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,6 +47,9 @@
     height: 100%;
 }
 
+.typeMapNav {
+    margin: 5px;
+}
 .mapImage {
     width: 100%;
     height: auto;
@@ -48,13 +64,13 @@
 }
 
 .leftArrow {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 30px;
     transform: rotate(90deg);
 }
 
 .rightArrow {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 30px;
     transform: rotate(270deg);
 }
