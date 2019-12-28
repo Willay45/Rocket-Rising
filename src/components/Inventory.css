@@ -5,6 +5,44 @@
     justify-content: space-between;
 }
 
+.bigContainerInventory {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: lightcyan;
+    height: 70%;
+}
+
+.inventoryRenderContainer {
+    background-color: darkgrey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100%;
+    padding: 25px;
+}
+
+.itemCase {
+    background-color: #636e72;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.nbItem {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+.itemImage {
+    height: 50px;
+}
+
+.testButton {
+    margin: 0;
+}
 
 .inventoryTitle {
     background-image: url("https://fontmeme.com/permalink/191223/bb12eb6c4911afe537bf9167b1d61239.png");

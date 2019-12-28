@@ -27,14 +27,32 @@
 }
 
 .mapTitleNav {
+    font-size: 34px;
+    margin-top: 70px;
     background: transparent;
     text-align: center;
-    margin: 5px;
 }
 
 .navigationTitleImage {
     background-color: rgba(0,0,0, 0.8);
     padding: 5px;
+}
+
+.mapBackgroundNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.typesAndLink {
+    display: flex;
+    flex-direction: row;
+    background-color: #2d3436;
+    margin-top: 150px;
 }
 
 .selectedMap {
@@ -57,10 +75,11 @@
 }
 
 .linkToMap {
-    padding: 5px;
+    padding: 10px;
+    text-align: center;
     text-decoration: none;
-    background-color: white;
-    color: black;
+    background-color: red;
+    color: white;
 }
 
 .leftArrow {

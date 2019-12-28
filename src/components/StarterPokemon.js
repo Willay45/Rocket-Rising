@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './StarterPokemon.css';
 import DisplayStats from './DisplayStarterDescription';
 import starterPack from '../datas/starters.json';
-import TeamPokemon from "./TeamPokemon";
 
 const StarterPokemon = () => {
     const [pokemonStat, setPokemonStat] = useState({});

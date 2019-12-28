@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './NavBar.css';
-import NavMaps from "./NavMaps";
 
 const NavBar = () => {
     return (

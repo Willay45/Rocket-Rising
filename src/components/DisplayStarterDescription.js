@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './DisplayStarterDescription.css';
 import axios from 'axios';
-import TeamPokemon from "./TeamPokemon";
 import {Link} from "react-router-dom";
-import NavMaps from "./NavMaps";
 
 const DisplayStarterDescription = ({starters, setPokemonTeam}) => {
     const [starterChoice, setStarterChoice] = useState([]);

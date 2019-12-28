@@ -3,7 +3,6 @@ import './TeamPokemon.css';
 import axios from 'axios';
 import DisplayPokemonTeamStats from './DisplayPokemonTeamStats';
 import PokemonCard from './PokemonCard';
-import model from './modelPokemons';
 import NavBar from "./NavBar";
 import randomNumber from "../services/RandomNumber";
 
@@ -39,7 +38,6 @@ const TeamPokemon = () => {
                 console.log(data);
                 const copyTeam = pokemonTeam;
                 const randomPokemon = [data];
-                const stock = ["hi", "hello"];
                 copyTeam.push(...randomPokemon);
                 console.log(copyTeam);
                 localStorage.setItem('randomPokemon', JSON.stringify(pokemonTeam));

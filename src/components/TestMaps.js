@@ -60,19 +60,25 @@ const TestMaps = () => {
                 </div>
                 <div className="selectedMap">
                     {selectedMap.name ?
-                        <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
+                        <div className="mapBackgroundNav" style={{backgroundImage: `url(${selectedMap.img})`}}>
+                            <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
+                            <div className="typesAndLink">
+                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
+                                    there:</p>
+                                <div className="allTheTypes">
+                                    {selectedMap.types ?
+                                        selectedMap.types.map((element) => {
+                                                return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
+                                            }
+                                        )
+                                        : null}
+                                </div>
+                            </div>
+                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go to: {currentMapName}</Link>
+                        </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }
-                    <img className="mapImage" src={selectedMap.img} alt="map background"/>
-                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
-                        there:</p>
-                    {selectedMap.types ?
-                        selectedMap.types.map((element) => {
-                                return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
-                            }
-                        )
-                        : null}
-                    <Link className="linkToMap" to={`/map/${currentMapName}`}>Go to: {currentMapName}</Link>
+                    {/*<img className="mapImage" src={selectedMap.img} alt="map background"/>*/}
                 </div>
                 <div
                     className="navDiv"
