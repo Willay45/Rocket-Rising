@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.BattleSceneActionBox  {
+    background-repeat: no-repeat;
+    background-image: url("https://projectpokemon.org/home/applications/core/interface/imageproxy/imageproxy.php?img=http://oi42.tinypic.com/2k3kmp.jpg&key=cae5c5e0f8ec9f8f9badb244842e498e46aba18594fd32913298764507bfa158");
+    height: 311px;
+    background-size: 100% auto;
+}
+
+.BattleSceneActionBox .actionsDisplay{
+
+        text-align: center;
+        padding-top: 50px;
+}
+.BattleSceneActionBox .actionsDisplay button.buttonColum{
+    margin: 15px 15px;
+}
+
+.BattleSceneActionBox .actionsDisplay button{
+    font-family: "DisposableDroidBB";
+    font-size: 1.3em;
+    border: none;
+    color: white;
+    opacity: 85%;
+    background: #381b1b;
+    height: 50px;
+    width: 40%;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.BattleSceneActionBox .actionsDisplay button:active{
+    transform: scale(.95);
+}
+
+.BattleSceneActionBox .attackDisplay{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.BattleSceneActionBox .attackDisplay button{
+    font-family: "DisposableDroidBB";
+    font-size: 1.2em;
+    border: none;
+    color: white;
+    opacity: 85%;
+    background: #381b1b;
+    height: 50px;
+    width: 40%;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin: 15px 12px;
+}
+.BattleSceneActionBox .attackDisplay button:active{
+    transform: scale(.95);
+}
+
+
+
+
+
+
+
+

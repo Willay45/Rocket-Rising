@@ -1,6 +1,7 @@
 import Player from "./Player";
 import PokemonFactory from "../factories/PokemonFactory";
 import config from "../config";
+import SceneFactory from "../factories/SceneFactory";
 
 class Game {
     constructor() {
@@ -20,6 +21,9 @@ class Game {
 
         const pokemon = await PokemonFactory.get(starterID,config.starterPokemonLvl);
         this.getPlayer().addPokemonToTeam(pokemon);
+
+        const ondineScene = await SceneFactory.get('ondine_battle')
+        this.setCurrentScene(ondineScene);
     }
 
     getCurrentScene() {

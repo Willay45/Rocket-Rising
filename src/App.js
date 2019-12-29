@@ -5,6 +5,7 @@ import NavMaps from "./components/NavMaps";
 import MapRender from "./components/MapRender";
 import LandingPage from "./components/LandingPage";
 import TeamPokemon from "./components/TeamPokemon";
+import GameEngine from "./components/scenes/GameEngine";
 import VolumeButton from "./components/ui/VolumeButton";
 import ChooseStarterScene from "./components/scenes/ChooseStarterScene";
 
@@ -15,6 +16,7 @@ function App() {
             <Switch>
             <Route exact path="/" component={LandingPage} />
                 <Route exact path="/choose-starter" component={ChooseStarterScene} />
+                <Route exact path="/game" component={GameEngine} />
                 <Route exact path="/map" component={NavMaps}/>
                 <Route path="/map/:map" component={MapRender}/>
                 <Route path="/team-pokemon" component={TeamPokemon}/>
