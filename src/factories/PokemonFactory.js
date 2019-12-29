@@ -56,8 +56,6 @@ class PokemonFactory{
         );
         pokemon.setLevel(lvl);
 
-        console.log('PokemonFactory: created pokemon', pokemon.getName(), 'with spells', pokemon.getSpells());
-
         return pokemon
     };
 }
