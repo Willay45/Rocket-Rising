@@ -1,0 +1,75 @@
+.teamPokemonRender {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamPokemonContainer {
+    height: 800px;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemonCase {
+    background-color: #2d3436;
+    border: solid #636e72 5px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    width: 170px;
+    height: 100px;
+}
+
+
+
+.twoFirst {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
+.twoSecond {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+.twoThird {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
+.tip {
+    background-color: white;
+    display: inline;
+    border: solid black 1px;
+    background-color: white;
+    font-size: 12px;
+    color: black;
+    padding: 10px;
+}
+
+.navMenuFake {
+    display: flex;
+}
+.menuItem {
+    width: 100px;
+}
