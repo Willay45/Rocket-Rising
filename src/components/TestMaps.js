@@ -13,36 +13,23 @@ const TestMaps = () => {
 
     useEffect(() => {
         setCurrentMapName(mapsName[currentMap]);
-        console.log("New render asked");
-        console.log(maps);
-        console.log(currentMapName);
         setSelectedMap(maps[currentMap])
     }, [currentMap]);
 
     const increase = () => {
         if (currentMap < mapsName.length - 1) {
             setCurrentMap(currentMap + 1);
-            console.log(currentMap);
         } else {
             setCurrentMap(0);
-            console.log("Can't increase more")
         }
     };
 
     const decrease = () => {
         if (currentMap > 0) {
             setCurrentMap(currentMap - 1);
-            console.log(currentMap)
         } else {
             setCurrentMap(mapsName.length - 1);
-            console.log("Can't decrease more")
         }
-    };
-
-    const backgroundSelectedMap = {
-        backgroundImage: `url(${selectedMap.img})`,
-        backgroundRepeat: "noRepeat",
-        backgroundSize: "contain"
     };
 
     return (

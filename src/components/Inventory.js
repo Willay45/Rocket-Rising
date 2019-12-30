@@ -13,7 +13,6 @@ function Inventory() {
 
     useEffect(() => {
         const localInventory = JSON.parse(localStorage.getItem('playerInventory'));
-        console.log(localInventory);
         if (localInventory !== null) {
             setLocalPlayerInventory(localInventory);
         } else {
@@ -30,19 +29,15 @@ function Inventory() {
 
     const addPokeball = () => {
         if (localPlayerInventory) {
-            console.log("I'm not null");
             let stockArray = localPlayerInventory;
             stockArray[0].number = stockArray[0].number + 1;
-            console.log(stockArray);
             setLocalPlayerInventory(stockArray);
             localStorage.setItem('playerInventory', JSON.stringify(stockArray))
         } else {
-            console.log("new one");
             let stockArray = [];
             let inventory = items[1];
             inventory.number = inventory.number + 1;
             stockArray.push(inventory);
-            console.log(stockArray);
             setLocalPlayerInventory(stockArray);
             localStorage.setItem('playerInventory', JSON.stringify(stockArray))
         }
@@ -50,25 +45,15 @@ function Inventory() {
 
     const addPotion = () => {
         if (localPlayerInventory[1]) {
-            console.log("I'm not empty");
             let newPotion = localPlayerInventory;
             newPotion[1].number = newPotion[1].number + 1;
-            console.log(newPotion);
             localStorage.setItem('playerInventory', JSON.stringify(newPotion));
         } else {
-            console.log("I was empty");
-            console.log(localPlayerInventory);
             let newPotion = localPlayerInventory;
             newPotion.push(items[0]);
-            console.log(newPotion);
             newPotion[1].number = newPotion[1].number + 1;
-            console.log(newPotion);
             localStorage.setItem('playerInventory', JSON.stringify(newPotion));
         }
-    };
-
-    const testArray = () => {
-        console.log(localPlayerInventory);
     };
 
     return (
@@ -109,7 +94,6 @@ function Inventory() {
             </div>
             <button className="testButton" onClick={addPokeball}>Get 5 pokeballs</button>
             <button className="testButton" onClick={addPotion}>Get a heal potion</button>
-            <button className="testButton" onClick={testArray}>Find by name</button>
         </div>
     )
 }

@@ -13,15 +13,9 @@ const TeamPokemon = () => {
     const [pokemonStat, setPokemonStat] = useState({});
     const [indexSelected, setIndexSelected] = useState(null);
 
-    const testMe = () => {
-        console.log(pokemonTeam)
-    };
-
     useEffect(() => {
         const localTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
-        console.log(localTeam);
         setPokemonTeam(localTeam);
-        console.log(pokemonTeam);
     }, []);
 
     const showStats = (element, index) => {
@@ -35,11 +29,9 @@ const TeamPokemon = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber(0, 250)}`)
             .then(response => response.data)
             .then(data => {
-                console.log(data);
                 const copyTeam = pokemonTeam;
                 const randomPokemon = [data];
                 copyTeam.push(...randomPokemon);
-                console.log(copyTeam);
                 localStorage.setItem('randomPokemon', JSON.stringify(pokemonTeam));
             });
     };
@@ -64,9 +56,7 @@ const TeamPokemon = () => {
                     )
                 })
                     :
-                    <div>
-                        <button onClick={testMe}>test</button>
-                    </div>
+                    null
                 }
             </div>
             {statsRequired ?

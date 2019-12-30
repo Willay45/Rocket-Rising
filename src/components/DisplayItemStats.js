@@ -7,7 +7,6 @@ const DisplayItemStats = (index, item) => {
 
     const [useIt, setUseIt] = useState(false);
     const [selectedItem, setSelectedItem] = useState(index.item);
-    console.log(index.item);
     return (
         <div className="itemStats">
             {

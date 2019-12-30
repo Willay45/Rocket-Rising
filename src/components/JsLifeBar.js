@@ -8,7 +8,6 @@ const JsLifeBar = ({pokemon}) => {
 
     //Life converter to %
     const lifeToCent = () => {
-        //todo add pokemon.stats[6]
         let toCent = pokemon.base_Stats.hp.current * 100 / pokemon.base_Stats.hp.base;
         return (toCent);
     };
