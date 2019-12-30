@@ -70,7 +70,7 @@ const UseItem = (props) => {
                                  }}
                             >
                                 <div>
-                                    <img alt="pokemon image" src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`} alt=""/>
+                                    <img alt="pokemon image" src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}/>
                                 </div>
                                 <div className="nameAndLifeBar">
                                     <p>{pokemon.name}</p>
