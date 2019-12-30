@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import "./NavMaps.css";
 import {Link} from "react-router-dom";
 import NavBar from "./NavBar";
+import Game from "../models/Game";
+import { useHistory } from 'react-router-dom';
 
 const NavMaps = () => {
+    const history = useHistory();
+    const [game, setGame] = useState(Game);
+    if(!game.getCurrentScene()) {
+        history.push('/choose-starter');
+    }
+
     return (
         <div className="bigContainer">
             <div className="containerNav">

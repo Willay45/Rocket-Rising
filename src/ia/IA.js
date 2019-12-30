@@ -3,10 +3,12 @@ import {getRamdom} from "../utils/random";
 
 export default {
     getAction(batteGameScene) {
-        // TODO: improve IA
+        const pokemonSpells = batteGameScene.getOpponentActivePokemon().getSpells();
+        const iSpell = getRamdom( pokemonSpells.length);
+        
         return {
             actionType: 'attack',
-            payload: batteGameScene.getOpponentActivePokemon().getSpells()[getRamdom( batteGameScene.getOpponentActivePokemon().getSpells().length +1)],
+            payload: pokemonSpells[iSpell].getName(),
         };
     }
 };

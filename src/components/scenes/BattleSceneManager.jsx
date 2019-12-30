@@ -23,11 +23,8 @@ const BattleSceneManager = ({ game, endTrigger}) => {
     const [messages, setMessages] = useState(messagesToDisplay);
     const [discussionWithPnj, setDiscussionWithPnj] = useState(true);
 
-
-
     useEffect(() => {
         MusicService.play(scene.getMusic());
-
     });
 
     const playerActivePokemon = scene.getPlayerActivePokemon();
@@ -36,49 +33,58 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
     const doTurn = (actionType, action) => {
         const arrayAction = scene.doTurn(actionType,action);
-        const messages = arrayAction.reduce((m, e) => {
-            m.push(`${e.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} uses ${e.action.getName()} on ${!e.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
-            m.push(`${!e.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} lose ${e.damages} hp.`);
+        const messages = arrayAction.reduce((message, element) => {
+            message.push(`${element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} uses ${element.action} on ${!element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
+            message.push(`${!element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} lose ${element.damages} hp.`);
 
-            if (e.hasKilled && e.isPlayer) {
-                m.push(`${opponentActivePokemon.getName()} fainted.`);
-            } else if (e.hasKilled && !e.isPlayer) {
-                m.push(`${playerActivePokemon.getName()} fainted.`);
+            if (element.hasKilled && element.isPlayer) {
+                message.push(`${opponentActivePokemon.getName()} fainted.`);
+            } else if (element.hasKilled && !element.isPlayer) {
+                message.push(`${playerActivePokemon.getName()} fainted.`);
             }
 
-            if (e.xpGain > 0) {
-                m.push(`${playerActivePokemon.getName()} earned ${e.xpGain} exp.`);
+            if (element.xpGain > 0) {
+                message.push(`${playerActivePokemon.getName()} earned ${element.xpGain} exp.`);
             }
 
-            return m;
+            return message;
         }, []);
 
+        if(scene.isOver()){
+            MusicService.play(scene.getMusic());
 
+            if(game.getPlayer().hasAlivePokemon()){
+                if (scene.getOpponent().getLoseMessage()) {
+                    messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getLoseMessage()}`);
+                }
+            } else {
+                messages.push("You have no healthy pokemon left. You lose");
+                if (scene.getOpponent().getWinMessage()) {
+                    messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getWinMessage()}`);
 
-    if(scene.isOver()){
-        MusicService.play(scene.getMusic());
-
-        if(game.getPlayer().hasAlivePokemon()){
-            messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getLoseMessage()}`)
-        }else {
-            messages.push("You have no healthy pokemon left. You lose");
-            messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getWinMessage()}`)
+                }
+            }
+            setDiscussionWithPnj(true);
         }
-    }
 
-
-    setMessages(messages);
+        setMessages(messages);
     };
 
-    const endMessagesAction = () => {
+    const endMessageActionBackToBattle = () => {
         setMessages([]);
         setDiscussionWithPnj(false);
     };
+    const endMessagesActionEndGame = () => {
+        scene.getEndAction()(game);
+        endTrigger()
+    };
+    const endMessagesAction = scene.isOver() ? endMessagesActionEndGame : endMessageActionBackToBattle;
 
     let boxComponent = (<BattleSceneActionBox game={game} doTurn={doTurn}/>);
     if(messages.length){
         boxComponent = (<MessagesBoxAutoText messages={messages} endMessagesAction={endMessagesAction}/>)
     }
+
     return(
         <div className="BattleSceneManager">
 

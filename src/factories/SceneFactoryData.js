@@ -1,6 +1,7 @@
 import BattleGameScene from "../models/BattleGameScene";
 import PnjFactory from "./PnjFactory";
 import SceneFactory from "./SceneFactory";
+import WorldMapGameScene from "../models/WorldMapGameScene";
 
 export default (factory) => ({
   'ondine_battle': async () => {
@@ -9,8 +10,8 @@ export default (factory) => ({
         pnj,
         "https://image.noelshack.com/fichiers/2019/52/6/1577527240-plage.png",
         function (game) {
-          game.setCurrentScene(SceneFactory.get('after_ondine_battle'));
+          game.setCurrentScene(SceneFactory.get('worldmap'));
         });
   },
-  'after_ondine_battle': () => {},
+  'worldmap': () => new WorldMapGameScene()
 });

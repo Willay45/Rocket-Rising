@@ -5,13 +5,15 @@ import PokemonFactory from "../../factories/PokemonFactory";
 import ChooseStaterPokemonDescription from "./ChooseStaterPokemonDescription";
 import Game from "../../models/Game";
 import { useHistory } from "react-router-dom";
+import MusicService from "../../tech/MusicService"
+
 
 
 const ChooseStarterScene= () => {
     const history = useHistory();
 
     useEffect(() => {
-        // MusicService.play(scene.getMusic());
+         MusicService.play('tutorial');
     });
 
     const [starters, setStarters ]= useState([]);
@@ -32,9 +34,9 @@ const ChooseStarterScene= () => {
            <div className='game-view'>
             <div className="starter-container">
                 {
-                    starters.map((e, i) => (<img onClick={()=>{
-                        setSelectedPokemon(e);
-                    }} key={i} src={ e.getSpriteFrontUrl() } alt="starters"/>))
+                    starters.map((element, index) => (<img onClick={()=>{
+                        setSelectedPokemon(element);
+                    }} key={index} src={ element.getSpriteFrontUrl() } alt="starters"/>))
                 }
             </div>
            </div>

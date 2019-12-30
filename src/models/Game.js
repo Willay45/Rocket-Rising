@@ -6,6 +6,7 @@ import SceneFactory from "../factories/SceneFactory";
 class Game {
     constructor() {
         this.currentScene = undefined;
+        this.previousScene = undefined;
         this.player = new Player("", []);
     }
 
@@ -29,8 +30,19 @@ class Game {
     getCurrentScene() {
         return this.currentScene;
     }
+
+    getPreviousScene() {
+        return this.previousScene;
+    }
+
     setCurrentScene(scene) {
         this.currentScene = scene;
+    }
+
+    backToPreviousScene() {
+        const currScene = this.currentScene;
+        this.currentScene = this.previousScene;
+        this.previousScene = currScene;
     }
 
     getPlayer() {

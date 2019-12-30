@@ -80,7 +80,8 @@ export default class Pokemon {
         }
     }
 
-    attackPokemon(target, attack){
+    attackPokemon(target, attackName){
+        const attack = this.getSpells().find(element => element.getName() === attackName);
         let damages = ((((this.getLevel() * 0.4 + 2) * this.baseStats.attack.current * attack.getPower()) / (target.baseStats.defense.current * 50) + 2));
         damages = Math.floor(damages);
         target.takeDamages(damages);

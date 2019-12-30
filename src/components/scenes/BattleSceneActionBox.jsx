@@ -15,7 +15,7 @@ export default  ({game, doTurn}) => {
         return (
             <div className="BattleSceneActionBox">
                 <div className="actionsDisplay">
-                    <button className="buttonColum"onClick={switchStatus('fight')}>Fight</button>
+                    <button className="buttonColum" onClick={switchStatus('fight')}>Fight</button>
                     <button className="buttonColum2">Bag</button>
                    <button className="buttonColum">Pokemon</button>
                    <button className="buttonColum2" disabled={!game.getCurrentScene().isWildPokemon()}>Run</button>
@@ -26,10 +26,10 @@ export default  ({game, doTurn}) => {
         return (
             <div className="BattleSceneActionBox">
                 <div className="attackDisplay">
-                    {playerActivePokemonSpells.map((e, i )=> (
-                        <button key={i} onClick={() => doTurn("attack",e)}>
-                            {e.getName()} <br/>
-                            <span style={{fontSize: '0.7em'}}>power: {e.getPower()}</span>
+                    {playerActivePokemonSpells.map((element, index )=> (
+                        <button key={index} onClick={() => doTurn("attack",element.getName())}>
+                            {element.getName()} <br/>
+                            <span style={{fontSize: '0.7em'}}>power: {element.getPower()}</span>
                         </button>
                         )
                     )}

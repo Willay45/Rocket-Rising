@@ -13,7 +13,6 @@ export default class BattleGameScene {
         this.endAction = endAction;
         this.game = Game;
         this.started = false;
-
         this.playerActivePokemon = this.player.getPokemonTeam()[0];
         this.opponentActivePokemon = opponent instanceof Player ? opponent.getPokemonTeam()[0] : opponent ;
     }
