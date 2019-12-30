@@ -3,25 +3,16 @@ import "./PokeCenter.css";
 
 const PokeCenter = () => {
 
-    function PokemonIll() {
-
-        if (currentLife != base_stat || isAlive = false) {
-            currentLife = base_stat;
-            isAlive = true;
-            return currentLife;
-        }
-    }
+    return (
+        <div className="PokeCenterContainer">
+            <div className="pc"/>
+            <div className="joelle"/>
+            <div className="tipsPokeCenter">
+                <p>Click on the nursery to heal your pokémon team !</p>
+                <p>Or click on the PC to manage your pokémons</p>
+            </div>
+        </div>
+    )
 };
-
-return (
-        <div className = "PokeCenterContainer" >
-            <div id="joelle"></div>
-
-            <div id="pc"></div>
-            < /div>
-)
-}
-;
-
 
 export default PokeCenter;

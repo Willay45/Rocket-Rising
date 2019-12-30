@@ -6,7 +6,6 @@ import PokeCenter from "./components/PokeCenter";
 function App() {
     return (
         <div className="App">
-
             <PokeCenter/>
         </div>
     );
