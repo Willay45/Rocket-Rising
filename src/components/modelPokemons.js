@@ -36,24 +36,6 @@ let model = [
         hpMax: 158
     },
     {
-        name: "mew",
-        type: "psychic",
-        stats:
-            [
-                {base_stat: 88},
-                {base_stat: 24},
-                {base_stat: 88},
-                {base_stat: 80},
-                {base_stat: 35},
-                {base_stat: 457},
-                {base_stat: 428},
-            ],
-        isFavorite: false,
-        lvl: 87,
-        hp: 468,
-        hpMax: 468
-    },
-    {
         name: "snorlax",
         type: "normal",
         stats:
@@ -65,24 +47,6 @@ let model = [
                 {base_stat: 35},
                 {base_stat: 489},
                 {base_stat: 287},
-            ],
-        isFavorite: false,
-        lvl: 68,
-        hp: 385,
-        hpMax: 385
-    },
-    {
-        name: "blastoise",
-        type: "water",
-        stats:
-            [
-                {base_stat: 88},
-                {base_stat: 24},
-                {base_stat: 48},
-                {base_stat: 80},
-                {base_stat: 35},
-                {base_stat: 348},
-                {base_stat: 27},
             ],
         isFavorite: false,
         lvl: 68,

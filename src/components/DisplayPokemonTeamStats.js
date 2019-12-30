@@ -33,15 +33,28 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
     return (
         <div className="statsContainer">
             <div className="header">
-                { pokemon.isFavorite ? <div
+                {pokemon.isFavorite ? <div
                         onClick={removeFavorite}
                         className="favoritePokemon"
-                    >Remove current favorite</div>
-                    : <div className="favoritePokemon"
-                    onClick={() => {
-                    addToFavorite(index);
-                }}
-                >Add as favorite</div>}
+                    >
+                        <p className="favoriteText">Remove to favorite</p>
+                        <img alt="yellow star favorite remove"
+                            className="favoriteStar"
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
+                        />
+                    </div>
+                    :
+                    <div className="favoritePokemon"
+                         onClick={() => {
+                             addToFavorite(index);
+                         }}
+                    >
+                        <p className="favoriteText">Add to favorite</p>
+                        <img alt="favorite yellow star add"
+                            className="favoriteStar"
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
+                        />
+                    </div>}
                 <img className="pokemonStatsImage"
                      src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}
                      alt={pokemon.name}/>
@@ -51,8 +64,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                 </div>
             </div>
             <div className="typesStats">
-                {pokemon.types ? <p>{pokemon.types[0].type.name}</p> : null}
-                {pokemon.types && pokemon.types[1] ? <p>{pokemon.types[1].type.name}</p> : null}
+                {pokemon.types ? <p>{pokemon.types[0].type.name.toUpperCase()}</p> : null}
+                {pokemon.types && pokemon.types[1] ? <p>{pokemon.types[1].type.name.toUpperCase()}</p> : null}
             </div>
 
             {/*Statistics of the selected pokemon*/}
@@ -60,17 +73,17 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                 <div className="statsRender">
                     <div className="statistics">
                         <h4>Statistics</h4>
-                        <JsLifeBar pokemon={pokemon} />
+                        <JsLifeBar pokemon={pokemon}/>
                         <div className="twoColumns">
                             <div className="leftStats">
-                                <p className="itemStats">Speed : {pokemon.stats[0].base_stat}</p>
-                                <p className="itemStats">Special defense : {pokemon.stats[1].base_stat}</p>
-                                <p className="itemStats">Special attack : {pokemon.stats[2].base_stat}</p>
+                                <p className="itemStats">Speed : {pokemon.base_Stats.speed.base}</p>
+                                <p className="itemStats">Special defense : {pokemon.base_Stats.specialDefense.base}</p>
+                                <p className="itemStats">Special attack : {pokemon.base_Stats.specialAttack.base}</p>
                             </div>
                             <div className="rightStats">
-                                <p className="itemStats">Defense : {pokemon.stats[3].base_stat}</p>
-                                <p className="itemStats">Attack : {pokemon.stats[4].base_stat}</p>
-                                <p className="itemStats">HP : {pokemon.stats[5].base_stat}</p>
+                                <p className="itemStats">Defense : Actually undefined</p>
+                                <p className="itemStats">Attack : {pokemon.base_Stats.attack.base}</p>
+                                <p className="itemStats">HP : {pokemon.base_Stats.hp.base}</p>
                             </div>
                         </div>
                     </div>

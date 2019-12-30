@@ -21,7 +21,7 @@ const NavMaps = () => {
                 </div>
                 <div className="backgroundDiv">
                     <div className="mapRenderNav">
-                        <ul>
+                        <ul className="listNav">
                             <li><Link className="itemLi" to="/map/forest">Forest</Link></li>
                             <li><Link className="itemLi" to="/map/desert">Desert</Link></li>
                             <li><Link className="itemLi" to="/map/plain">Plain</Link></li>
@@ -34,11 +34,11 @@ const NavMaps = () => {
                             <li><Link className="itemLi" to="/map/dojo">Dojo</Link></li>
                             <li><Link className="itemLi" to="/map/glacier">Glacier</Link></li>
                             <li><Link className="itemLi" to="/starter-pokemon">Starter pokemon</Link></li>
+                            <li><Link className="itemLi" to="/adventure-start">after starter</Link></li>
                         </ul>
                     </div>
                 </div>
                 <NavBar/>
-                <div className="darkBottomBorder"/>
             </div>
         </div>
     )

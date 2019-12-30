@@ -66,7 +66,7 @@ const MapRender = (props) => {
         };
 
         return (
-            <div>
+            <div className="mapRenderContainer">
                 <div className={`darkBorder`}>
                     {selectedMap ? <h1 className="mapTitle">{selectedMap.name}</h1> : null}
                 </div>
@@ -90,7 +90,6 @@ const MapRender = (props) => {
                     }
                 </div>
                 <NavBar/>
-                <div className="darkBorder"/>
             </div>
         )
     }
