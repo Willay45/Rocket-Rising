@@ -1,0 +1,54 @@
+.PokeCenterContainer {
+    background-color: black;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/4/1576169341-cpin.jpg");
+    background-repeat: no-repeat;
+    background-size: 800px 100vh;
+    background-position: center;
+    height: 100vh;
+}
+
+.footerContainerPokeCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.navBarPokeCenter {
+    width: 100%;
+}
+
+.joelle {
+    display: flex;
+    height: 130px;
+    width: 90px;
+    position: absolute;
+    top: 30%;
+    right: 36%;
+    cursor: pointer;
+}
+
+.pc {
+    display: flex;
+    height: 180px;
+    width: 70px;
+    position: absolute;
+    top: 30%;
+    left: 2%;
+    cursor: pointer;
+}
+
+.doubleTipsPokeCenter {
+    padding: 15px;
+}
+
+.tipsPokeCenter {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}

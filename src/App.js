@@ -10,6 +10,7 @@ import TutorialEnd from "./components/TutorialEnd";
 import Inventory from "./components/Inventory";
 import TestMaps from "./components/TestMaps";
 import UseItem from "./components/UseItem";
+import PokeCenter from "./components/PokeCenter";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/inventory" component={Inventory}/>
                 <Route path="/testMap" component={TestMaps}/>
                 <Route path="/use-item" component={UseItem}/>
+                <Route path="/pokeCenter" component={PokeCenter}/>
             </Switch>
         </div>
     );
