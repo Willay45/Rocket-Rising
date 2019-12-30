@@ -36,7 +36,7 @@ export default class Player {
     };
 
     hasAlivePokemon(){
-       return this.pokemonTeam.filter(e=>e.isAlive()).length > 0;
+       return this.pokemonTeam.filter(element=>element.isAlive()).length > 0;
     }
 
     getWinMessage() {
