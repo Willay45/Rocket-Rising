@@ -13,7 +13,7 @@ const DisplayItemStats = (index, item) => {
             {
                 useIt ?
                     <div>
-                        coucoutoi
+                        Empty inventory :c
                     </div>
                     :
                     <div>
@@ -21,9 +21,14 @@ const DisplayItemStats = (index, item) => {
                         <p>{index.item.description}</p>
                     </div>
             }
-            <Link to={{pathname:'/use-item', state:{index}}}>
-                <p>I want to use it</p>
-            </Link>
+            {
+                index.item.power ?
+                    <Link className="linkContainerDisplayItem" to={{pathname:'/use-item', state:{index}}}>
+                        <p className="linkToUse">I want to use it</p>
+                    </Link>
+                    :
+                    null
+            }
         </div>
     )
 };

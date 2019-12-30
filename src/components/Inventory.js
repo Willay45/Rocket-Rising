@@ -80,15 +80,18 @@ function Inventory() {
                     <div className="inventoryRenderContainer">
                         {localPlayerInventory !== null ?
                             localPlayerInventory.map((item, index) => {
-                                return (
-                                    <div className="itemCase"
-                                         onClick={() => needInfo(item, index)}
-                                         key={index}
-                                    >
-                                        <img className="itemImage" src={item.img} alt="stuff image"/>
-                                        <h3 className="nbItem">{item.number}</h3>
-                                    </div>
-                                )
+                                if (item.number > 0) {
+                                    return (
+                                        <div className="itemCase"
+                                             onClick={() => needInfo(item, index)}
+                                             key={index}
+                                        >
+                                            <img className="itemImage" src={item.img} alt="stuff image"/>
+                                            <h3 className="nbItem">{item.number}</h3>
+                                        </div>
+                                    )
+                                }
+                                else return null;
                             })
                             :
                             null
