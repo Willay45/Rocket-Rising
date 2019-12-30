@@ -1,12 +1,8 @@
 import PokemonLvlsTable from "./PokemonLvlsTable";
 
 export default class Pokemon {
-    set curentHp(value) {
-        this._curentHp = value;
-    }
-    get curentHp() {
-        return this._curentHp;
-    }
+
+
 
     constructor(id, name, baseXp, types, baseStats, spells, description) {
         this.name = name;
