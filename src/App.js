@@ -11,6 +11,7 @@ import Inventory from "./components/Inventory";
 import TestMaps from "./components/TestMaps";
 import UseItem from "./components/UseItem";
 import PokeCenter from "./components/PokeCenter";
+import PokePC from "./components/PokePC";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/testMap" component={TestMaps}/>
                 <Route path="/use-item" component={UseItem}/>
                 <Route path="/pokeCenter" component={PokeCenter}/>
+                <Route path="/pokePC" component={PokePC}/>
             </Switch>
         </div>
     );
