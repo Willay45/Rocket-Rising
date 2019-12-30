@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "name": "Small heal potion",
+      "power": 20,
+      "number": 0,
+      "img": "http://image.jeuxvideo.com/medias-sm/149149/1491487146-3944-photo.png",
+      "description": "A very simple potion, will heal your Pokémon 20HP."
+    },
+    {
+      "name": "Pokéball",
+      "chance": 1,
+      "number": 0,
+      "img":"https://www.pokepedia.fr/images/archive/8/87/20090803090752%21Pok%C3%A9_Ball.png",
+      "description": "Catch your first pokemons with this simple PokéBall !"
+    },
+    {
+      "name": "Lipo berry",
+      "power": 30,
+      "number": 0,
+      "img": "https://margxt.fr/wp-content/uploads/2019/08/Pokemon-Go-Baie-Framby.png",
+      "description": "This berry looks delicious, it will heal your Pokémon 30HP !"
+    }
+  ]
+}

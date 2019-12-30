@@ -1,0 +1,20 @@
+.itemStats {
+    height: 40%;
+    background-color: rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+.linkContainerDisplayItem {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.linkToUse {
+    text-align: center;
+    width: 80px;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 15px;
+}
