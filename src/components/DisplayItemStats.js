@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import './DisplayItemStats.css'
-import UseItem from "./UseItem";
+import "./DisplayItemStats.css";
 
 const DisplayItemStats = (index, item) => {
 

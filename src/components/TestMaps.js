@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import './TestMaps.css';
-import {maps} from '../services/maps';
+import React, {useState, useEffect} from "react";
+import "./TestMaps.css";
+import {maps} from "../services/maps";
 import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 
