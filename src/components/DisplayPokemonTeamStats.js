@@ -76,14 +76,14 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                         <JsLifeBar pokemon={pokemon}/>
                         <div className="twoColumns">
                             <div className="leftStats">
-                                <p className="itemStats">Speed : {pokemon.stats[0].base_stat}</p>
-                                <p className="itemStats">Special defense : {pokemon.stats[1].base_stat}</p>
-                                <p className="itemStats">Special attack : {pokemon.stats[2].base_stat}</p>
+                                <p className="itemStats">Speed : {pokemon.base_Stats.speed.base}</p>
+                                <p className="itemStats">Special defense : {pokemon.base_Stats.specialDefense.base}</p>
+                                <p className="itemStats">Special attack : {pokemon.base_Stats.specialAttack.base}</p>
                             </div>
                             <div className="rightStats">
-                                <p className="itemStats">Defense : {pokemon.stats[3].base_stat}</p>
-                                <p className="itemStats">Attack : {pokemon.stats[4].base_stat}</p>
-                                <p className="itemStats">HP : {pokemon.stats[5].base_stat}</p>
+                                <p className="itemStats">Defense : Actually undefined</p>
+                                <p className="itemStats">Attack : {pokemon.base_Stats.attack.base}</p>
+                                <p className="itemStats">HP : {pokemon.base_Stats.hp.base}</p>
                             </div>
                         </div>
                     </div>
