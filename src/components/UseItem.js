@@ -53,8 +53,6 @@ const UseItem = (props) => {
                                              }
                                          });
                                          localInventory.map((element) => {
-                                             console.log(element);
-                                             console.log(selectedItem);
                                              if (element.name === selectedItem.name) {
                                                  element.number = element.number - 1;
                                                  setSelectedItem(element);
@@ -72,7 +70,7 @@ const UseItem = (props) => {
                                  }}
                             >
                                 <div>
-                                    <img src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`} alt=""/>
+                                    <img alt="pokemon image" src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`} alt=""/>
                                 </div>
                                 <div className="nameAndLifeBar">
                                     <p>{pokemon.name}</p>
@@ -93,7 +91,7 @@ const UseItem = (props) => {
 
 
             <button onClick={injureAPokemon}>Hurt him</button>
-            <Link to="/inventory"><button>Go back to inventory</button></Link>
+            <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to inventory</p></Link>
             {itemUsed ?
                 null
             : <div className="tipUseItem">

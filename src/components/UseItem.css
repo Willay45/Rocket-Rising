@@ -59,9 +59,25 @@
     height: 80%;
 }
 
+.containerToInventoryLink {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.toInventory {
+    display: inline;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 15px;
+}
+
 .linkToInventoryItem {
     padding: 10px;
     background-color: rgba(255,20,20, 0.9);
     color: white;
     text-decoration: none;
 }
+

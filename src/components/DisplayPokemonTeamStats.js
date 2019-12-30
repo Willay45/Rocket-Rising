@@ -38,7 +38,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                         className="favoritePokemon"
                     >
                         <p className="favoriteText">Remove to favorite</p>
-                        <img
+                        <img alt="yellow star favorite remove"
                             className="favoriteStar"
                             src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
                         />
@@ -50,7 +50,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                          }}
                     >
                         <p className="favoriteText">Add to favorite</p>
-                        <img
+                        <img alt="favorite yellow star add"
                             className="favoriteStar"
                             src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
                         />

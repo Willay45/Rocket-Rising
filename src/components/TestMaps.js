@@ -43,7 +43,7 @@ const TestMaps = () => {
                 >
                     <img className="leftArrow"
                          src="https://image.noelshack.com/fichiers/2019/52/4/1577375125-pngkit-arrow-pointing-down-png-508417.png"
-                         alt=""/>
+                         alt="left direction arrow"/>
                 </div>
                 <div className="selectedMap">
                     {selectedMap.name ?
@@ -65,13 +65,13 @@ const TestMaps = () => {
                         </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }
-                    {/*<img className="mapImage" src={selectedMap.img} alt="map background"/>*/}
                 </div>
                 <div
                     className="navDiv"
                     onClick={increase}
                 >
-                    <img className="rightArrow"
+                    <img alt="right direction arrow"
+                        className="rightArrow"
                          src="https://image.noelshack.com/fichiers/2019/52/4/1577375125-pngkit-arrow-pointing-down-png-508417.png"
                     />
                 </div>

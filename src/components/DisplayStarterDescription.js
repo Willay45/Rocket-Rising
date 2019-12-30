@@ -12,7 +12,6 @@ const DisplayStarterDescription = ({starters, setPokemonTeam}) => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${starters.name.toLowerCase()}`)
             .then(response => response.data)
             .then(data => {
-                console.log(data);
                 const choosenPokemon = data;
                 setChoiceDone(true);
                 setStarterChoice(choosenPokemon);
@@ -20,7 +19,6 @@ const DisplayStarterDescription = ({starters, setPokemonTeam}) => {
     };
 
     useEffect(() => {
-        console.log(starterChoice);
         localStorage.setItem('pokemonTeam', JSON.stringify(starterChoice))
     }, [starterChoice]);
 

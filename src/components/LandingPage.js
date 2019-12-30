@@ -10,7 +10,6 @@ function LandingPage() {
     }, []);
     const newPlayer = () => {
         let localSave = JSON.parse(localStorage.getItem('pokemonTeam'));
-        console.log(localSave);
         if (localSave != null) {
             setIsExisting(true);
         }

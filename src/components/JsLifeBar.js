@@ -3,13 +3,13 @@ import React, {useEffect, useState} from 'react';
 const JsLifeBar = ({pokemon}) => {
     const [pokemonLife, setPokemonLife] = useState(pokemon.base_Stats.hp.current);
     useEffect(() => {
-        console.log("life has changed")
+
     }, [pokemonLife]);
 
     //Life converter to %
     const lifeToCent = () => {
         let toCent = pokemon.base_Stats.hp.current * 100 / pokemon.base_Stats.hp.base;
-        return (toCent);
+        return toCent;
     };
 
     return (
