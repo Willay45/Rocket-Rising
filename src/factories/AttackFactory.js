@@ -11,7 +11,7 @@ class AttackFactory {
           spell.power,
           spell.pp,
           spell.type.name,
-          spell.flavor_text_entries.find(element => element.language.name === "en" && element.version_group.name === config.version).flavor_text,
+          spell.flavor_text_entries.find(entry => entry.language.name === "en" && entry.version_group.name === config.version).flavor_text,
       );
   };
 }

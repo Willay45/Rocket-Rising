@@ -13,41 +13,40 @@ class PokemonFactory{
     async get(id,lvl){
         const pokemonJson = await Api.getPokemon(id);
         const pokemonSpells = await Promise.all(pokemonJson.moves
-            .filter(element => element.version_group_details.find(elements => elements.level_learned_at <= lvl &&
-                elements.version_group.name === config.version))
-            .map(element => element.move.name)
-            .map(element => AttackFactory.get(element)));
-        const finalPokemonSpells = shuffle(pokemonSpells.filter(element => element.power > 0)).slice(0, 4);
-
+            .filter(move => move.version_group_details.find(moveVersion => moveVersion.level_learned_at <= lvl &&
+                moveVersion.version_group.name === config.version))
+            .map(move => move.move.name)
+            .map(moveName => AttackFactory.get(moveName)));
+        const finalPokemonSpells = shuffle(pokemonSpells.filter(move => move.power > 0)).slice(0, 4);
         const pokemon = new Pokemon(
             pokemonJson.id,
             pokemonJson.name,
             pokemonJson.base_experience,
-            pokemonJson.types.map(element => element.type.name),
+            pokemonJson.types.map(type => type.type.name),
             {
                 speed : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "speed").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "speed").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "speed").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "speed").base_stat,
                 },
                 specialDefense : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "special-defense").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "special-defense").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "special-defense").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "special-defense").base_stat,
                 },
                 specialAttack : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "special-attack").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "special-attack").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "special-attack").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "special-attack").base_stat,
                 },
                 defense : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "defense").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "defense").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "defense").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "defense").base_stat,
                 },
                 attack : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "attack").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "attack").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "attack").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "attack").base_stat,
                 },
                 hp : {
-                    base : pokemonJson.stats.find(element => element.stat.name === "hp").base_stat,
-                    current : pokemonJson.stats.find(element => element.stat.name === "hp").base_stat,
+                    base : pokemonJson.stats.find(stat => stat.stat.name === "hp").base_stat,
+                    current : pokemonJson.stats.find(stat => stat.stat.name === "hp").base_stat,
                 }
             },
             finalPokemonSpells,

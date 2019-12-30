@@ -33,18 +33,18 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
     const doTurn = (actionType, action) => {
         const arrayAction = scene.doTurn(actionType,action);
-        const messages = arrayAction.reduce((message, element) => {
-            message.push(`${element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} uses ${element.action} on ${!element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
-            message.push(`${!element.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} lose ${element.damages} hp.`);
+        const messages = arrayAction.reduce((message, pokemon) => {
+            message.push(`${pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} uses ${pokemon.action} on ${!pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
+            message.push(`${!pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} lose ${pokemon.damages} hp.`);
 
-            if (element.hasKilled && element.isPlayer) {
+            if (pokemon.hasKilled && pokemon.isPlayer) {
                 message.push(`${opponentActivePokemon.getName()} fainted.`);
-            } else if (element.hasKilled && !element.isPlayer) {
+            } else if (pokemon.hasKilled && !pokemon.isPlayer) {
                 message.push(`${playerActivePokemon.getName()} fainted.`);
             }
 
-            if (element.xpGain > 0) {
-                message.push(`${playerActivePokemon.getName()} earned ${element.xpGain} exp.`);
+            if (pokemon.xpGain > 0) {
+                message.push(`${playerActivePokemon.getName()} earned ${pokemon.xpGain} exp.`);
             }
 
             return message;

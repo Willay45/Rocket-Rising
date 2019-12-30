@@ -26,10 +26,10 @@ export default  ({game, doTurn}) => {
         return (
             <div className="BattleSceneActionBox">
                 <div className="attackDisplay">
-                    {playerActivePokemonSpells.map((element, index )=> (
-                        <button key={index} onClick={() => doTurn("attack",element.getName())}>
-                            {element.getName()} <br/>
-                            <span style={{fontSize: '0.7em'}}>power: {element.getPower()}</span>
+                    {playerActivePokemonSpells.map((spell, index )=> (
+                        <button key={index} onClick={() => doTurn("attack",spell.getName())}>
+                            {spell.getName()} <br/>
+                            <span style={{fontSize: '0.7em'}}>power: {spell.getPower()}</span>
                         </button>
                         )
                     )}
