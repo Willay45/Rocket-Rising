@@ -1,0 +1,95 @@
+.navigationContainer {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.mapsContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.navDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    padding: 15px;
+    color: white;
+    height: 95%;
+    cursor: pointer;
+}
+
+.mapTitleNav {
+    font-size: 34px;
+    margin-top: 70px;
+    background: transparent;
+    text-align: center;
+}
+
+.navigationTitleImage {
+    background-color: rgba(0,0,0, 0.8);
+    padding: 5px;
+}
+
+.mapBackgroundNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.typesAndLink {
+    display: flex;
+    flex-direction: row;
+    background-color: #2d3436;
+    margin-top: 150px;
+}
+
+.selectedMap {
+    background-color: rgba(0,0,0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.typeMapNav {
+    margin: 5px;
+}
+.mapImage {
+    width: 100%;
+    height: auto;
+    opacity: 70%;
+}
+
+.linkToMap {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+}
+
+.leftArrow {
+    height: 40px;
+    width: 30px;
+    transform: rotate(90deg);
+}
+
+.rightArrow {
+    height: 40px;
+    width: 30px;
+    transform: rotate(270deg);
+}

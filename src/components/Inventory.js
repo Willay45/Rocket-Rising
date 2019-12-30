@@ -1,78 +1,99 @@
-// eslint-disable-next-line no-unused-vars
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Inventory.css";
 import "../Items.json";
+import NavBar from "./NavBar";
+import {items} from "../datas/items";
+import DisplayItemStats from "./DisplayItemStats";
 
 function Inventory() {
-    const [berrie1,setberrie1] = useState(0);
-    const [berrie2,setberrie2] = useState(0);
-    const [berrie3,setberrie3] = useState(0);
-    const [pokegreen,setpokegreen] = useState(0);
-    const [pokeballs,setpokeballs] = useState(0);
-    const [potions,setpotions] = useState(0);
-    const [potion2,setpotion2] = useState(0);
+    const [moreInfo, setMoreInfo] = useState(false);
+    const [indexSelected, setIndexSelected] = useState(null);
+    const [itemSelected, setItemSelected] = useState(null);
+    const [localPlayerInventory, setLocalPlayerInventory] = useState(null);
+
+    useEffect(() => {
+        const localInventory = JSON.parse(localStorage.getItem('playerInventory'));
+        if (localInventory !== null) {
+            setLocalPlayerInventory(localInventory);
+        } else {
+            return null;
+        }
+    }, []);
+
+    const needInfo = (item, index) => {
+        let selectedItem = item;
+        setMoreInfo(true);
+        setItemSelected(selectedItem);
+        setIndexSelected(index)
+    };
+
+    const addPokeball = () => {
+        if (localPlayerInventory) {
+            let stockArray = localPlayerInventory;
+            stockArray[0].number = stockArray[0].number + 1;
+            setLocalPlayerInventory(stockArray);
+            localStorage.setItem('playerInventory', JSON.stringify(stockArray))
+        } else {
+            let stockArray = [];
+            let inventory = items[1];
+            inventory.number = inventory.number + 1;
+            stockArray.push(inventory);
+            setLocalPlayerInventory(stockArray);
+            localStorage.setItem('playerInventory', JSON.stringify(stockArray))
+        }
+    };
+
+    const addPotion = () => {
+        if (localPlayerInventory[1]) {
+            let newPotion = localPlayerInventory;
+            newPotion[1].number = newPotion[1].number + 1;
+            localStorage.setItem('playerInventory', JSON.stringify(newPotion));
+        } else {
+            let newPotion = localPlayerInventory;
+            newPotion.push(items[0]);
+            newPotion[1].number = newPotion[1].number + 1;
+            localStorage.setItem('playerInventory', JSON.stringify(newPotion));
+        }
+    };
 
     return (
-        <div className="container">
+        <div className="mainContainerInventory">
+            <div className="containerInventory">
+                <div className="inventoryTitle"/>
 
-            <div className="titles">
-
-                <h2>berries</h2>
-
-                <h2>pokeballs</h2>
-
-                <h2>drinks</h2>
-
+                <div className="bigContainerInventory">
+                    <div className="inventoryRenderContainer">
+                        {localPlayerInventory !== null ?
+                            localPlayerInventory.map((item, index) => {
+                                if (item.number > 0) {
+                                    return (
+                                        <div className="itemCase"
+                                             onClick={() => needInfo(item, index)}
+                                             key={index}
+                                        >
+                                            <img className="itemImage" src={item.img} alt="stuff image"/>
+                                            <h3 className="nbItem">{item.number}</h3>
+                                        </div>
+                                    )
+                                }
+                                else return null;
+                            })
+                            :
+                            null
+                        }
+                    </div>
+                    {moreInfo ?
+                        <DisplayItemStats
+                            index={indexSelected}
+                            item={itemSelected}
+                        />
+                        : null
+                    }
+                </div>
+                <NavBar/>
             </div>
-
-            <ul>
-                <li>
-                    {berrie1}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/15.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{pokeballs}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/pokeball.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{potions}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/potion.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{berrie2}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/17.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{pokegreen}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/pokegreen.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{potion2}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/potion2.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-                <li>{berrie3}
-                    <div style={{
-                        background: `no-repeat center url(${require("../images/20.png")})`,
-                        backgroundSize: 'contain'
-                    }}/>
-                </li>
-
-            </ul>
-
-
+            <button className="testButton" onClick={addPokeball}>Get 5 pokeballs</button>
+            <button className="testButton" onClick={addPotion}>Get a heal potion</button>
         </div>
     )
 }
