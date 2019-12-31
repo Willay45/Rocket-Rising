@@ -1,0 +1,46 @@
+
+
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.MessageBox{
+    background-repeat: no-repeat;
+    background-image: url("https://cdn.discordapp.com/attachments/648803413886500864/660938188231147521/willywilly.jpg");
+    height: 311px;
+    background-size: 100% auto;
+    display: flex;
+    justify-content: center;
+}
+
+.MessageBox .message-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 85%;
+    text-align: center;
+    background-color: #F9F9D5;
+    width: 90%;
+    height: 70%;
+    border-radius: 5px;
+    margin-top: 11%;
+
+    font-family: "DisposableDroidBB";
+    font-size: 1.4em;
+}
+
+.MessageBox .message-container > * {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.MessageBox .nextMessage{
+    position: absolute;
+    font-family: "DisposableDroidBB";
+    font-size: 1.4em;
+    bottom: 10px;
+    right: 10px;
+}
