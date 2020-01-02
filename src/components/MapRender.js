@@ -16,10 +16,10 @@ const MapRender = (props) => {
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
 
-        /*const [game, setGame] = useState(Game);
+        const [game, setGame] = useState(Game);
         if(!game.getCurrentScene()) {
             history.push('/choose-starter');
-        }*/
+        }
 
         const getPokemon = (myMap) => {
             const stock = [];
