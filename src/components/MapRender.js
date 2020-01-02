@@ -4,11 +4,22 @@ import NavBar from "./NavBar";
 import randomNumber from "../services/RandomNumber";
 import {maps} from "../services/maps";
 import "./MapRender.css";
+import MusicService from "../tech/MusicService";
+import Game from "../models/Game";
+import BattleGameScene from "../models/BattleGameScene";
+import PokemonFactory from "../factories/PokemonFactory";
+import { useHistory } from 'react-router-dom';
 
 const MapRender = (props) => {
+    const history = useHistory();
         const [selectedMap, setSelectedMap] = useState({});
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
+
+        const [game, setGame] = useState(Game);
+        if(!game.getCurrentScene()) {
+            history.push('/choose-starter');
+        }
 
         const getPokemon = (myMap) => {
             const stock = [];
@@ -42,7 +53,16 @@ const MapRender = (props) => {
             const randomPokemon = stockTypes[randomNumber(0, selectedMap.nbTotal)];
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPokemon.pokemon.name}`);
             const pokemon = await response.data;
-            setOpponentObject(pokemon)
+            setOpponentObject(pokemon);
+
+            setTimeout(() => {
+               MusicService.play('wildVsPlayer');
+               PokemonFactory.get(pokemon.name.toLowerCase(), 15)
+                   .then((opponent) => {
+                       Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => game.backToPreviousScene()));
+                       history.push('/game');
+                   });
+            }, 1500);
         };
 
         return (

@@ -41,11 +41,7 @@
     align-items: center;
     justify-content: center;
 }
-.navButtons {
-    display: flex;
-    justify-content: space-around;
-    background-color: grey;
-}
+
 .itemNav {
     height: 80px;
     width: 80px;

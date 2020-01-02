@@ -46,10 +46,7 @@ export default function Presentation() {
             <img className="giovanni" alt="chef"
                  src="https://image.noelshack.com/fichiers/2019/52/4/1577369256-giovanni-2.jpg"/>
             <p className="textbox">{skip}
-                {stop === false ? <button onClick={skipped}
-                                          className="skip"
-                >
-                    Next<img className="icon" alt="rocket"
+                {stop === false ? <button onClick={skipped} className="skip">Next<img className="icon" alt="rocket"
                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/R_de_color_Rojo.PNG/220px-R_de_color_Rojo.PNG"/>
                 </button> : null}
             </p>
