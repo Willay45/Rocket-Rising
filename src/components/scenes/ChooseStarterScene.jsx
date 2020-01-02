@@ -25,6 +25,7 @@ const ChooseStarterScene= () => {
     }
      const chooseAction = async () => {
        await Game.startGameWithStarter(selectedPokemon.getName());
+         selectedPokemon.setStats();
          history.push("/game");
 
     };

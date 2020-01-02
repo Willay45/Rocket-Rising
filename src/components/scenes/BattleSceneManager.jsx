@@ -8,7 +8,7 @@ import GameSceneBattlefield from "./GameSceneBattlefield";
 const BattleSceneManager = ({ game, endTrigger}) => {
     const scene = game.getCurrentScene();
     let messagesToDisplay = [];
-
+console.log(scene.getPlayerActivePokemon().getCurentHp());
     if(!scene.isStarted()){
         if (scene.isWildPokemon()) {
             messagesToDisplay = [`Ho..! A wild ${scene.getOpponentActivePokemon().getName()} appears!`,

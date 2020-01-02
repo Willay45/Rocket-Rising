@@ -67,35 +67,25 @@ export default class Pokemon {
 
     setLevel(lvl) {
         this.curentXp = PokemonLvlsTable[lvl]; //faire récompense de level up
-        this.baseStats.attack.base = this.baseStats.attack.base +5;
-        this.baseStats.attack.current = this.baseStats.attack.current +5;
-        this.baseStats.defense.base = this.baseStats.defense.base +5;
-        this.baseStats.defense.current = this.baseStats.defense.current +5;
-        this.baseStats.speed.base = this.baseStats.speed.base +5;
-        this.baseStats.speed.current = this.baseStats.speed.current +5;
-        this.baseStats.specialAttack.base = this.baseStats.specialAttack.base +5;
-        this.baseStats.specialAttack.current = this.baseStats.specialAttack.current +5;
-        this.baseStats.specialDefense.base = this.baseStats.specialDefense.base +5;
-        this.baseStats.specialDefense.current = this.baseStats.specialDefense.current +5;
-        this.baseStats.hp.base = this.baseStats.hp.base +5;
-        this.baseStats.hp.current = this.baseStats.hp.current +5;
+
 
     }
 
     setStats(){
         for (let i = 4; i < this.getLevel(); i++){
             this.baseStats.attack.base = this.baseStats.attack.base +5;
-            this.baseStats.attack.current = this.baseStats.attack.current +5;
+            this.baseStats.attack.current = this.baseStats.attack.base;
             this.baseStats.defense.base = this.baseStats.defense.base +5;
-            this.baseStats.defense.current = this.baseStats.defense.current +5;
+            this.baseStats.defense.current = this.baseStats.defense.base;
             this.baseStats.speed.base = this.baseStats.speed.base +5;
-            this.baseStats.speed.current = this.baseStats.speed.current +5;
+            this.baseStats.speed.current = this.baseStats.speed.base;
             this.baseStats.specialAttack.base = this.baseStats.specialAttack.base +5;
-            this.baseStats.specialAttack.current = this.baseStats.specialAttack.current +5;
+            this.baseStats.specialAttack.current = this.baseStats.specialAttack.base;
             this.baseStats.specialDefense.base = this.baseStats.specialDefense.base +5;
-            this.baseStats.specialDefense.current = this.baseStats.specialDefense.current +5;
+            this.baseStats.specialDefense.current = this.baseStats.specialDefense.base;
             this.baseStats.hp.base = this.baseStats.hp.base +5;
-            this.baseStats.hp.current = this.baseStats.hp.current +5;
+            this.baseStats.hp.current = this.baseStats.hp.base;
+            this.setCurentHp(this.baseStats.hp.base);
         }
     }
 
@@ -112,7 +102,7 @@ export default class Pokemon {
         this.curentHp = this.curentHp - damages;
         if (this.curentHp <= 0 ){
             this.curentHp = 0;
-            this.statut = "KO"
+            this.statut = "KO";
         }
     }
 
