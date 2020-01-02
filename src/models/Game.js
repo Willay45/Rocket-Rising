@@ -22,8 +22,9 @@ class Game {
 
         const pokemon = await PokemonFactory.get(starterID,config.starterPokemonLvl);
         this.getPlayer().addPokemonToTeam(pokemon);
+        this.getPlayer().setLocalStorageTeam();
 
-        const ondineScene = await SceneFactory.get('ondine_battle')
+        const ondineScene = await SceneFactory.get('ondine_battle');
         this.setCurrentScene(ondineScene);
     }
 
