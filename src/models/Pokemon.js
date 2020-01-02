@@ -4,7 +4,7 @@ export default class Pokemon {
 
 
 
-    constructor(id, name, baseXp, types, baseStats, spells, description) {
+    constructor(id, name, baseXp, types, baseStats, spells, description, isCaptured) {
         this.name = name;
         this.id = id;
         this.baseXp = baseXp;
@@ -17,6 +17,7 @@ export default class Pokemon {
         this.spriteBackUrl = (`http://www.pokestadium.com/sprites/xy/back/${this.name}.gif`);
         this.spriteFrontUrl = (`http://www.pokestadium.com/sprites/xy/${this.name}.gif`);
         this.description = description;
+        this.isCaptured = false;
     }
 
     getId() {
@@ -49,6 +50,10 @@ export default class Pokemon {
 
     getCurentHp() {
         return this.curentHp;
+    }
+
+    setIsCaptured(captured){
+        this.isCaptured = captured;
     }
 
     setCurentHp(hp) {

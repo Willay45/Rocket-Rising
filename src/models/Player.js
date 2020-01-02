@@ -36,6 +36,7 @@ export default class Player {
         return this.wallet;
     }
 
+
     addPokemonToTeam(pokemon){
         this.pokemonTeam.push(pokemon);
     }
@@ -64,5 +65,27 @@ export default class Player {
 
     getHelloMessage() {
         return this.helloMessage;
+    }
+
+    usePokeball(getOpponentActivePokemon) {
+        if(getOpponentActivePokemon.getCurentHp() > (getOpponentActivePokemon.getBaseStats().hp .base/2)){
+            let randomNumber = getRandomInterval(1, 11);
+            if(randomNumber === 1){
+                getOpponentActivePokemon.setIsCaptured(true);
+                this.addPokemonToTeam(getOpponentActivePokemon.getName());
+            }
+        }else if (getOpponentActivePokemon.getCurentHp() > getOpponentActivePokemon.getBaseStats().hp .base/4 && getOpponentActivePokemon.getCurentHp() < getOpponentActivePokemon.getBaseStats().hp .base/2){
+            let randomNumber = getRandomInterval(1, 3);
+            if (randomNumber === 1){
+                getOpponentActivePokemon.setIsCaptured(true);
+                this.addPokemonToTeam(getOpponentActivePokemon.getName());
+            }
+        }else if (getOpponentActivePokemon.getCurentHp() < getOpponentActivePokemon.getBaseStats().hp .base/4){
+            let randomNumber = getRandomInterval(1, 2);
+            if(randomNumber === 0){
+                getOpponentActivePokemon.setIsCaptured(true);
+                this.addPokemonToTeam(getOpponentActivePokemon.getName());
+            }
+        }
     }
 }
