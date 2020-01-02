@@ -91,7 +91,7 @@ const UseItem = (props) => {
 
 
             <button onClick={injureAPokemon}>Hurt him</button>
-            <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to inventory</p></Link>
+            {itemUsed ? null : <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to inventory</p></Link>}
             {itemUsed ?
                 null
             : <div className="tipUseItem">

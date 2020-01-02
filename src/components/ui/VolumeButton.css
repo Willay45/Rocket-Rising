@@ -1,0 +1,13 @@
+.VolumeButton button {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    font-size: 1.4em;
+    background: #b3b3b3;
+    opacity: 0.5;
+    border: solid 1px #a2a2a2;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9;
+}

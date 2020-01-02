@@ -1,19 +1,25 @@
 import React, {useState, useEffect} from "react";
 import "./LandingPage.css";
 import {Link, Route, Switch} from "react-router-dom";
+import MusicService from "../tech/MusicService";
+import "./LandingPage.css";
 
 function LandingPage() {
     const [isExisting, setIsExisting] = useState(false);
 
     useEffect(() => {
+        MusicService.play("intro");
+
         newPlayer()
     }, []);
+
     const newPlayer = () => {
         let localSave = JSON.parse(localStorage.getItem('pokemonTeam'));
         if (localSave != null) {
             setIsExisting(true);
         }
     };
+
     return (
         <div>
             {
@@ -30,7 +36,7 @@ function LandingPage() {
                     </div>
                     :
                     <div className="homePage">
-                        <Link to="/starter-pokemon">
+                        <Link to="/tutorial">
                             <button className="playButton"> Play</button>
                         </Link>
                         <img className="principalTitle"
@@ -38,10 +44,8 @@ function LandingPage() {
                              alt="home page picture"/>
                     </div>
             }
-
         </div>
     )
 }
-
 
 export default LandingPage;
