@@ -47,8 +47,9 @@ const TestMaps = () => {
                 </div>
                 <div className="selectedMap">
                     {selectedMap.name ?
-                        <div className="mapBackgroundNav" style={{backgroundImage: `url(${selectedMap.img})`}}>
+                        <div className="mapBackgroundNav">
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
+                            <img className="mapSelected" src={selectedMap.img} alt="map"/>
                             <div className="typesAndLink">
                                 <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
                                     there:</p>

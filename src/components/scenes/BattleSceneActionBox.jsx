@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import "./BattleSceneActionBox.css"
+import {useHistory} from "react-router-dom";
 
 export default  ({game, doTurn}) => {
     const [status, setStatus] = useState( "actions");
-
+    const history = useHistory();
     const playerActivePokemonSpells = game.getCurrentScene().getPlayerActivePokemon().getSpells();
 
     const switchStatus = (newStatus) => () => {
@@ -16,8 +17,8 @@ export default  ({game, doTurn}) => {
             <div className="BattleSceneActionBox">
                 <div className="actionsDisplay">
                     <button className="buttonColum" onClick={switchStatus('fight')}>Fight</button>
-                    <button className="buttonColum2">Bag</button>
-                   <button className="buttonColum">Pokemon</button>
+                    <button className="buttonColum2" onClick={() => history.push("/inventory")}>Bag</button>
+                   <button className="buttonColum" onClick={() => history.push("/team-pokemon")}>Pokemon</button>
                    <button className="buttonColum2" disabled={!game.getCurrentScene().isWildPokemon()}>Run</button>
                 </div>
             </div>

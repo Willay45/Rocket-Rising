@@ -36,7 +36,7 @@ function LandingPage() {
                     </div>
                     :
                     <div className="homePage">
-                        <Link to="/choose-starter">
+                        <Link to="/tutorial">
                             <button className="playButton"> Play</button>
                         </Link>
                         <img className="principalTitle"
