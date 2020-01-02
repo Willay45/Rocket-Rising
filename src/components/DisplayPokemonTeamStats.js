@@ -97,10 +97,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                     </div>
                     <div className="movesStats">
                         <h4>MOVES LEARNED</h4>
-                        <p className="itemSpell">{pokemon.spells[0].name}</p>
-                        <p className="itemSpell">{pokemon.spells[1].name}</p>
-                        <p className="itemSpell">{pokemon.spells[2].name}</p>
-                        <p className="itemSpell">{pokemon.spells[3].name}</p>
+                        {pokemon.spells.map(spell => <p className="itemSpell">{spell.name} : {spell.type}</p>)}
                     </div>
                 </div>
             </div>
