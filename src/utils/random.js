@@ -17,3 +17,7 @@ export default (max) => {
     }
     return tirage
 };
+
+export const getRandomInterval = (min, max) => {
+    return Math.random() * (max - min) + min;
+};
