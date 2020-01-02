@@ -69,19 +69,19 @@ export default class Player {
 
     usePokeball(getOpponentActivePokemon) {
         if(getOpponentActivePokemon.getCurentHp() > (getOpponentActivePokemon.getBaseStats().hp .base/2)){
-            let randomNumber = 0;
+            let randomNumber = getRandomInterval(1, 11);
             if(randomNumber === 1){
                 getOpponentActivePokemon.setIsCaptured(true);
                 this.addPokemonToTeam(getOpponentActivePokemon.getName());
             }
         }else if (getOpponentActivePokemon.getCurentHp() > getOpponentActivePokemon.getBaseStats().hp .base/4 && getOpponentActivePokemon.getCurentHp() < getOpponentActivePokemon.getBaseStats().hp .base/2){
-            let randomNumber = 0;
+            let randomNumber = getRandomInterval(1, 3);
             if (randomNumber === 1){
                 getOpponentActivePokemon.setIsCaptured(true);
                 this.addPokemonToTeam(getOpponentActivePokemon.getName());
             }
         }else if (getOpponentActivePokemon.getCurentHp() < getOpponentActivePokemon.getBaseStats().hp .base/4){
-            let randomNumber = 0;
+            let randomNumber = getRandomInterval(1, 2);
             if(randomNumber === 0){
                 getOpponentActivePokemon.setIsCaptured(true);
                 this.addPokemonToTeam(getOpponentActivePokemon.getName());
