@@ -11,7 +11,6 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
     if(!scene.isStarted()){
         if (scene.isWildPokemon()) {
-            console.log(scene.getPlayerActivePokemon());
             messagesToDisplay = [`Ho..! A wild ${scene.getOpponentActivePokemon().getName()} appears!`,
                 `you send ${scene.getPlayerActivePokemon().getName()}`];
         } else {
