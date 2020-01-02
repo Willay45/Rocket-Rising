@@ -1,4 +1,3 @@
-
 export default class Player {
     constructor(name, pokemonTeam, helloMessage, winMessage, loseMessage, picture) {
         this.name = name ? name : "";
@@ -23,9 +22,19 @@ export default class Player {
         return this.inventory;
     }
 
+    getLocalInventory() {
+        let localInventory = JSON.parse(localStorage.getItem('playerInventory'));
+        return localInventory;
+    }
+
+    setLocalInventory() {
+        let stockInventory = this.getInventory();
+        localStorage.setItem('playerInventory', JSON.stringify(stockInventory));
+    }
+
     getName (){
         return this.name;
-    };
+    }
 
     getWallet() {
         return this.wallet;
@@ -33,7 +42,17 @@ export default class Player {
 
     addPokemonToTeam(pokemon){
         this.pokemonTeam.push(pokemon);
-    };
+    }
+
+    setLocalStorageTeam() {
+        let stockTeam = this.getPokemonTeam();
+        localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam));
+    }
+
+    getLocalTeam() {
+        let localTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
+        return localTeam;
+    }
 
     hasAlivePokemon(){
        return this.pokemonTeam.filter(pokemon=>pokemon.isAlive()).length > 0;

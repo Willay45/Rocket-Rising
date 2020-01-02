@@ -64,8 +64,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                 </div>
             </div>
             <div className="typesStats">
-                {pokemon.types ? <p>{pokemon.types[0].type.name.toUpperCase()}</p> : null}
-                {pokemon.types && pokemon.types[1] ? <p>{pokemon.types[1].type.name.toUpperCase()}</p> : null}
+                {pokemon.types ? <p>{pokemon.types[0].toUpperCase()}</p> : null}
+                {pokemon.types && pokemon.types[1] ? <p>{pokemon.types[1].toUpperCase()}</p> : null}
             </div>
 
             {/*Statistics of the selected pokemon*/}
@@ -76,14 +76,14 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                         <JsLifeBar pokemon={pokemon}/>
                         <div className="twoColumns">
                             <div className="leftStats">
-                                <p className="itemStats">Speed : {pokemon.base_Stats.speed.base}</p>
-                                <p className="itemStats">Special defense : {pokemon.base_Stats.specialDefense.base}</p>
-                                <p className="itemStats">Special attack : {pokemon.base_Stats.specialAttack.base}</p>
+                                <p className="itemStats">Speed : {pokemon.baseStats.speed.base}</p>
+                                <p className="itemStats">Special defense : {pokemon.baseStats.specialDefense.base}</p>
+                                <p className="itemStats">Special attack : {pokemon.baseStats.specialAttack.base}</p>
                             </div>
                             <div className="rightStats">
                                 <p className="itemStats">Defense : Actually undefined</p>
-                                <p className="itemStats">Attack : {pokemon.base_Stats.attack.base}</p>
-                                <p className="itemStats">HP : {pokemon.base_Stats.hp.base}</p>
+                                <p className="itemStats">Attack : {pokemon.baseStats.attack.base}</p>
+                                <p className="itemStats">HP : {pokemon.baseStats.hp.base}</p>
                             </div>
                         </div>
                     </div>
