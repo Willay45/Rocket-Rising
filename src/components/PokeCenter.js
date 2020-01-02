@@ -20,8 +20,7 @@ const PokeCenter = () => {
             if (currentLife < baseLife) {
                 element.baseStats.hp.current = baseLife;
                 alert("Your team has been successfully healed !");
-            }
-            else {
+            } else {
                 alert("Your team can not been saved right now")
             }
         });
@@ -32,11 +31,10 @@ const PokeCenter = () => {
 
     return (
         <div className="PokeCenterContainer">
-            {/*<Link to="/pokePC"><div className="pc"/></Link>*/}
             <div onClick={nurseHeal} className="joelle"/>
             <div className="tipsPokeCenter">
                 <div className="doubleTipsContainerPokeCenter">
-                    <p className="doubleTipsPokeCenter">Click on the nursery to heal your pokémon team !</p>
+                    <p className="doubleTipsPokeCenter">Click on the nurse to heal your pokémon team !</p>
                     <p className="doubleTipsPokeCenter">Or click on the PC to manage your pokémons</p>
                 </div>
                 <NavBar className="navBarPokeCenter"/>
