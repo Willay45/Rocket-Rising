@@ -22,12 +22,8 @@ export default class Player {
         return this.inventory;
     }
 
-    getLocalInventory() {
-        let localInventory = JSON.parse(localStorage.getItem('playerInventory'));
-        return localInventory;
-    }
-
-    setLocalInventory() {
+    setInventory(item) {
+        this.inventory.push(item);
         let stockInventory = this.getInventory();
         localStorage.setItem('playerInventory', JSON.stringify(stockInventory));
     }

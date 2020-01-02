@@ -6,6 +6,14 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
+    const getLvl = () => {
+        for (let level = 0; level < 100; level++) {
+            const expNeeded = Math.pow((level), 3);
+            if (pokemon.curentXp > expNeeded / 2 && pokemon.curentXp < expNeeded + (expNeeded / 2)) {
+                return level + 1;
+            }
+        }
+    };
 
     const addToFavorite = (index) => {
         pokemon.isFavorite = true;
@@ -60,7 +68,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                      alt={pokemon.name}/>
                 <div className="nameAndLvl">
                     <h1 className="statsName">{pokemon.name.toUpperCase()}</h1>
-                    <p>Lv.{pokemon.lvl}</p>
+                    <p>Lv.{getLvl()}</p>
                 </div>
             </div>
             <div className="typesStats">
@@ -81,7 +89,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                                 <p className="itemStats">Special attack : {pokemon.baseStats.specialAttack.base}</p>
                             </div>
                             <div className="rightStats">
-                                <p className="itemStats">Defense : Actually undefined</p>
+                                <p className="itemStats">Defense : {pokemon.baseStats.defense.base}</p>
                                 <p className="itemStats">Attack : {pokemon.baseStats.attack.base}</p>
                                 <p className="itemStats">HP : {pokemon.baseStats.hp.base}</p>
                             </div>
@@ -89,10 +97,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                     </div>
                     <div className="movesStats">
                         <h4>MOVES LEARNED</h4>
-                        <p className="itemSpell">Fire punch</p>
-                        <p className="itemSpell">Fly</p>
-                        <p className="itemSpell">Tunnel</p>
-                        <p className="itemSpell">Quenouille</p>
+                        {pokemon.spells.map(spell => <p className="itemSpell">{spell.name} : {spell.type}</p>)}
                     </div>
                 </div>
             </div>
