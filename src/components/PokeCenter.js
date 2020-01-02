@@ -8,7 +8,6 @@ const PokeCenter = () => {
 
     useEffect(() => {
         let stockTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
-        console.log(stockTeam);
         setPokemonTeam(stockTeam);
     }, []);
 
@@ -24,7 +23,6 @@ const PokeCenter = () => {
                 alert("Your team can not been saved right now")
             }
         });
-        console.log(stockTeam);
         setPokemonTeam(stockTeam);
         localStorage.setItem('pokemonTeam', JSON.stringify(pokemonTeam));
     };
