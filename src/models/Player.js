@@ -1,3 +1,5 @@
+import {getRandomInterval} from "../utils/random";
+
 export default class Player {
     constructor(name, pokemonTeam, helloMessage, winMessage, loseMessage, picture) {
         this.name = name ? name : "";
