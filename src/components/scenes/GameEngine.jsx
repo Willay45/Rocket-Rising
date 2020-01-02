@@ -8,6 +8,7 @@ import './GameEngine.css';
 import { useHistory } from 'react-router-dom';
 import WorldMapGameScene from "../../models/WorldMapGameScene";
 import NavMaps from "../NavMaps";
+import TestMaps from "../TestMaps";
 
 const GameEngine = () => {
     const history = useHistory();
@@ -25,7 +26,7 @@ const GameEngine = () => {
     if (currentScene instanceof  BattleGameScene) {
         sceneToRender = (<BattleSceneManager endTrigger={sceneEndTrigger} game={game}/>);
     }else if (currentScene instanceof WorldMapGameScene){
-        sceneToRender = (<NavMaps/>)
+        sceneToRender = (<TestMaps/>)
     }
 
     return(

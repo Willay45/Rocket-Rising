@@ -53,7 +53,7 @@ class PokemonFactory{
             PokemonFactoryDescriptionsData[id] || 'No-description'
         );
         pokemon.setLevel(lvl);
-
+        pokemon.setStats();
         return pokemon
     };
 }
