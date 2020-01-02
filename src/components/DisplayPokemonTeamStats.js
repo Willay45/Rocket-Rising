@@ -6,6 +6,14 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
+    const getLvl = () => {
+        for (let level = 0; level < 100; level++) {
+            const expNeeded = Math.pow((level), 3);
+            if (pokemon.curentXp > expNeeded / 2 && pokemon.curentXp < expNeeded + (expNeeded / 2)) {
+                return level + 1;
+            }
+        }
+    };
 
     const addToFavorite = (index) => {
         pokemon.isFavorite = true;
@@ -60,7 +68,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                      alt={pokemon.name}/>
                 <div className="nameAndLvl">
                     <h1 className="statsName">{pokemon.name.toUpperCase()}</h1>
-                    <p>Lv.{pokemon.lvl}</p>
+                    <p>Lv.{getLvl()}</p>
                 </div>
             </div>
             <div className="typesStats">
@@ -89,10 +97,10 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                     </div>
                     <div className="movesStats">
                         <h4>MOVES LEARNED</h4>
-                        <p className="itemSpell">Fire punch</p>
-                        <p className="itemSpell">Fly</p>
-                        <p className="itemSpell">Tunnel</p>
-                        <p className="itemSpell">Quenouille</p>
+                        <p className="itemSpell">{pokemon.spells[0].name}</p>
+                        <p className="itemSpell">{pokemon.spells[1].name}</p>
+                        <p className="itemSpell">{pokemon.spells[2].name}</p>
+                        <p className="itemSpell">{pokemon.spells[3].name}</p>
                     </div>
                 </div>
             </div>
