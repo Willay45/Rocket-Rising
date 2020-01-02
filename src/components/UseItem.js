@@ -21,7 +21,7 @@ const UseItem = (props) => {
     const injureAPokemon = () => {
         let damage = "10";
         let stockTeam = pokemonTeam;
-        stockTeam[0].base_Stats.hp.current = stockTeam[0].base_Stats.hp.current - damage;
+        stockTeam[0].baseStats.hp.current = stockTeam[0].baseStats.hp.current - damage;
         localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam))
     };
 
@@ -39,8 +39,8 @@ const UseItem = (props) => {
                                      let i = 0;
                                      let stockTeam = pokemonTeam;
                                      let localInventory = playerInventory;
-                                     let currentLife = pokemon.base_Stats.hp.current;
-                                     let baseLife = pokemon.base_Stats.hp.base;
+                                     let currentLife = pokemon.baseStats.hp.current;
+                                     let baseLife = pokemon.baseStats.hp.base;
                                      if (currentLife < baseLife) {
                                          while (currentLife < baseLife && i < selectedItem.power) {
                                              currentLife = currentLife + 1;
@@ -48,7 +48,7 @@ const UseItem = (props) => {
                                          }
                                          stockTeam.map((element) => {
                                              if (element === pokemon) {
-                                                 element.base_Stats.hp.current = currentLife;
+                                                 element.baseStats.hp.current = currentLife;
                                                  setPokemonTeam(stockTeam);
                                              }
                                          });
@@ -91,7 +91,7 @@ const UseItem = (props) => {
 
 
             <button onClick={injureAPokemon}>Hurt him</button>
-            <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to inventory</p></Link>
+            {itemUsed ? null : <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to inventory</p></Link>}
             {itemUsed ?
                 null
             : <div className="tipUseItem">
