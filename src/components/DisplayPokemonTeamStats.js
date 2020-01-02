@@ -81,7 +81,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                                 <p className="itemStats">Special attack : {pokemon.baseStats.specialAttack.base}</p>
                             </div>
                             <div className="rightStats">
-                                <p className="itemStats">Defense : Actually undefined</p>
+                                <p className="itemStats">Defense : {pokemon.baseStats.defense.base}</p>
                                 <p className="itemStats">Attack : {pokemon.baseStats.attack.base}</p>
                                 <p className="itemStats">HP : {pokemon.baseStats.hp.base}</p>
                             </div>
