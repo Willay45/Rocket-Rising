@@ -68,6 +68,23 @@ export default class Pokemon {
         }
     }
 
+    takeDamages(damages){
+        this.curentHp = this.curentHp - damages;
+        if (this.curentHp <= 0 ){
+            this.curentHp = 0;
+            this.statut = "KO"
+        }
+    }
+
+    attackPokemon(target, attackName){
+        const attack = this.getSpells().find(element => element.getName() === attackName);
+        let damages = ((((this.getLevel() * 0.4 + 2) * this.baseStats.attack.current * attack.getPower()) / (target.baseStats.defense.current * 50) + 2));
+        damages = Math.floor(damages);
+        target.takeDamages(damages);
+        return { damages, heal: 0 };
+    }
+
+
     getSpriteBackUrl(){
         return this.spriteBackUrl;
     }
@@ -91,5 +108,11 @@ export default class Pokemon {
 
     isAlive(){
         return this.getCurentHp() > 0;
+    }
+
+    gainXp(opponentPokemon) {
+        const xpGains = 10;
+        this.curentXp += xpGains;
+        return xpGains;
     }
 }

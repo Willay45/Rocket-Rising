@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./LandingPage.css";
 import {Link, Route, Switch} from "react-router-dom";
 import MusicService from "../tech/MusicService";
+import "./LandingPage.css";
 
 function LandingPage() {
     const [isExisting, setIsExisting] = useState(false);

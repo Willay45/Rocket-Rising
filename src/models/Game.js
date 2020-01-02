@@ -1,10 +1,12 @@
 import Player from "./Player";
 import PokemonFactory from "../factories/PokemonFactory";
 import config from "../config";
+import SceneFactory from "../factories/SceneFactory";
 
 class Game {
     constructor() {
         this.currentScene = undefined;
+        this.previousScene = undefined;
         this.player = new Player("", []);
     }
 
@@ -20,13 +22,27 @@ class Game {
 
         const pokemon = await PokemonFactory.get(starterID,config.starterPokemonLvl);
         this.getPlayer().addPokemonToTeam(pokemon);
+
+        const ondineScene = await SceneFactory.get('ondine_battle')
+        this.setCurrentScene(ondineScene);
     }
 
     getCurrentScene() {
         return this.currentScene;
     }
+
+    getPreviousScene() {
+        return this.previousScene;
+    }
+
     setCurrentScene(scene) {
         this.currentScene = scene;
+    }
+
+    backToPreviousScene() {
+        const currScene = this.currentScene;
+        this.currentScene = this.previousScene;
+        this.previousScene = currScene;
     }
 
     getPlayer() {

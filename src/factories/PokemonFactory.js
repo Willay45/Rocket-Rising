@@ -18,7 +18,6 @@ class PokemonFactory{
             .map(move => move.move.name)
             .map(moveName => AttackFactory.get(moveName)));
         const finalPokemonSpells = shuffle(pokemonSpells.filter(move => move.power > 0)).slice(0, 4);
-
         const pokemon = new Pokemon(
             pokemonJson.id,
             pokemonJson.name,
