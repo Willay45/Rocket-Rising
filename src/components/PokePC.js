@@ -9,14 +9,11 @@ const PokePC = () => {
     const [pokemonPC, setPokemonPC] = useState(null);
 
     useEffect(() => {
-        let stockPC = JSON.parse(localStorage.getItem('pokemonTeam'));
-        setPokemonPC(stockPC);
-    }, []);
-
-    useEffect(() => {
         let stockTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
         setPokemonTeam(stockTeam);
         console.log(stockTeam);
+        let stockPc = JSON.parse(localStorage.getItem('playerPC'));
+        setPokemonPC(stockPc);
     }, []);
 
 
@@ -26,19 +23,35 @@ const PokePC = () => {
             <div>
                 <h1 className="computerTitle">Personal computer</h1>
             </div>
-            <div>
-                {
-                    pokemonTeam ?
-                        pokemonTeam.map((element) => {
-                            return (
-                                <div>
-                                    <PokemonCard pokemon={element}/>
-                                </div>
-                            )
-                        })
-                        :
-                        null
-                }
+            <div className="pcInterface">
+                <div className="leftColumnPC">
+                    {
+                        pokemonTeam ?
+                            pokemonTeam.map((element) => {
+                                return (
+                                    <div>
+                                        <PokemonCard pokemon={element}/>
+                                    </div>
+                                )
+                            })
+                            :
+                            null
+                    }
+                </div>
+                <div className="rightColumnPC">
+                    {
+                        pokemonPC ?
+                            pokemonPC.map((element) => {
+                                return(
+                                    <div>
+                                        <PokemonCard pokemon={element}/>
+                                    </div>
+                                )
+                            })
+                            :
+                            null
+                    }
+                </div>
             </div>
             <Link className="linkToPokeCenter" to="/pokeCenter"><p className="exitButton">Exit</p></Link>
         </div>
