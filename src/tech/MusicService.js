@@ -6,7 +6,8 @@ const musics = {
     'tutorial': 'http://23.237.126.42/ost/pokemon-original-game-soundtrack/wpujuzto/103%20-%20professor%20oak.mp3',
     'victoryVsTrainer': 'http://23.237.126.42/ost/pokemon-original-game-soundtrack/qxjdgirm/116%20-%20victory%20%28vs%20trainer%29.mp3',
     'victoryVsPokemon': 'http://23.237.126.42/ost/pokemon-original-game-soundtrack/acsnqdjp/108%20-%20victory%20%28vs%20wild%20pokemon%29.mp3',
-
+    'healPokemonCenter' : 'http://23.237.126.42/ost/pokemon-original-game-soundtrack/faayhybd/111%20-%20pokemon%20recovery.mp3',
+    'pokemonCenterMusic' : 'http://23.237.126.42/ost/pokemon-original-game-soundtrack/covgwqib/110%20-%20pokemon%20center.mp3'
 };
 
 let audioPlayer = new Audio();

@@ -18,6 +18,15 @@
     width: 100%;
 }
 
+.messagePokeCenter {
+    width: 99%;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    background-color: white;
+    border: solid 2px black;
+}
+
 .joelle {
     display: flex;
     height: 100px;
@@ -42,6 +51,19 @@
 
 .doubleTipsContainerPokeCenter {
     border: solid 2px black;
+}
+
+.okButtonPokeCenter {
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 15px 25px;
+    position: absolute;
+    left: 40%;
+    top: 65%;
+}
+.okButtonPokeCenter:active {
+    transform: scale(2);
 }
 
 .doubleTipsPokeCenter {

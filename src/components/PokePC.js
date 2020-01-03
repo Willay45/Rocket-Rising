@@ -11,7 +11,6 @@ const PokePC = () => {
     useEffect(() => {
         let stockTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
         setPokemonTeam(stockTeam);
-        console.log(stockTeam);
         let stockPc = JSON.parse(localStorage.getItem('playerPC'));
         setPokemonPC(stockPc);
     }, []);
