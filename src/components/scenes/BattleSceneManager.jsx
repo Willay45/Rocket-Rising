@@ -8,7 +8,6 @@ import GameSceneBattlefield from "./GameSceneBattlefield";
 const BattleSceneManager = ({ game, endTrigger}) => {
     const scene = game.getCurrentScene();
     let messagesToDisplay = [];
-console.log(scene.getPlayerActivePokemon().getCurentHp());
     if(!scene.isStarted()){
         if (scene.isWildPokemon()) {
             messagesToDisplay = [`Ho..! A wild ${scene.getOpponentActivePokemon().getName()} appears!`,
@@ -52,20 +51,27 @@ console.log(scene.getPlayerActivePokemon().getCurentHp());
 
         if(scene.isOver()){
             MusicService.play(scene.getMusic());
+            if (!scene.isWildPokemon()){
+                if(game.getPlayer().hasAlivePokemon()){
+                    if (scene.getOpponent().getLoseMessage()) {
+                        messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getLoseMessage()}`);
+                    }
+                } else {
+                    messages.push("You have no healthy pokemon left. You lose");
+                    if (scene.getOpponent().getWinMessage()) {
+                        messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getWinMessage()}`);
 
-            if(game.getPlayer().hasAlivePokemon()){
-                if (scene.getOpponent().getLoseMessage()) {
-                    messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getLoseMessage()}`);
+                    }
                 }
-            } else {
-                messages.push("You have no healthy pokemon left. You lose");
-                if (scene.getOpponent().getWinMessage()) {
-                    messages.push(`${scene.getOpponent().getName()} : ${scene.getOpponent().getWinMessage()}`);
-
+                setDiscussionWithPnj(true);
+            }else {
+                if(game.getPlayer().hasAlivePokemon()){
+                        messages.push(`You won against ${scene.getOpponent().getName()}`);
+                } else {
+                    messages.push("You have no healthy pokemon left. You lose!!");
+                    }
                 }
             }
-            setDiscussionWithPnj(true);
-        }
 
         setMessages(messages);
     };
@@ -87,12 +93,13 @@ console.log(scene.getPlayerActivePokemon().getCurentHp());
 
     return(
         <div className="BattleSceneManager">
-
             <GameSceneBattlefield
                 opponentActivePokemon={opponentActivePokemon}
                 playerActivePokemon={playerActivePokemon}
                 scene={scene}
                 discussion={discussionWithPnj}/>
+
+
 
             <div className="actionBox">
                 {boxComponent}

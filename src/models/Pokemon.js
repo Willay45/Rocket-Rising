@@ -141,7 +141,7 @@ export default class Pokemon {
     }
 
     gainXp(opponentPokemon) {
-        const xpGains = 10;
+        const xpGains = Math.pow(this.getLevel(), 3);
         this.curentXp += xpGains;
         return xpGains;
     }
