@@ -1,0 +1,43 @@
+.pcContainer {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.computerTitle {
+    margin: 0;
+    text-align: center;
+}
+
+.pcInterface {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftColumnPC {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightColumnPC {
+    display: flex;
+    flex-direction: column;
+}
+
+.exitButton {
+    margin: 0;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    background-color: red;
+}
+
+.linkToPokeCenter {
+    text-decoration: none;
+    color: white;
+}

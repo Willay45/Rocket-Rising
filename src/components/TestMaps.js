@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 
 const TestMaps = () => {
-    let mapsName = ["abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
+    let mapsName = ["pokecenter", "shop", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
 
     const [currentMap, setCurrentMap] = useState(0);
     const [currentMapName, setCurrentMapName] = useState(mapsName[currentMap]);
@@ -49,20 +49,23 @@ const TestMaps = () => {
                     {selectedMap.name ?
                         <div className="mapBackgroundNav">
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
-                            <img className="mapSelected" src={selectedMap.img} alt="map"/>
-                            <div className="typesAndLink">
-                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
-                                    there:</p>
-                                <div className="allTheTypes">
-                                    {selectedMap.types ?
-                                        selectedMap.types.map((element) => {
-                                                return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
-                                            }
-                                        )
-                                        : null}
+                            <img className="mapSelected" src={selectedMap.img} alt="map image"/>
+                            {selectedMap.types ?
+                                <div className="typesAndLink">
+                                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of
+                                        pokemon you can find
+                                        there:</p>
+                                    <div className="allTheTypes">
+                                        {selectedMap.types ?
+                                            selectedMap.types.map((element) => {
+                                                    return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
+                                                }
+                                            )
+                                            : null}
+                                    </div>
                                 </div>
-                            </div>
-                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go to: {currentMapName}</Link>
+                                : null}
+                            <Link className="linkToMap" to={selectedMap.pathname}>Go to: {currentMapName.toUpperCase()}</Link>
                         </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }
@@ -72,7 +75,7 @@ const TestMaps = () => {
                     onClick={increase}
                 >
                     <img alt="right direction arrow"
-                        className="rightArrow"
+                         className="rightArrow"
                          src="https://image.noelshack.com/fichiers/2019/52/4/1577375125-pngkit-arrow-pointing-down-png-508417.png"
                     />
                 </div>

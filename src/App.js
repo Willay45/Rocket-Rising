@@ -12,6 +12,8 @@ import TutorialEnd from "./components/TutorialEnd";
 import Inventory from "./components/Inventory";
 import TestMaps from "./components/TestMaps";
 import UseItem from "./components/UseItem";
+import PokeCenter from "./components/PokeCenter";
+import PokePC from "./components/PokePC";
 import TutorialSceneManager from "./components/scenes/TutorialSceneManager";
 
 function App() {
@@ -30,7 +32,8 @@ function App() {
                 <Route path="/inventory" component={Inventory}/>
                 <Route path="/testMap" component={TestMaps}/>
                 <Route path="/use-item" component={UseItem}/>
-                <Route path="/team-pokemon" component={TeamPokemon}/>
+                <Route path="/pokeCenter" component={PokeCenter}/>
+                <Route path="/pokePC" component={PokePC}/>
             </Switch>
         </div>
     );
