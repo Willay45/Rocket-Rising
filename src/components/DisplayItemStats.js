@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import "./DisplayItemStats.css";
 
 const DisplayItemStats = (index, item) => {
-
     const [useIt, setUseIt] = useState(false);
     const [selectedItem, setSelectedItem] = useState(index.item);
+
     return (
         <div className="itemStats">
             {
@@ -14,7 +14,7 @@ const DisplayItemStats = (index, item) => {
                         Empty inventory :c
                     </div>
                     :
-                    <div>
+                    <div className="itemAndDescriptionItemStats">
                         <h1>{index.item.name}</h1>
                         <p>{index.item.description}</p>
                     </div>

@@ -5,6 +5,7 @@ import DisplayPokemonTeamStats from './DisplayPokemonTeamStats';
 import PokemonCard from './PokemonCard';
 import NavBar from "./NavBar";
 import randomNumber from "../services/RandomNumber";
+import PokemonFactory from "../factories/PokemonFactory";
 
 
 const TeamPokemon = () => {
@@ -12,6 +13,7 @@ const TeamPokemon = () => {
     const [statsRequired, setStatsRequired] = useState(false);
     const [pokemonStat, setPokemonStat] = useState({});
     const [indexSelected, setIndexSelected] = useState(null);
+    const [newPokemon, setNewPokemon] = useState(null);
 
     useEffect(() => {
         const localTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
@@ -26,19 +28,19 @@ const TeamPokemon = () => {
     };
 
     const closeStats = () => {
-        console.log("hello");
         setStatsRequired(false);
     };
 
-    const addPokemonToTeam = () => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber(0, 250)}`)
-            .then(response => response.data)
-            .then(data => {
-                const copyTeam = pokemonTeam;
-                const randomPokemon = [data];
-                copyTeam.push(...randomPokemon);
-                localStorage.setItem('randomPokemon', JSON.stringify(pokemonTeam));
-            });
+    const addRandomPokemonToTeam = () => {
+        PokemonFactory.get(randomNumber(1,255), 10).then(data => {
+            console.log(data);
+            setNewPokemon(data);
+            let theTeam = pokemonTeam;
+            theTeam.push(data);
+            console.log(theTeam);
+            setPokemonTeam(theTeam);
+            localStorage.setItem('pokemonTeam', JSON.stringify(theTeam));
+        });
     };
 
     return (

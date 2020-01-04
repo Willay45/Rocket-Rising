@@ -10,11 +10,12 @@
     bottom: 0;
 }
 
-.closeWindowIcon {
+.closeWindowIconDisplayPokemon {
     border-radius: 15px;
     background-color: red;
     width: 30px;
     height: 30px;
+    margin: 10px;
 }
 
 @keyframes fade-in {

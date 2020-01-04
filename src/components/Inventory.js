@@ -27,6 +27,11 @@ function Inventory() {
         setIndexSelected(index)
     };
 
+    const closeInfo = () => {
+        console.log("hello");
+        setMoreInfo(false);
+    };
+
     const addPokeball = () => {
         if (localPlayerInventory) {
             let stockArray = localPlayerInventory;
@@ -83,10 +88,13 @@ function Inventory() {
                         }
                     </div>
                     {moreInfo ?
-                        <DisplayItemStats
-                            index={indexSelected}
-                            item={itemSelected}
-                        />
+                        <div className="itemInfo">
+                            <img onClick={closeInfo} className="closeWindowIcon" src="https://image.noelshack.com/fichiers/2020/01/6/1578154650-kisspng-computer-icons-window-button-actions-window-close-icon-5ab0da45ddb522-1926493715215396539081.png" alt="close window icon"/>
+                            <DisplayItemStats
+                                index={indexSelected}
+                                item={itemSelected}
+                            />
+                        </div>
                         : null
                     }
                 </div>

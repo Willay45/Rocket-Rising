@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './DisplayPokemonTeamStats.js.css';
 import JsLifeBar from './JsLifeBar';
 
-const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, setStatsRequired, closeStats}) => {
+const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, closeStats}) => {
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
@@ -13,10 +13,6 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, s
                 return level + 1;
             }
         }
-    };
-
-    const closeStatsWindow = () => {
-        setStatsRequired(false);
     };
 
     const addToFavorite = (index) => {
@@ -40,6 +36,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, s
         team.splice(0, 1);
         const pokemonTeamNow = [stock, ...team];
         setTeamPokemon(pokemonTeamNow);
+        localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTeamNow));
+
     };
 
     return (
@@ -73,8 +71,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, s
                 <div className="nameAndLvl">
                     <h1 className="statsName">{pokemon.name.toUpperCase()}</h1>
                     <p>Lv.{getLvl()}</p>
+                    <img onClick={closeStats} className="closeWindowIconDisplayPokemon" src="https://image.noelshack.com/fichiers/2020/01/6/1578154650-kisspng-computer-icons-window-button-actions-window-close-icon-5ab0da45ddb522-1926493715215396539081.png" alt="close window icon"/>
                 </div>
-                <img onClick={closeStats} className="closeWindowIcon" src="https://image.noelshack.com/fichiers/2020/01/6/1578154650-kisspng-computer-icons-window-button-actions-window-close-icon-5ab0da45ddb522-1926493715215396539081.png" alt="close window icon"/>
             </div>
             <div className="typesStats">
                 {pokemon.types ? <p>{pokemon.types[0].toUpperCase()}</p> : null}

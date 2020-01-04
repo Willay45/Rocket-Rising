@@ -7,15 +7,29 @@
     height: 100vh;
 }
 
+.pokemonTeamContainerUseItem {
+    display: flex;
+    margin: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 40%;
+}
+
 .pageTitleUseItem {
     display: flex;
     justify-content: center;
     background-color: rgba(0,0,0,0.6);
     color: white;
 }
+
+.pokemonCardContainerUseItem {
+    height: 100px;
+}
+
 .pokemonCaseUseItem {
     background-color: grey;
 }
+
 .tipUseItem {
     border: solid 2px black;
     background-color: white;
@@ -40,7 +54,13 @@
     border-bottom-left-radius: 35px;
     border-top-left-radius: 35px;
     height: 100px;
-    width: 170px;
+    width: 190px;
+}
+
+.pokemonCardImageUseItem {
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 50%;
 }
 
 .afterUseItem {
