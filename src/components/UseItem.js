@@ -21,7 +21,7 @@ const UseItem = (props) => {
     const injureAPokemon = () => {
         let damage = "10";
         let stockTeam = pokemonTeam;
-        stockTeam[0].baseStats.hp.current = stockTeam[0].baseStats.hp.current - damage;
+        stockTeam[0].curentHp = stockTeam[0].curentHp - damage;
         localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam))
     };
 

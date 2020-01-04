@@ -7,6 +7,7 @@ import MusicService from "../tech/MusicService";
 const PokeCenter = () => {
     const [pokemonTeam, setPokemonTeam] = useState(null);
     const [needHeal, setNeedHeal] = useState(null);
+    const [timeOutMessage, setTimeOutMessage] = useState(true);
 
     useEffect(() => {
         let stockTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
@@ -17,20 +18,23 @@ const PokeCenter = () => {
     const nurseHeal = () => {
         let stockTeam = pokemonTeam;
         stockTeam.map((element) => {
-            let currentLife = element.curentHp;
+            let currentLife = element.baseStats.hp.current;
             let baseLife = element.baseStats.hp.base;
-            if (currentLife < baseLife) {
+            if (currentLife < baseLife || element.curentHp < baseLife) {
                 MusicService.play('healPokemonCenter');
+                setNeedHeal(true);
                 setTimeout(() => {
-                    setNeedHeal(true);
                     element.baseStats.hp.current = baseLife;
+                    element.curentHp = baseLife;
+                    setTimeOutMessage(false);
+                    setPokemonTeam(stockTeam);
+                    localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam));
                 }, 3000);
+                setPokemonTeam(stockTeam);
             } else {
                 setNeedHeal(false);
             }
         });
-        setPokemonTeam(stockTeam);
-        localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam));
     };
 
     return (
@@ -40,22 +44,28 @@ const PokeCenter = () => {
                 needHeal === true &&
                 <div className="messagePokeCenter">
                     <h1>Nurse Joelle:</h1>
-                    <p>Give me your Pokémons and I will heal them !</p>
+                    {
+                        timeOutMessage ?
+                            <p>Give me your Pokémons and I will heal them !</p>
+                            :
+                            <div>
+                                <p>Your Pokémon team has been successfully healed !</p>
+                                <button className="okButtonPokeCenter" onClick={() => {
+                                    setNeedHeal(null)
+                                }}>OK</button>
+                            </div>
+                    }
                 </div>
             }
             {
                 needHeal === false &&
                 <div className="messagePokeCenter">
-                    <h1>Nurse Joelle:</h1>
+                    <h1>Joelle:</h1>
                     <p>Your Pokémons are in good health! Come back if you injure them</p>
-                </div>
-            }
-            {
-                needHeal === true || needHeal === false ?
                     <button className="okButtonPokeCenter" onClick={() => {
                         setNeedHeal(null)
                     }}>OK</button>
-                    : null
+                </div>
             }
             <div className="tipsPokeCenter">
                 {
