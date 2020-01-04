@@ -10,6 +10,7 @@ const UseItem = (props) => {
     const [playerInventory, setPlayerInventory] = useState(null);
     const [selectedPokemon, setSelectedPokemon] = useState(null);
 
+
     useEffect(() => {
         let localTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
         setPokemonTeam(localTeam);
