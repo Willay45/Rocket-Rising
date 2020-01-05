@@ -9,14 +9,6 @@
       "pathname": "/pokeCenter"
     },
     {
-      "id": "shop",
-      "number": 2,
-      "name": "Shop",
-      "className": "mapRenderShop",
-      "img": "",
-      "pathname": "/shop"
-    },
-    {
       "id": "abandoned",
       "number": 3,
       "name": "Abandoned Castle",

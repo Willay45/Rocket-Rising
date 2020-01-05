@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 
 const TestMaps = () => {
-    let mapsName = ["pokecenter", "shop", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
+    let mapsName = ["pokecenter", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
 
     const [currentMap, setCurrentMap] = useState(0);
     const [currentMapName, setCurrentMapName] = useState(mapsName[currentMap]);
