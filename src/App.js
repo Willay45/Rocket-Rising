@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import {Route, Switch} from 'react-router-dom';
-import NavMaps from "./components/NavMaps";
 import MapRender from "./components/MapRender";
 import LandingPage from "./components/LandingPage";
 import TeamPokemon from "./components/TeamPokemon";
@@ -13,6 +12,7 @@ import Inventory from "./components/Inventory";
 import TestMaps from "./components/TestMaps";
 import UseItem from "./components/UseItem";
 import TutorialSceneManager from "./components/scenes/TutorialSceneManager";
+import BattleTeamPokemon from "./components/BattleTeamPokemon";
 
 function App() {
     return (
@@ -31,6 +31,7 @@ function App() {
                 <Route path="/testMap" component={TestMaps}/>
                 <Route path="/use-item" component={UseItem}/>
                 <Route path="/team-pokemon" component={TeamPokemon}/>
+                <Route path="/battle-team-pokemon" component={BattleTeamPokemon}/>
             </Switch>
         </div>
     );

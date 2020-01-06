@@ -1,11 +1,15 @@
 import React, {useState} from "react";
 import "./BattleSceneActionBox.css"
 import {useHistory} from "react-router-dom";
+import BattleTeamPokemon from "../BattleTeamPokemon";
 
 export default  ({game, doTurn}) => {
     const [status, setStatus] = useState( "actions");
     const history = useHistory();
     const playerActivePokemonSpells = game.getCurrentScene().getPlayerActivePokemon().getSpells();
+
+
+
 
     const switchStatus = (newStatus) => () => {
         setTimeout(() => setStatus(newStatus),150);
@@ -18,8 +22,8 @@ export default  ({game, doTurn}) => {
                 <div className="actionsDisplay">
                     <button className="buttonColum" onClick={switchStatus('fight')}>Fight</button>
                     <button className="buttonColum2" onClick={() => history.push("/inventory")}>Bag</button>
-                   <button className="buttonColum" onClick={() => history.push("/team-pokemon")}>Pokemon</button>
-                   <button className="buttonColum2" disabled={!game.getCurrentScene().isWildPokemon()}>Run</button>
+                   <button className="buttonColum" onClick={switchStatus('team-pokemon')}>Pokemon</button>
+                   <button className="buttonColum2" disabled={!game.getCurrentScene().isWildPokemon()} onClick={() => history.push("/map")}>Run</button>
                 </div>
             </div>
         )
@@ -37,6 +41,11 @@ export default  ({game, doTurn}) => {
                     <button className="back" onClick={switchStatus("actions")}>Back</button>
                 </div>
             </div>
+        )
+    } else if (status === "team-pokemon"){
+        return (
+            <BattleTeamPokemon/>
+
         )
     }
 

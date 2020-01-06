@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./GameSceneBattlefield.css";
 
 
 const GameSceneBattlefield = ({scene, opponentActivePokemon, playerActivePokemon, discussion}) => {
+
+
+
 
 
     const playerPokemonSpriteBack = playerActivePokemon.getSpriteBackUrl();
