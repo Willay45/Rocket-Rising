@@ -59,7 +59,9 @@ function Inventory() {
     return (
         <div className="mainContainerInventory">
             <div className="containerInventory">
-                <div className="inventoryTitle"/>
+                <div className="inventoryTitle">
+                    <h1>Inventory</h1>
+                </div>
 
                 <div className="bigContainerInventory">
                     <div className="inventoryRenderContainer">

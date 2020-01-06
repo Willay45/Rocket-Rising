@@ -1,13 +1,15 @@
 .teamPokemonRender {
     background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
-    background-size: 400%;
+    background-size: 200%;
     background-position: top;
     background-repeat: no-repeat;
+    background-color: black;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .teamPokemonContainer {
@@ -22,22 +24,22 @@
 .supportPokemonCard {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .pokemonTeamTitleContainer {
-    background-image: url("https://fontmeme.com/permalink/191226/b064f9181b64d925ed360d43f24d54af.png");
+
     height: 28vh;
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: rgba(0,0,0,0.8);
-    color: white;
 }
 
-.pokemonTeamTitle {
+.h1 {
 
+    color: white;
 }
 
 .pokemonCase {
@@ -48,7 +50,6 @@
     width: 170px;
     height: 100px;
 }
-
 
 
 .twoFirst {
@@ -70,6 +71,7 @@
     background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
     height: 15vh;
 }
+
 .twoThird {
     display: flex;
     width: 100%;
@@ -93,6 +95,7 @@
 .navMenuFake {
     display: flex;
 }
+
 .menuItem {
     width: 100px;
 }

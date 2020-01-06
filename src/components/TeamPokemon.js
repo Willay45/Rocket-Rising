@@ -38,6 +38,7 @@ const TeamPokemon = () => {
 
     return (
         <div className="teamPokemonRender">
+            <h1>Team Pokemon</h1>
             <div className="pokemonTeamTitleContainer"/>
             {/*The 6 pokémons*/}
             <div className="teamPokemonContainer">

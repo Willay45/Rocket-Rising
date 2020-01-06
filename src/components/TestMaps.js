@@ -34,8 +34,7 @@ const TestMaps = () => {
 
     return (
         <div className="mapsContainer">
-            <img className="navigationTitleImage"
-                 src="https://fontmeme.com/permalink/191226/64dc75d51622372524761ffb2576dd23.png"/>
+            <h1>Destination</h1>
             <div className="navigationContainer">
                 <div
                     className="navDiv"
@@ -51,7 +50,7 @@ const TestMaps = () => {
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
                             <img className="mapSelected" src={selectedMap.img} alt="map"/>
                             <div className="typesAndLink">
-                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of pokemon you can find
+                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type you can find
                                     there:</p>
                                 <div className="allTheTypes">
                                     {selectedMap.types ?
@@ -62,7 +61,7 @@ const TestMaps = () => {
                                         : null}
                                 </div>
                             </div>
-                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go to: {currentMapName}</Link>
+                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go !</Link>
                         </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }
