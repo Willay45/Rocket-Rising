@@ -19,11 +19,7 @@ export default function Presentation() {
       `……………
        ………………………………………………………`,
       `Well… Choose one among this three of them :`,
-      `(Starter choice screen)`,
-      `Good. Come back with the Poliwag when it's done.`,
       `Good luck, and don't get caught by Looker or another policeman.`,
-      `(Click here to open the map and go to the beach)`,
-      `Well done, you have fulfill your mission has expected.`,
       `Now, go outside, and be sure than the Team Rocket is feared by everyone !`,
       `If you need something, come back here to buy some objects for your stuff.`];
       
