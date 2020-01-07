@@ -17,11 +17,11 @@ const [display, setDisplay] = useState("description");
     }else if(display === "stats"){
         component = ( <div>
             <p>Speed : {pokemon.baseStats.speed.base}</p>
-            <p>Special-defense : {pokemon.baseStats.specialDefense.base}</p>
-            <p>Special-attack : {pokemon.baseStats.specialAttack.base}</p>
-            <p>Defence : {pokemon.baseStats.defense.base}</p>
-            <p>Attack : {pokemon.baseStats.attack.base}</p>
-            <p>Health : {pokemon.baseStats.hp.base}</p>
+            <p>Special-defense : {pokemon.baseStats.specialDefense.current} / {pokemon.baseStats.specialDefense.base}</p>
+            <p>Special-attack : {pokemon.baseStats.specialAttack.current} / {pokemon.baseStats.specialAttack.base}</p>
+            <p>Defence : {pokemon.baseStats.defense.current} / {pokemon.baseStats.defense.base}</p>
+            <p>Attack : {pokemon.baseStats.attack.current} / {pokemon.baseStats.attack.base}</p>
+            <p>Health : {pokemon.baseStats.hp.current} / {pokemon.baseStats.hp.base}</p>
             <button className="choose" onClick={chooseAction}>Choose</button>
             <button className="description" onClick={() => {
                 setDisplay("description");

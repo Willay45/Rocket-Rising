@@ -7,18 +7,26 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: white;
 }
 
+.pokemonTeam-title {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    color: lightblue;
+}
+
 .teamPokemonContainer {
     width: 100%;
-    height: 800px;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: start;
+    align-items: flex-start;
+    position: relative;
 }
 
 .supportPokemonCard {
@@ -28,7 +36,6 @@
 }
 
 .pokemonTeamTitleContainer {
-
     height: 28vh;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -38,7 +45,6 @@
 }
 
 .h1 {
-
     color: white;
 }
 
@@ -47,10 +53,12 @@
     border: solid #636e72 5px;
     border-bottom-left-radius: 35px;
     border-top-left-radius: 35px;
-    width: 170px;
+    width: calc(50% - 20px);
     height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 10px;
 }
-
 
 .twoFirst {
     display: flex;
@@ -84,7 +92,6 @@
 
 .tip {
     background-color: white;
-    display: inline;
     border: solid black 2px;
     font-size: 12px;
     text-align: center;

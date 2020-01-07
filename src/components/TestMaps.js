@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 
 const TestMaps = () => {
-    let mapsName = ["abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
+    let mapsName = ["pokecenter", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
 
     const [currentMap, setCurrentMap] = useState(0);
     const [currentMapName, setCurrentMapName] = useState(mapsName[currentMap]);
@@ -71,7 +71,7 @@ const TestMaps = () => {
                     onClick={increase}
                 >
                     <img alt="right direction arrow"
-                        className="rightArrow"
+                         className="rightArrow"
                          src="https://image.noelshack.com/fichiers/2019/52/4/1577375125-pngkit-arrow-pointing-down-png-508417.png"
                     />
                 </div>

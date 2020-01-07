@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './DisplayPokemonTeamStats.js.css';
 import JsLifeBar from './JsLifeBar';
 
-const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) => {
+const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, closeStats}) => {
 
     const [favorite, setFavorite] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
@@ -36,6 +36,8 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
         team.splice(0, 1);
         const pokemonTeamNow = [stock, ...team];
         setTeamPokemon(pokemonTeamNow);
+        localStorage.setItem('fetched pokemon', JSON.stringify(pokemonTeamNow));
+
     };
 
     return (
@@ -48,7 +50,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                         <p className="favoriteText">Remove to favorite</p>
                         <img alt="yellow star favorite remove"
                             className="favoriteStar"
-                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png"
                         />
                     </div>
                     :
@@ -60,7 +62,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                         <p className="favoriteText">Add to favorite</p>
                         <img alt="favorite yellow star add"
                             className="favoriteStar"
-                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" alt="star"
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png"
                         />
                     </div>}
                 <img className="pokemonStatsImage"
@@ -69,6 +71,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon}) 
                 <div className="nameAndLvl">
                     <h1 className="statsName">{pokemon.name.toUpperCase()}</h1>
                     <p>Lv.{getLvl()}</p>
+                    <img onClick={closeStats} className="closeWindowIconDisplayPokemon" src="https://image.noelshack.com/fichiers/2020/01/6/1578154650-kisspng-computer-icons-window-button-actions-window-close-icon-5ab0da45ddb522-1926493715215396539081.png" alt="close window icon"/>
                 </div>
             </div>
             <div className="typesStats">

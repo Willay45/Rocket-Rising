@@ -17,11 +17,20 @@ const GameSceneBattlefield = ({scene, opponentActivePokemon, playerActivePokemon
         return(toCent);
     };
 
+    const background = () => {
+        if (!scene.isWildPokemon()){
+            return scene.getBackground()
+        } else {
+            return "https://image.noelshack.com/fichiers/2020/01/5/1578067091-arene.jpg";
+        }
+    };
+
     return(
         <div className="GameSceneBattlefield">
-            <div className="battlefield" style={{backgroundImage:`url(${scene.getBackground()})`, position: 'relative'}}>
+            <div className="battlefield" style={{backgroundImage:`url(${background()})`, position: 'relative'}}>
                 <div className="pnj" style={{display: discussion ? "block" : "none"}}>
-                    <img src= {scene.getOpponentImage()} alt="pnj"/>
+                    <img src= {scene.getOpponentImage()} style={{height: scene.isWildPokemon() ? "150px" : undefined,
+                        width:scene.isWildPokemon() ? "150px" : undefined}} alt="pnj"/>
                 </div>
                 <div className="opponent" style={{display: discussion ? "none" : "block"}}>
                     <div className="statBox">

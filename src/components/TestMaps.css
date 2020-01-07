@@ -15,7 +15,6 @@
     flex-direction: column;
     background-color: black;
     color: white;
-
 }
 
 .navDiv {
@@ -112,5 +111,4 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
