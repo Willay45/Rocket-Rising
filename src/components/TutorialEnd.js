@@ -7,13 +7,13 @@ const TutorialEnd = () => {
     return(
         <div className="tutorialEndContainer">
             <div className="titleMap">
-                <h1>DownTown</h1>
+                <h1>Go !</h1>
             </div>
             <div className="backgroundImage">
 
             </div>
             <div className="tipsEnd">
-                <h3>Click on the map bellow to navigate</h3>
+                <h3> Click on the map ! </h3>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Down_red_arrow.png" alt="red arrow"/>
             </div>
             <NavBar/>
