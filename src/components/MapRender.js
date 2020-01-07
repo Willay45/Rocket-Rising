@@ -20,7 +20,6 @@ const MapRender = (props) => {
         if(!game.getCurrentScene()) {
             history.push('/choose-starter');
         }
-
         const getPokemon = (myMap) => {
             const stock = [];
             myMap.types.forEach(element => {
