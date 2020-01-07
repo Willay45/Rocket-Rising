@@ -1,9 +1,11 @@
 .containerInventory {
+
     height: 100vh;
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .bigContainerInventory {
@@ -11,10 +13,12 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    background-image: url("https://image.noelshack.com/fichiers/2019/52/6/1577571119-backgroundmenu.jpg");
+    background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
     background-repeat: no-repeat;
     background-size: 200%;
     background-position: center;
+    background-color: black;
+
 }
 
 .inventoryRenderContainer {
@@ -25,12 +29,14 @@
 }
 
 .itemCase {
-    background-color: rgba(255,255,255,0.3);
+
     height: 70px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 9px;
     margin: 10px;
+    background-color: rgba(222, 222, 222, 0.4);
+
 }
 
 .nbItem {
@@ -41,55 +47,23 @@
 
 .itemImage {
     height: 50px;
+
 }
 
 .testButton {
     margin: 0;
+
 }
 
 .inventoryTitle {
-    background-image: url("https://fontmeme.com/permalink/191223/bb12eb6c4911afe537bf9167b1d61239.png");
+    background: black;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0,0,0, 0.8);
     height: 10%;
     padding: 5px;
-}
-
-.containerInventory ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    list-style-type: none;
-    background: linear-gradient(#9198e5, #E1D198);
-    padding: 0;
-    margin: 0;
-    height: 100%;
-}
-
-.itemList {
-    border: 2px solid white;
-    border-radius: 8px;
-    border-bottom: 20px solid #FF0000;
-    background: rgba(255,255,255, 0.6);
-    opacity: 100%;
-    margin: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.titles {
-    height: 15vh;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 80%;
-}
-
-.itemTitle {
     color: white;
     font: Bold 13px Arial;
     padding: 15px;

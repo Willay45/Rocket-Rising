@@ -1,7 +1,8 @@
 .tutorialEndContainer {
-    background-image: url("https://image.noelshack.com/fichiers/2019/51/2/1576616129-sans-titre.jpg");
+    background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 200%;
+    background-color: black;
     background-position: center;
     height: 100vh;
     display: flex;
@@ -15,18 +16,21 @@
 }
 
 .titleMap {
-    background-color: black;
+    background-color: black ;
     display: flex;
     color: white;
-    justify-content: center;
 }
 
 .tipsEnd {
     width: 100%;
     height: 140px;
-    background-color: lightblue;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+}
+
+h3 {
+    color: white;
 }

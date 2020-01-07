@@ -34,8 +34,7 @@ const TestMaps = () => {
 
     return (
         <div className="mapsContainer">
-            <img className="navigationTitleImage"
-                 src="https://fontmeme.com/permalink/191226/64dc75d51622372524761ffb2576dd23.png"/>
+            <h1>Destination</h1>
             <div className="navigationContainer">
                 <div
                     className="navDiv"
@@ -49,23 +48,20 @@ const TestMaps = () => {
                     {selectedMap.name ?
                         <div className="mapBackgroundNav">
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
-                            <img className="mapSelected" src={selectedMap.img} alt="map image"/>
-                            {selectedMap.types ?
-                                <div className="typesAndLink">
-                                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Types of
-                                        pokemon you can find
-                                        there:</p>
-                                    <div className="allTheTypes">
-                                        {selectedMap.types ?
-                                            selectedMap.types.map((element) => {
-                                                    return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
-                                                }
-                                            )
-                                            : null}
-                                    </div>
+                            <img className="mapSelected" src={selectedMap.img} alt="map"/>
+                            <div className="typesAndLink">
+                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type you can find
+                                    there:</p>
+                                <div className="allTheTypes">
+                                    {selectedMap.types ?
+                                        selectedMap.types.map((element) => {
+                                                return (<p className="typeMapNav">{element.typeName.toUpperCase()}</p>)
+                                            }
+                                        )
+                                        : null}
                                 </div>
-                                : null}
-                            <Link className="linkToMap" to={selectedMap.pathname}>Go to: {currentMapName.toUpperCase()}</Link>
+                            </div>
+                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go !</Link>
                         </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }
