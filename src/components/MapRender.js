@@ -16,10 +16,7 @@ const MapRender = (props) => {
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
 
-        const [game, setGame] = useState(Game);
-        if(!game.getCurrentScene()) {
-            history.push('/choose-starter');
-        }
+
         const getPokemon = (myMap) => {
             const stock = [];
             myMap.types.forEach(element => {
@@ -57,8 +54,10 @@ const MapRender = (props) => {
             setTimeout(() => {
                MusicService.play('wildVsPlayer');
                PokemonFactory.get(pokemon.name.toLowerCase(), 15)
+
                    .then((opponent) => {
                        Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => game.backToPreviousScene()));
+                       console.log(opponent);
                        history.push('/game');
                    });
             }, 1500);

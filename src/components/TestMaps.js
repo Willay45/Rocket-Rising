@@ -61,7 +61,11 @@ const TestMaps = () => {
                                         : null}
                                 </div>
                             </div>
-                            <Link className="linkToMap" to={`/map/${currentMapName}`}>Go !</Link>
+                            {currentMapName === "pokecenter" ?
+                                <Link className="linkToMap" to={"/pokecenter"}>Go !</Link>
+                                :
+                                <Link className="linkToMap" to={`/map/${currentMapName}`}>Go !</Link>
+                            }
                         </div>
                         : <h1 className="mapTitleNav">{currentMapName.toUpperCase()}</h1>
                     }

@@ -29,7 +29,6 @@ const BattleSceneManager = ({ game, endTrigger}) => {
     const playerActivePokemon = scene.getPlayerActivePokemon();
     const opponentActivePokemon = scene.getOpponentActivePokemon();
 
-
     const doTurn = (actionType, action) => {
         const arrayAction = scene.doTurn(actionType,action);
         const messages = arrayAction.reduce((message, pokemon) => {
@@ -38,6 +37,7 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
             if (pokemon.hasKilled && pokemon.isPlayer) {
                 message.push(`${opponentActivePokemon.getName()} fainted.`);
+                localStorage.setItem('pokemonTeam', JSON.stringify(game.getPlayer().getPokemonTeam()));
             } else if (pokemon.hasKilled && !pokemon.isPlayer) {
                 message.push(`${playerActivePokemon.getName()} fainted.`);
             }
