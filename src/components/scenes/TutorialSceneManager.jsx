@@ -40,9 +40,6 @@ const TutorialSceneManager = () => {
         localStorage.setItem('playerInventory', JSON.stringify(playerInventory));
         const index = messages.indexOf(skip);
         setSkip(messages[index + 1]);
-        if (index === 2) {
-            console.log(shadowball)
-        }
         if (index === messages.length - 1) {
             setStop(true)
         }
