@@ -3,6 +3,7 @@ import MessagesBox from "../ui/MessagesBox";
 import "./TutorialSceneManager.css"
 import { useHistory } from "react-router-dom";
 import MusicService from "../../tech/MusicService";
+import { items } from "../../datas/items";
 
 const TutorialSceneManager = () => {
     const history = useHistory();
@@ -16,7 +17,7 @@ const TutorialSceneManager = () => {
     `We want to control the world and all the pokemons by the way !
     For that, we made a new powerful pokeball : The ShadowBall !`,
     `It's allow you to capture any pokemons, even those belong to another trainer.
-    Use it for steal the maximum of them.`,
+    Use it for steal the maximum of them. I'll give you 5 of them.`,
     `You passed the selections, but you still have to do your proofs !
     Your first mission will be to bring back a Poliwag.`,
     `It looks like than a girl on the beach has this pokemon. You know what to do…
@@ -32,8 +33,16 @@ const TutorialSceneManager = () => {
     const [stop, setStop] = useState(false);
 
     function skipped() {
+        let shadowball = items[3];
+        shadowball.number = 5;
+        let playerInventory = [];
+        playerInventory.push(shadowball);
+        localStorage.setItem('playerInventory', JSON.stringify(playerInventory));
         const index = messages.indexOf(skip);
         setSkip(messages[index + 1]);
+        if (index === 2) {
+            console.log(shadowball)
+        }
         if (index === messages.length - 1) {
             setStop(true)
         }
