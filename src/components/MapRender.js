@@ -16,7 +16,6 @@ const MapRender = (props) => {
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
 
-
         const getPokemon = (myMap) => {
             const stock = [];
             myMap.types.forEach(element => {
@@ -56,8 +55,7 @@ const MapRender = (props) => {
                PokemonFactory.get(pokemon.name.toLowerCase(), 15)
 
                    .then((opponent) => {
-                       Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => game.backToPreviousScene()));
-
+                       Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => history.push('/testMap')));
                        history.push('/game');
                    });
             }, 1500);

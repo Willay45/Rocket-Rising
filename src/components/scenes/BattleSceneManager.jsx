@@ -7,22 +7,22 @@ import GameSceneBattlefield from "./GameSceneBattlefield";
 
 const BattleSceneManager = ({ game, endTrigger}) => {
     const scene = game.getCurrentScene();
-    let messagesToDisplay = [];
+    const messagesToDisplay = [];
     const [messages, setMessages] = useState(messagesToDisplay);
     const [discussionWithPnj, setDiscussionWithPnj] = useState(true);
-const opponentName = scene.getOpponentActivePokemon().getName();
 
+    const opponentName = scene.getOpponentActivePokemon().getName();
 
+    console.log(scene.getPlayerActivePokemon);
 
     if(!scene.isStarted()){
-        console.log(opponentName);
         if (scene.isWildPokemon()) {
-            messagesToDisplay = [`Ho..! A wild pokemon appears!`,
-                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`];
+            messagesToDisplay.push(`Ho..! A wild ${opponentName} appears!`,
+                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`);
         } else {
-            messagesToDisplay = [`You assault ${game.getCurrentScene().getOpponent().getName()}`,
+            messagesToDisplay.push(`You assault ${game.getCurrentScene().getOpponent().getName()}`,
                 `${game.getCurrentScene().getOpponent().getName()} : ${game.getCurrentScene().getOpponent().getHelloMessage()}`,
-                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`];
+                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`);
         }
     }
 
