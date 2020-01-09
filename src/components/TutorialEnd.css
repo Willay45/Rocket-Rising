@@ -1,5 +1,5 @@
 .tutorialEndContainer {
-    background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
+    background-image: url("https://image.noelshack.com/fichiers/2020/02/4/1578562109-5.jpg");
     background-repeat: no-repeat;
     background-size: 200%;
     background-color: black;
@@ -33,4 +33,6 @@
 
 h3 {
     color: white;
+    font-size: 25px;
+    margin-bottom: 5px;
 }
