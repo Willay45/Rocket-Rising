@@ -14,7 +14,6 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
     const opponentName = scene.getOpponentActivePokemon().getName();
 
-    console.log(Game.getPlayer());
 
     if(!scene.isStarted()){
         if (scene.isWildPokemon()) {
