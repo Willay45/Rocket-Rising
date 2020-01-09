@@ -19,9 +19,8 @@ const TutorialSceneManager = () => {
     `It's allow you to capture any pokemons, even those belong to another trainer.
     Use it for steal the maximum of them. I'll give you 5 of them.`,
     `You passed the selections, but you still have to do your proofs !
-    Your first mission will be to bring back a Poliwag.`,
-    `It looks like than a girl on the beach has this pokemon. You know what to do…
-    However, it's possible than she try to defend herself…`,
+    Your first mission will be to fight a young trainer: Ondine !`,
+    `But watch out, she'll probably try to defend herself…`,
     `What, you don't have any pokemon ?
     Well… Choose one among this three of them :`
 ];

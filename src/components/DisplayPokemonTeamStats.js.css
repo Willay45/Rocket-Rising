@@ -145,7 +145,7 @@
 }
 
 .itemStats {
-    font-size: 14px;
+    font-size: 16px;
     margin: 2px
 }
 
@@ -156,5 +156,5 @@
 
 .itemSpell {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
 }
