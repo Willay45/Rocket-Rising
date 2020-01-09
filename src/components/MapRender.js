@@ -16,6 +16,7 @@ const MapRender = (props) => {
         const [opponentObject, setOpponentObject] = useState(null);
         const [stockTypes, setStockTypes] = useState([]);
 
+
         const getPokemon = (myMap) => {
             const stock = [];
             myMap.types.forEach(element => {
