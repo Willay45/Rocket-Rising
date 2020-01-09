@@ -50,8 +50,12 @@ const TestMaps = () => {
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
                             <img className="mapSelected" src={selectedMap.img} alt="map"/>
                             <div className="typesAndLink">
-                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type you can find
-                                    there:</p>
+                                {selectedMap.id === "pokecenter" ?
+                                    null :
+                                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type
+                                        you can find
+                                        there:</p>
+                                }
                                 <div className="allTheTypes">
                                     {selectedMap.types ?
                                         selectedMap.types.map((element) => {

@@ -63,7 +63,7 @@ const MapRender = (props) => {
 
         return (
             <div className="mapRenderContainer">
-                <div className={`darkBorder`}>
+                <div className={`darkBorderMapRender`}>
                     {selectedMap ? <h1 className="mapTitle">{selectedMap.name}</h1> : null}
                 </div>
                 <div className={selectedMap ? `${selectedMap.className}` : "mapRender"}>

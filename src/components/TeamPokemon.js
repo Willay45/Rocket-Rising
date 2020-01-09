@@ -33,11 +33,9 @@ const TeamPokemon = () => {
 
     const addRandomPokemonToTeam = () => {
         PokemonFactory.get(randomNumber(1,255), 10).then(data => {
-            console.log(data);
             setNewPokemon(data);
             let theTeam = pokemonTeam;
             theTeam.push(data);
-            console.log(theTeam);
             setPokemonTeam(theTeam);
             localStorage.setItem('pokemonTeam', JSON.stringify(theTeam));
         });

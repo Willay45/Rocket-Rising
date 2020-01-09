@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
 .mapRenderContainer {
+    font-family: DisposableDroidBB;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,8 +40,9 @@
 .mapTitle {
     color: white;
 }
-.darkBorder {
+.darkBorderMapRender {
     height: 15vh;
+    font-size: 20px;
     background-color: black;
     display: flex;
     align-items: center;

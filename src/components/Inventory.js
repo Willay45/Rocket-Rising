@@ -28,7 +28,6 @@ function Inventory() {
     };
 
     const closeInfo = () => {
-        console.log("hello");
         setMoreInfo(false);
     };
 

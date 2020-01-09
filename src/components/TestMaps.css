@@ -1,5 +1,9 @@
-.navigationContainer {
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
 
+.navigationContainer {
     height: 69vh;
     display: flex;
     flex-direction: row;
@@ -8,6 +12,7 @@
 }
 
 .mapsContainer {
+    font-family: DisposableDroidBB;
     height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -53,7 +58,6 @@
 .mapBackgroundNav .mapSelected {
     height: 172px;
     width: 294px;
-
 }
 
 .typesAndLink {
