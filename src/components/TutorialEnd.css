@@ -1,5 +1,12 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
 .tutorialEndContainer {
+
     background-image: url("https://image.noelshack.com/fichiers/2020/02/4/1578562109-5.jpg");
+    font-family: DisposableDroidBB;
     background-repeat: no-repeat;
     background-size: 200%;
     background-color: black;

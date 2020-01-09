@@ -54,8 +54,9 @@ const MapRender = (props) => {
             setTimeout(() => {
                MusicService.play('wildVsPlayer');
                PokemonFactory.get(pokemon.name.toLowerCase(), 15)
+
                    .then((opponent) => {
-                       Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => game.backToPreviousScene()));
+                       Game.setCurrentScene(new BattleGameScene(opponent ,'', (game) => history.push('/testMap')));
                        history.push('/game');
                    });
             }, 1500);
@@ -63,7 +64,7 @@ const MapRender = (props) => {
 
         return (
             <div className="mapRenderContainer">
-                <div className={`darkBorder`}>
+                <div className={`darkBorderMapRender`}>
                     {selectedMap ? <h1 className="mapTitle">{selectedMap.name}</h1> : null}
                 </div>
                 <div className={selectedMap ? `${selectedMap.className}` : "mapRender"}>

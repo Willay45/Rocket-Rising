@@ -73,7 +73,7 @@ const UseItem = (props) => {
                                 >
                                     <div>
                                         <img className="pokemonCardImageUseItem"
-                                            alt="pokemon image"
+                                             alt="pokemon image"
                                              src={`http://www.pokestadium.com/sprites/xy/${pokemon.name}.gif`}/>
                                     </div>
                                     <div className="nameAndLifeBar">
@@ -93,7 +93,6 @@ const UseItem = (props) => {
                     </div>
                 }
             </div>
-            <button onClick={injureAPokemon}>Hurt him</button>
             {itemUsed ? null :
                 <Link className="containerToInventoryLink" to="/inventory"><p className="toInventory">Go back to
                     inventory</p></Link>}
