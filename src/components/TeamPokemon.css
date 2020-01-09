@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.teamPokemonRender {
+    background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
+    background-size: 200%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.pokemonTeam-title {
+    font-family: DisposableDroidBB;
+    font-size: 30px;
+    padding: 5px;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.teamPokemonContainer {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    font-family: DisposableDroidBB;
+}
+
+.supportPokemonCard {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.pokemonTeamTitleContainer {
+    height: 28vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.h1 {
+    color: white;
+}
+
+.pokemonCase {
+    background-color: #2d3436;
+    border: solid #636e72 5px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    width: calc(50% - 20px);
+    height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.twoFirst {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
+.twoSecond {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
+.twoThird {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://image.noelshack.com/fichiers/2019/50/7/1576364967-backgroundbutton.png");
+    height: 15vh;
+}
+
+.tip {
+    background-color: white;
+    border: solid black 2px;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+    padding: 10px;
+}
+
+.navMenuFake {
+    display: flex;
+}
+
+.menuItem {
+    width: 100px;
+}

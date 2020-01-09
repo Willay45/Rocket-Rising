@@ -1,0 +1,244 @@
+{
+  "maps": [
+    {
+      "id": "pokecenter",
+      "number": 1,
+      "name": "Pokemon Center",
+      "className": "mapRenderPokemonCenter",
+      "img": "https://cdna.artstation.com/p/assets/images/images/004/158/902/large/scott-zenteno-pokecenter.jpg?1480927479&dl=1",
+      "pathname": "/pokeCenter"
+    },
+    {
+      "id": "abandoned",
+      "number": 3,
+      "name": "Abandoned Castle",
+      "types": [
+        {
+          "id": 8,
+          "typeName": "ghost",
+          "nbPokemon": 3
+        },
+        {
+          "id": 14,
+          "typeName": "psychic",
+          "nbPokemon": 23
+        },
+        {
+          "id": 17,
+          "typeName": "dark",
+          "nbPokemon": 5
+        }
+      ],
+      "className": "mapRenderAbandoned",
+      "nbType": 3,
+      "nbTotal": 31,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZhDrxBRFTB57qLlY_LLwMahjpyt_azO2srrrJU8Hflizn_DSj",
+      "pathname": "/map/abandoned"
+    },
+
+    {
+      "id": "desert",
+      "number": 4,
+      "name": "Desert",
+      "types": [
+        {
+          "id": 6,
+          "typeName": "ground",
+          "nbPokemon": 17
+        }
+      ],
+      "className": "mapRenderDesert",
+      "nbType": 1,
+      "nbTotal": 17,
+      "img": "https://image.noelshack.com/fichiers/2019/50/1/1575910408-desert.jpg",
+      "pathname": "/map/desert"
+    },
+
+    {
+      "id": "dojo",
+      "number": 5,
+      "name": "Dojo",
+      "types": [
+        {
+          "id": 2,
+          "typeName": "fighting",
+          "nbPokemon": 10
+        }
+      ],
+      "className": "mapRenderDojo",
+      "nbType": 1,
+      "nbTotal": 10,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiMnz09VZ6UgZfdSsPmqYOb1c3M_xbTiViI8MKaaBV4K6hpqqH",
+      "pathname": "/map/dojo"
+    },
+
+    {
+      "id": "electrical",
+      "number": 6,
+      "name": "Electrical Factory",
+      "types": [
+        {
+          "id": 9,
+          "typeName": "steel",
+          "nbPokemon": 5
+        },
+        {
+          "id": 13,
+          "typeName": "electric",
+          "nbPokemon": 16
+        }
+      ],
+      "className": "mapRenderElectrical",
+      "nbType": 2,
+      "nbTotal": 21,
+      "img": "https://www.pokepedia.fr/images/1/19/Eoliennes_anime.png",
+      "pathname": "/map/electrical"
+    },
+
+    {
+      "id": "forest",
+      "number": 7,
+      "name": "Forest",
+      "types": [
+        {
+          "id": 18,
+          "typeName": "fairy",
+          "nbPokemon": 12
+        },
+        {
+          "id": 7,
+          "typeName": "bug",
+          "nbPokemon": 21
+        },
+        {
+          "id": 4,
+          "typeName": "poison",
+          "nbPokemon": 37
+        }
+      ],
+      "className": "mapRenderForest",
+      "nbType": 3,
+      "nbTotal": 61,
+      "img": "https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/10/04090337/EGCfymnXkAE92lx.jpg",
+      "pathname": "/map/forest"
+    },
+
+    {
+      "id": "glacier",
+      "number": 8,
+      "name": "Glacier",
+      "types": [
+        {
+          "id": 15,
+          "typeName": "ice",
+          "nbPokemon": 9
+        }
+      ],
+      "className": "mapRenderGlacier",
+      "nbType": 1,
+      "nbTotal": 9,
+      "img": "https://www.pokebip.com/pages/jeuxvideo/pokemon_donjon_mystere_magnagate/soluce/screen/102.png",
+      "pathname": "/map/glacier"
+    },
+
+    {
+      "id": "mountain",
+      "number": 9,
+      "name": "Mountain",
+      "types": [
+        {
+          "id": 6,
+          "typeName": "rock",
+          "nbPokemon": 17
+        }
+      ],
+      "className": "mapRenderMountain",
+      "nbType": 1,
+      "nbTotal": 17,
+      "img": "https://image.noelshack.com/fichiers/2019/49/7/1575772803-montagne.png",
+      "pathname": "/map/mountain"
+    },
+
+    {
+      "id": "ocean",
+      "number": 10,
+      "name": "Ocean",
+      "types": [
+        {
+          "id": 11,
+          "typeName": "water",
+          "nbPokemon": 49
+        }
+      ],
+      "className": "mapRenderOcean",
+      "nbType": 1,
+      "nbTotal": 49,
+      "img": "https://image.noelshack.com/fichiers/2019/49/4/1575563477-mer.jpg",
+      "pathname": "/map/ocean"
+    },
+
+    {
+      "id": "path",
+      "number": 11,
+      "name": "Path",
+      "types": [
+        {
+          "id": 1,
+          "typeName": "normal",
+          "nbPokemon": 36
+        }
+      ],
+      "className": "mapRenderPath",
+      "nbType": 1,
+      "nbTotal": 36,
+      "img": "https://image.noelshack.com/fichiers/2019/52/5/1577471764-ontheroad.jpg",
+      "pathname": "/map/path"
+    },
+
+    {
+      "id": "plain",
+      "number": 12,
+      "name": "Plain",
+      "types": [
+        {
+          "id": 12,
+          "typeName": "grass",
+          "nbPokemon": 23
+        },
+        {
+          "id": 3,
+          "typeName": "flying",
+          "nbPokemon": 37
+        }
+      ],
+      "className": "mapRenderPlain",
+      "nbType": 2,
+      "nbTotal": 60,
+      "img": "https://i.pinimg.com/originals/85/b0/71/85b0714c5bda6ba66bd7c8c9a75abb3e.png",
+      "pathname": "/map/plain"
+    },
+
+    {
+      "id": "volcano",
+      "number": 13,
+      "name": "Volcano",
+      "types": [
+        {
+          "id": 16,
+          "typeName": "dragon",
+          "nbPokemon": 3
+        },
+        {
+          "id": 10,
+          "typeName": "fire",
+          "nbPokemon": 37
+        }
+      ],
+      "className": "mapRenderVolcano",
+      "nbType": 2,
+      "nbTotal": 40,
+      "img": "https://image.noelshack.com/fichiers/2019/50/1/1575908191-volcan.jpg",
+      "pathname": "/map/volcano"
+    }
+  ]
+}

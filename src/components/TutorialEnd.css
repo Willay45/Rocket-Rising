@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.tutorialEndContainer {
+
+    background-image: url("https://image.noelshack.com/fichiers/2020/02/4/1578562109-5.jpg");
+    font-family: DisposableDroidBB;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-color: black;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.backgroundImage {
+    height: 60vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.titleMap {
+    background-color: black ;
+    display: flex;
+    color: white;
+}
+
+.tipsEnd {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+h3 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 5px;
+}

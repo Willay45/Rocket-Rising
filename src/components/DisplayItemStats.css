@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.useItemContainer {
+    font-family: DisposableDroidBB;
+}
+
+.tipUseItem {
+    font-size: 22px;
+}
+
+.itemStats {
+    text-align: center;
+    font-size: 16px;
+}
+
+.closeWindowIcon {
+    border-radius: 15px;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    top: 64%;
+}
+
+.itemAndDescriptionItemStats {
+    margin: 10px;
+}
+
+.linkContainerDisplayItem{
+    display: inline-block;
+    width: 60%;
+    text-decoration: none;
+}
+
+.linkToUse {
+    text-align: center;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+}

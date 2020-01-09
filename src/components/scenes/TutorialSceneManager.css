@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../../fonts/disposabledroid-bb.regular.ttf");
+}
+
+
+.background-giovanni {
+    background: url("https://image.noelshack.com/fichiers/2019/52/7/1577642476-centre-ville.jpg");
+    height: 425px;
+    position: relative;
+    background-size: cover;
+}
+
+.background-giovanni .giovanni {
+    position: absolute;
+    height: 330px;
+    top: 50px;
+    left: 150px;
+}
+
+.next_button {
+
+    font-family: "DisposableDroidBB";
+
+}

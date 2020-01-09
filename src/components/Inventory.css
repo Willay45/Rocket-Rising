@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.containerInventory {
+    font-family: DisposableDroidBB;
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.bigContainerInventory {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: center;
+    background-color: black;
+
+}
+
+.inventoryRenderContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 25px;
+}
+
+.itemCase {
+
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    margin: 10px;
+    background-color: rgba(222, 222, 222, 0.4);
+
+}
+
+.nbItem {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+.itemImage {
+    height: 50px;
+
+}
+
+.testButton {
+    margin: 0;
+}
+
+.tip {
+    font-family: DisposableDroidBB;
+}
+
+.inventoryTitle {
+    background: black;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: DisposableDroidBB;
+    font-size: 20px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.itemInfo {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+    animation: fade-in 1s;
+    text-decoration: none;
+}
