@@ -34,7 +34,7 @@
 .mapTitle {
     color: white;
 }
-.darkBorder {
+.darkBorderMapRender {
     height: 15vh;
     background-color: black;
     display: flex;

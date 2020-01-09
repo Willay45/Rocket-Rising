@@ -3,6 +3,7 @@ import "./TestMaps.css";
 import {maps} from "../services/maps";
 import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
+import MusicService from "../tech/MusicService";
 
 const TestMaps = () => {
     let mapsName = ["pokecenter", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
@@ -10,6 +11,10 @@ const TestMaps = () => {
     const [currentMap, setCurrentMap] = useState(0);
     const [currentMapName, setCurrentMapName] = useState(mapsName[currentMap]);
     const [selectedMap, setSelectedMap] = useState({});
+
+    useEffect(()=>{
+        MusicService.play("map");
+    });
 
     useEffect(() => {
         setCurrentMapName(mapsName[currentMap]);
@@ -50,8 +55,12 @@ const TestMaps = () => {
                             <h1 className="mapTitleNav">{selectedMap.name.toUpperCase()}</h1>
                             <img className="mapSelected" src={selectedMap.img} alt="map"/>
                             <div className="typesAndLink">
-                                <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type you can find
-                                    there:</p>
+                                {selectedMap.id === "pokecenter" ?
+                                    null :
+                                    <p style={{textAlign: "center", fontSize: "18px", color: "#E6462D"}}>Pokemon's type
+                                        you can find
+                                        there:</p>
+                                }
                                 <div className="allTheTypes">
                                     {selectedMap.types ?
                                         selectedMap.types.map((element) => {

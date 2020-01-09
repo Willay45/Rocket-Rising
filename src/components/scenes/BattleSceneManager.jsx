@@ -8,32 +8,38 @@ import GameSceneBattlefield from "./GameSceneBattlefield";
 const BattleSceneManager = ({ game, endTrigger}) => {
     const scene = game.getCurrentScene();
     let messagesToDisplay = [];
+    const [messages, setMessages] = useState(messagesToDisplay);
+    const [discussionWithPnj, setDiscussionWithPnj] = useState(true);
+const opponentName = scene.getOpponentActivePokemon().getName();
+
+
+
     if(!scene.isStarted()){
+        console.log(opponentName);
         if (scene.isWildPokemon()) {
-            messagesToDisplay = [`Ho..! A wild ${scene.getOpponentActivePokemon().getName()} appears!`,
-                `you send ${scene.getPlayerActivePokemon().getName()}`];
+            messagesToDisplay = [`Ho..! A wild pokemon appears!`,
+                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`];
         } else {
-            messagesToDisplay = [`You assault ${scene.getOpponent().getName()}`,
-                `${scene.getOpponent().getName()} : ${scene.getOpponent().getHelloMessage()}`,
-                `you send ${scene.getPlayerActivePokemon().getName()}`];
+            messagesToDisplay = [`You assault ${game.getCurrentScene().getOpponent().getName()}`,
+                `${game.getCurrentScene().getOpponent().getName()} : ${game.getCurrentScene().getOpponent().getHelloMessage()}`,
+                `you send ${game.getCurrentScene().getPlayerActivePokemon().getName()}`];
         }
     }
 
-    const [messages, setMessages] = useState(messagesToDisplay);
-    const [discussionWithPnj, setDiscussionWithPnj] = useState(true);
+
 
     useEffect(() => {
         MusicService.play(scene.getMusic());
     });
-
     const playerActivePokemon = scene.getPlayerActivePokemon();
     const opponentActivePokemon = scene.getOpponentActivePokemon();
 
     const doTurn = (actionType, action) => {
         const arrayAction = scene.doTurn(actionType,action);
         const messages = arrayAction.reduce((message, pokemon) => {
-            message.push(`${pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} uses ${pokemon.action} on ${!pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
-            message.push(`${!pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()} lose ${pokemon.damages} hp.`);
+
+            message.push(`${pokemon.isPlayer ? playerActivePokemon.getName() : game.getCurrentScene().getOpponentActivePokemon().getName()} uses ${pokemon.action} on ${!pokemon.isPlayer ? playerActivePokemon.getName() : opponentActivePokemon.getName()}.`);
+            message.push(`${!pokemon.isPlayer ? playerActivePokemon.getName() : game.getCurrentScene().getOpponentActivePokemon().getName()} lose ${pokemon.damages} hp.`);
 
             if (pokemon.hasKilled && pokemon.isPlayer) {
                 message.push(`${opponentActivePokemon.getName()} fainted.`);
