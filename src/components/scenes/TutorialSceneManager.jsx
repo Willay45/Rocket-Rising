@@ -57,7 +57,8 @@ const TutorialSceneManager = () => {
             <div>
                 <MessagesBox>
                     {skip}
-                    <button onClick={skipped}>Next</button>
+                    <button className="next_button" onClick={skipped}>Next</button>
+
                 </MessagesBox>
             </div>
         </div>
