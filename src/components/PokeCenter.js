@@ -15,8 +15,7 @@ const PokeCenter = () => {
         MusicService.play('pokemonCenterMusic');
     }, []);
 
-    console.log(Game.getPlayer().getPokemonTeam()[0].getCurentHp());
-    console.log(pokemonTeam);
+    
     const nurseHeal = () => {
         let stockTeam = pokemonTeam;
         stockTeam.map((pokemon) => {
