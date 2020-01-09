@@ -3,29 +3,30 @@ import "./PokeCenter.css";
 import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 import MusicService from "../tech/MusicService";
+import Game from "../models/Game";
 
 const PokeCenter = () => {
-    const [pokemonTeam, setPokemonTeam] = useState(null);
+    const [pokemonTeam, setPokemonTeam] = useState(Game.getPlayer().getPokemonTeam());
     const [needHeal, setNeedHeal] = useState(null);
     const [timeOutMessage, setTimeOutMessage] = useState(true);
 
+
     useEffect(() => {
-        let stockTeam = JSON.parse(localStorage.getItem('pokemonTeam'));
-        setPokemonTeam(stockTeam);
         MusicService.play('pokemonCenterMusic');
     }, []);
 
+    console.log(Game.getPlayer().getPokemonTeam()[0].getCurentHp());
+    console.log(pokemonTeam);
     const nurseHeal = () => {
         let stockTeam = pokemonTeam;
-        stockTeam.map((element) => {
-            let currentLife = element.baseStats.hp.current;
-            let baseLife = element.baseStats.hp.base;
-            if (currentLife < baseLife || element.curentHp < baseLife) {
+        stockTeam.map((pokemon) => {
+            let currentLife = Game.getPlayer().getPokemonTeam()[stockTeam.indexOf(pokemon)].getCurentHp();
+            let baseLife = Game.getPlayer().getPokemonTeam()[stockTeam.indexOf(pokemon)].baseStats.hp.base;
+            if (currentLife < baseLife || pokemon.curentHp < baseLife) {
                 MusicService.play('healPokemonCenter');
                 setNeedHeal(true);
                 setTimeout(() => {
-                    element.baseStats.hp.current = baseLife;
-                    element.curentHp = baseLife;
+                    pokemon.setCurentHp(baseLife);
                     setTimeOutMessage(false);
                     setPokemonTeam(stockTeam);
                     localStorage.setItem('pokemonTeam', JSON.stringify(stockTeam));

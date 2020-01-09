@@ -4,6 +4,7 @@ import BattleSceneActionBox from "./BattleSceneActionBox";
 import MusicService from "../../tech/MusicService";
 import MessagesBoxAutoText from "../ui/MessagesBoxAutoText";
 import GameSceneBattlefield from "./GameSceneBattlefield";
+import Game from "../../models/Game";
 
 const BattleSceneManager = ({ game, endTrigger}) => {
     const scene = game.getCurrentScene();
@@ -13,7 +14,7 @@ const BattleSceneManager = ({ game, endTrigger}) => {
 
     const opponentName = scene.getOpponentActivePokemon().getName();
 
-    console.log(scene.getPlayerActivePokemon);
+    console.log(Game.getPlayer());
 
     if(!scene.isStarted()){
         if (scene.isWildPokemon()) {
