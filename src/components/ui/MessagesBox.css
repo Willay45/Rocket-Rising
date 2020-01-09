@@ -36,6 +36,17 @@
     margin-right: 15px;
 }
 
+.MessageBox .message-container p{
+    margin: 5px;
+}
+
+.MessageBox .message-container .description {
+}
+
+.MessageBox .message-container h1 {
+    margin: 0;
+}
+
 .MessageBox .nextMessage{
     position: absolute;
     font-family: "DisposableDroidBB";
