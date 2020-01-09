@@ -4,6 +4,7 @@ import {maps} from "../services/maps";
 import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 import MusicService from "../tech/MusicService";
+import Game from "../models/Game";
 
 const TestMaps = () => {
     let mapsName = ["pokecenter", "abandoned", "desert", "dojo", "electrical", "forest", "glacier", "mountain", "ocean", "path", "plains", "volcano"];
