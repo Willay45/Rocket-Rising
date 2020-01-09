@@ -83,7 +83,7 @@ const DisplayPokemonTeamStats = ({pokemon, teamPokemon, index, setTeamPokemon, c
             <div className="movesAndStats">
                 <div className="statsRender">
                     <div className="statistics">
-                        <h4>Statistics</h4>
+                        <h2>Statistics</h2>
                         <JsLifeBar pokemon={pokemon}/>
                         <div className="twoColumns">
                             <div className="leftStats">

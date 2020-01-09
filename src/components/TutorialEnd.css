@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
 .tutorialEndContainer {
+    font-family: DisposableDroidBB;
     background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
     background-repeat: no-repeat;
     background-size: 200%;

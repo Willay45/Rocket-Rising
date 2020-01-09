@@ -4,7 +4,7 @@ import './TutorialEnd.css'
 
 const TutorialEnd = () => {
 
-    return(
+    return (
         <div className="tutorialEndContainer">
             <div className="titleMap">
                 <h1>Go !</h1>

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
 .teamPokemonRender {
     background-image: url("https://www.vehiclehi.com/thumbnails/detail/20121101/pokemon%20minimalistic%20dark%20poke%20balls%201920x1080%20wallpaper_www.vehiclehi.com_54.jpg");
     background-size: 200%;
@@ -13,10 +18,12 @@
 }
 
 .pokemonTeam-title {
+    font-family: DisposableDroidBB;
+    font-size: 30px;
+    padding: 5px;
     width: 100%;
     margin: 10px 0;
     text-align: center;
-    color: lightblue;
 }
 
 .teamPokemonContainer {
@@ -27,6 +34,7 @@
     flex-direction: row;
     align-items: flex-start;
     position: relative;
+    font-family: DisposableDroidBB;
 }
 
 .supportPokemonCard {

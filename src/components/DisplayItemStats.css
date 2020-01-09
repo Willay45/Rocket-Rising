@@ -1,5 +1,19 @@
+@font-face {
+    font-family: "DisposableDroidBB";
+    src: url("../fonts/disposabledroid-bb.regular.ttf");
+}
+
+.useItemContainer {
+    font-family: DisposableDroidBB;
+}
+
+.tipUseItem {
+    font-size: 22px;
+}
+
 .itemStats {
     text-align: center;
+    font-size: 16px;
 }
 
 .closeWindowIcon {
